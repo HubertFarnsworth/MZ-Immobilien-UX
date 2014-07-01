@@ -73,8 +73,7 @@
             Einzugsdatum
             <div id="dateslider", class="slider-"></div>
             <input id="date-lower-input" class="inputClass">
-            <input id="date-upper-input" class="inputClass">
-        </div>
+            <span class="example-val" id="date-upper-input">Friday, 31st December 2010</span>        </div>
         
         <script>
             // Create a new date from a string, return as a timestamp.
@@ -231,8 +230,8 @@
                 start: [ timestamp('2015'), timestamp('2016') ],
                 connect: true,
                 range: {
-                    'min': timestamp('2014'),
-                    'max': timestamp('2017')
+                    min: timestamp('2014'),
+                    max: timestamp('2017')
                 },
                 // Steps of one week
                 step: 7 * 24 * 60 * 60 * 1000,
