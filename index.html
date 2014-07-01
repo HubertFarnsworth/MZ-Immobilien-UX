@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>Immobilien</title>
+        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="res/css/immobilien.css">
+
+        <!-- ab hier auslagern in js-Datei -->
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0PvpLCbWVhxSK5JsRibDD75qjcfpfZio">
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(49.0167, 12.0833),
+                zoom: 13
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <!-- bis hier auslagern in js-Datei -->
+        
+    </head>
+
+    <body>
+
+        <script src="libs/jquery-2.0.3.min.js"></script>
+        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+        <!-- The noUiSlider script and stylesheet -->
+        <link href="libs/6.2.0/jquery.nouislider.css" rel="stylesheet">
+        <script src="libs/6.2.0/jquery.nouislider.min.js"></script>
+
+    	<div id="headline">
+    		<h1 id="logo">
+    			Mittelbayerische Immobilien
+    		</h1>
+    		
+    	</div>
+    	<div id="navigation-buttons">
+    		<button type="button" class="btn btn-default" id="gesuche-button">			Gesuche
+    		</button>
+    		<button type="button" class="btn btn-default" id="anbieten-button">			Anbieten
+    		</button>
+    		<button type="button" class="btn btn-default" id="merkliste-button">		Meine Merkliste
+    		</button>
+    	</div>
+
+        <div id="controls-left">
+            <div id="serialization", class="noUi-handle noUi-handle-lower"></div>
+            <input id="input1" class="inputClass">
+            <input id="input2" class="inputClass">
+        </div>
+        <script>
+            $("#serialization").noUiSlider({
+                start: [ 20, 100 ],
+                step: 10,
+                connect: true,
+                range: {
+                    'min': [ 20 ],
+                    'max': [ 800 ]
+                },
+                serialization: {
+                    lower: [
+                      $.Link({
+                        target: $('#input1'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                            postfix: '\u20AC'
+                        }
+                      })
+                    ],
+                    
+
+                    upper: [
+                      $.Link({
+                        target: $('#input2'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                            postfix: '\u20AC'
+                        }
+                      })
+                    ],
+                }
+            });
+        </script>
+        
+        <div id="map-canvas"/>
+
+    	
+    </body>
+
+
+</html>
