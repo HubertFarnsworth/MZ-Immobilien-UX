@@ -1,3 +1,7 @@
+html { height: 100% }
+
+body { height: 100%; margin: 0; padding: 0 }
+
 #logo {
 	background-color: #104E8B;
 	color: white; 
@@ -23,3 +27,19 @@
 	margin-left: 0;  
 }
 
+#map-area{
+	padding-top: 1%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#map{
+
+}
+
+#map-canvas {
+	height: 70%;
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-top: 1%;
+}

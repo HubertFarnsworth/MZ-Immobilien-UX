@@ -5,6 +5,24 @@
         <title>Immobilien</title>
         <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="res/css/immobilien.css">
+
+        <!-- ab hier auslagern in js-Datei -->
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0PvpLCbWVhxSK5JsRibDD75qjcfpfZio">
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(49.0167, 12.0833),
+                zoom: 13
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <!-- bis hier auslagern in js-Datei -->
+        
     </head>
 
     <body>
@@ -22,6 +40,8 @@
     		<button type="button" class="btn btn-default" id="merkliste-button">		Meine Merkliste
     		</button>
     	</div>
+        
+        <div id="map-canvas"/>
 
     	<script src="libs/jquery-2.0.3.min.js"></script>
 		<script src="libs/bootstrap/js/bootstrap.min.js"></script>
