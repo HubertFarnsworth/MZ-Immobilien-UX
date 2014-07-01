@@ -48,24 +48,91 @@
     		</button>
     	</div>
 
-        <div id="controls-left">
-            <div id="serialization", class="noUi-handle noUi-handle-lower"></div>
-            <input id="input1" class="inputClass">
-            <input id="input2" class="inputClass">
+        <div id="money-controls">
+            Kosten
+            <div id="moneyslider", class="slider-"></div>
+            <input id="money-lower-input" class="inputClass">
+            <input id="money-upper-input" class="inputClass">
         </div>
+
+        <div id="rooms-controls">
+            Anzahl der Zimmer
+            <div id="roomsslider", class="slider-"></div>
+            <input id="rooms-lower-input" class="inputClass">
+            <input id="rooms-upper-input" class="inputClass">
+        </div>
+
+        <div id="size-controls">
+            Wohnfläche
+            <div id="sizeslider", class="slider-"></div>
+            <input id="size-lower-input" class="inputClass">
+            <input id="size-upper-input" class="inputClass">
+        </div>
+
+        <div id="date-controls">
+            Einzugsdatum
+            <div id="dateslider", class="slider-"></div>
+            <input id="date-lower-input" class="inputClass">
+            <input id="date-upper-input" class="inputClass">
+        </div>
+        
         <script>
-            $("#serialization").noUiSlider({
-                start: [ 20, 100 ],
+            // Create a new date from a string, return as a timestamp.
+            function timestamp(str){
+                return new Date(str).getTime();   
+            }
+
+            // Create a list of day and monthnames.
+            var
+                weekdays = [
+                    "Sunday", "Monday", "Tuesday",
+                    "Wednesday", "Thursday", "Friday",
+                    "Saturday"
+                ],
+                months = [
+                    "January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"
+                ];
+
+            // Append a suffix to dates.
+            // Example: 23 => 23rd, 1 => 1st.
+            function nth (d) {
+              if(d>3 && d<21) return 'th';
+              switch (d % 10) {
+                    case 1:  return "st";
+                    case 2:  return "nd";
+                    case 3:  return "rd";
+                    default: return "th";
+                }
+            }
+
+            // Create a string representation of the date.
+            function formatDate ( date ) {
+                return weekdays[date.getDay()] + ", " +
+                    date.getDate() + nth(date.getDate()) + " " +
+                    months[date.getMonth()] + " " +
+                    date.getFullYear();
+            }
+
+            // Write a date as a pretty value.
+            function setDate( value ){
+                $(this).html(formatDate(new Date(+value)));   
+            }
+
+            $("#moneyslider").noUiSlider({
+                start: [ 250, 400 ],
                 step: 10,
                 connect: true,
                 range: {
-                    'min': [ 20 ],
-                    'max': [ 800 ]
+                    'min': [ 100 ],
+                    'max': [ 1000 ]
                 },
                 serialization: {
                     lower: [
                       $.Link({
-                        target: $('#input1'),
+                        target: $('#money-lower-input'),
                         format: {
                             // Prefix the value with an Euro symbol
                             // Write the value using 1 decimal.
@@ -78,12 +145,115 @@
 
                     upper: [
                       $.Link({
-                        target: $('#input2'),
+                        target: $('#money-upper-input'),
                         format: {
                             // Prefix the value with an Euro symbol
                             // Write the value using 1 decimal.
                             decimals: 0,
                             postfix: '\u20AC'
+                        }
+                      })
+                    ],
+                }
+            });
+
+            $("#roomsslider").noUiSlider({
+                start: [ 1, 6 ],
+                step: 1,
+                connect: true,
+                range: {
+                    'min': [ 1 ],
+                    'max': [ 10 ]
+                },
+                serialization: {
+                    lower: [
+                      $.Link({
+                        target: $('#rooms-lower-input'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                        }
+                      })
+                    ],
+                    
+
+                    upper: [
+                      $.Link({
+                        target: $('#rooms-upper-input'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                        }
+                      })
+                    ],
+                }
+            });
+
+            $("#sizeslider").noUiSlider({
+                start: [ 20, 100 ],
+                step: 10,
+                connect: true,
+                range: {
+                    'min': [ 20 ],
+                    'max': [ 800 ]
+                },
+                serialization: {
+                    lower: [
+                      $.Link({
+                        target: $('#size-lower-input'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                            postfix: 'm²'
+                        }
+                      })
+                    ],
+                    
+
+                    upper: [
+                      $.Link({
+                        target: $('#size-upper-input'),
+                        format: {
+                            // Prefix the value with an Euro symbol
+                            // Write the value using 1 decimal.
+                            decimals: 0,
+                            postfix: 'm²'
+                        }
+                      })
+                    ],
+                }
+            });
+
+            $("#dateslider").noUiSlider({
+                start: [ timestamp('2015'), timestamp('2016') ],
+                connect: true,
+                range: {
+                    'min': timestamp('2014'),
+                    'max': timestamp('2017')
+                },
+                // Steps of one week
+                step: 7 * 24 * 60 * 60 * 1000,
+                serialization: {
+                    lower: [
+                      $.Link({
+                        target: $('#date-lower-input'),
+                        method: setDate,
+                        format: {
+                            decimals: 0
+                        }
+                      })
+                    ],
+                    
+
+                    upper: [
+                      $.Link({
+                        target: $('#date-upper-input'),
+                        method: setDate,
+                        format: {
+                            decimals: 0
                         }
                       })
                     ],
