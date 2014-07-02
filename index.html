@@ -32,6 +32,9 @@
         <!-- The noUiSlider script and stylesheet -->
         <link href="libs/6.2.0/jquery.nouislider.css" rel="stylesheet">
         <script src="libs/6.2.0/jquery.nouislider.min.js"></script>
+        <script src="libs/jquery-ui-1.11.0.custom/jquery-ui.js"></script>
+        <link rel="stylesheet" href="libs/jquery-ui-1.11.0.custom/jquery-ui.css">
+
 
     	<div id="headline">
     		<h1 id="logo">
@@ -39,6 +42,7 @@
     		</h1>
     		
     	</div>
+        
     	<div id="navigation-buttons">
     		<button type="button" class="btn btn-default" id="gesuche-button">			Gesuche
     		</button>
@@ -70,55 +74,17 @@
         </div>
 
         <div id="date-controls">
-            Einzugsdatum
-            <div id="dateslider", class="slider-"></div>
-            <input id="date-lower-input" class="inputClass">
-            <span class="example-val" id="date-upper-input">Friday, 31st December 2010</span>        </div>
-        
+            <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min"></p>
+            <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max"></p>
+
         <script>
-            // Create a new date from a string, return as a timestamp.
-            function timestamp(str){
-                return new Date(str).getTime();   
-            }
+            $(function() {
+                $( "#datepicker-min" ).datepicker();
+            });
 
-            // Create a list of day and monthnames.
-            var
-                weekdays = [
-                    "Sunday", "Monday", "Tuesday",
-                    "Wednesday", "Thursday", "Friday",
-                    "Saturday"
-                ],
-                months = [
-                    "January", "February", "March",
-                    "April", "May", "June", "July",
-                    "August", "September", "October",
-                    "November", "December"
-                ];
-
-            // Append a suffix to dates.
-            // Example: 23 => 23rd, 1 => 1st.
-            function nth (d) {
-              if(d>3 && d<21) return 'th';
-              switch (d % 10) {
-                    case 1:  return "st";
-                    case 2:  return "nd";
-                    case 3:  return "rd";
-                    default: return "th";
-                }
-            }
-
-            // Create a string representation of the date.
-            function formatDate ( date ) {
-                return weekdays[date.getDay()] + ", " +
-                    date.getDate() + nth(date.getDate()) + " " +
-                    months[date.getMonth()] + " " +
-                    date.getFullYear();
-            }
-
-            // Write a date as a pretty value.
-            function setDate( value ){
-                $(this).html(formatDate(new Date(+value)));   
-            }
+            $(function() {
+                $( "#datepicker-max" ).datepicker();
+            });
 
             $("#moneyslider").noUiSlider({
                 start: [ 250, 400 ],
@@ -220,39 +186,6 @@
                             // Write the value using 1 decimal.
                             decimals: 0,
                             postfix: 'm²'
-                        }
-                      })
-                    ],
-                }
-            });
-
-            $("#dateslider").noUiSlider({
-                start: [ timestamp('2015'), timestamp('2016') ],
-                connect: true,
-                range: {
-                    min: timestamp('2014'),
-                    max: timestamp('2017')
-                },
-                // Steps of one week
-                step: 7 * 24 * 60 * 60 * 1000,
-                serialization: {
-                    lower: [
-                      $.Link({
-                        target: $('#date-lower-input'),
-                        method: setDate,
-                        format: {
-                            decimals: 0
-                        }
-                      })
-                    ],
-                    
-
-                    upper: [
-                      $.Link({
-                        target: $('#date-upper-input'),
-                        method: setDate,
-                        format: {
-                            decimals: 0
                         }
                       })
                     ],
