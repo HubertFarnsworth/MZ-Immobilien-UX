@@ -98,10 +98,11 @@
         //var input = $("#wo-input");
         var input = document.getElementById('wo-input');
         var options = {
+            types: ['(cities)'],
             componentRestrictions: {country: 'de'}
         };
 
-        autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete = new google.maps.places.Autocomplete(input, options);
         //until here google autocomplete -----
 
 
