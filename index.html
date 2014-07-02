@@ -34,7 +34,7 @@
         <script src="libs/6.2.0/jquery.nouislider.min.js"></script>
         <script src="libs/jquery-ui-1.11.0.custom/jquery-ui.js"></script>
         <link rel="stylesheet" href="libs/jquery-ui-1.11.0.custom/jquery-ui.css">
-
+        <link href="res/css/datepicker.css" rel="stylesheet" type="text/css"/>
 
     	<div id="headline">
     		<h1 id="logo">
@@ -85,11 +85,14 @@
 
         <script>
             $(function() {
-                $( "#datepicker-min" ).datepicker();
-            });
-
-            $(function() {
-                $( "#datepicker-max" ).datepicker();
+                $( "#datepicker-min, #datepicker-max" ).datepicker({
+                    inline: true,
+                    showOtherMonths: true,
+                    dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+                    monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+                    dateFormat: 'dd.mm.yy',
+                    firstDay: 1
+                });
             });
 
             $("#moneyslider").noUiSlider({
