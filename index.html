@@ -103,6 +103,7 @@
                 step: 10,
                 min: 100,
                 max: 1000,
+                range: true,
                 slide: function(event, ui) {
                     for (var i = 0; i < ui.values.length; ++i) {
                         $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
@@ -120,6 +121,7 @@
                 step: 1,
                 min: 1,
                 max: 25,
+                range: true,
                 slide: function(event, ui) {
                     for (var i = 0; i < ui.values.length; ++i) {
                         $("input.roomsInput[data-index=" + i + "]").val(ui.values[i]);
@@ -137,6 +139,7 @@
                 step: 10,
                 min: 10,
                 max: 800,
+                range: true,
                 slide: function(event, ui) {
                     for (var i = 0; i < ui.values.length; ++i) {
                         $("input.sizeInput[data-index=" + i + "]").val(ui.values[i]);
