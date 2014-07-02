@@ -57,6 +57,10 @@
                     <p id="was-label">Was?</p>
                     <input id="was-input" class="inputClass">
                 </div>
+                <div id="mieten-kaufen-select">
+                    <button type="button" class="btn btn-primary" id="Mieten-Button">Mieten</button>
+                    <button type="button" class="btn btn-default" id="Kaufen-Button">Kaufen</button>
+                </div>
                 <div id="money-controls">
                     Kosten
                     <div id="moneyslider", class="slider"></div>
@@ -87,6 +91,17 @@
         </div>
 
         <script>
+
+            $("#Mieten-Button").click(function() {
+                $("#Mieten-Button").attr('class', 'btn btn-primary');
+                $("#Kaufen-Button").attr('class', 'btn btn-default');
+            });
+
+            $("#Kaufen-Button").click(function() {
+                $("#Kaufen-Button").attr('class', 'btn btn-primary');
+                $("#Mieten-Button").attr('class', 'btn btn-default');
+            });
+            
             $(function() {
                 $( "#datepicker-min, #datepicker-max" ).datepicker({
                     inline: true,

@@ -27,6 +27,12 @@ body { height: 100%; margin: 0; padding: 0 }
 	margin-left: 0;  
 }
 
+#mieten-kaufen-select{
+	display: inline-block;
+	margin-bottom: 3%;
+	margin-top: 3%; 
+}
+
 #map-canvas {
 	height: 500px;
 	margin-right: 10%;
