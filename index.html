@@ -52,30 +52,36 @@
     		</button>
     	</div>
 
-        <div id="money-controls">
-            Kosten
-            <div id="moneyslider", class="slider-"></div>
-            <input id="money-lower-input" class="inputClass">
-            <input id="money-upper-input" class="inputClass">
+        <div id="selection">
+            <div id="selection-slider">
+                <div id="money-controls">
+                    Kosten
+                    <div id="moneyslider", class="slider-"></div>
+                    <input id="money-lower-input" class="inputClass">
+                    <p class="inputlabel">bis</p>
+                    <input id="money-upper-input" class="inputClass">
+                </div>
+                <div id="rooms-controls">
+                    Anzahl der Zimmer
+                    <div id="roomsslider", class="slider-"></div>
+                    <input id="rooms-lower-input" class="inputClass">
+                    <p class="inputlabel">bis</p>
+                    <input id="rooms-upper-input" class="inputClass">
+                </div>
+                <div id="size-controls">
+                    Wohnfläche
+                    <div id="sizeslider", class="slider-"></div>
+                    <input id="size-lower-input" class="inputClass">
+                    <p class="inputlabel">bis</p>
+                    <input id="size-upper-input" class="inputClass">
+                </div>
+                <div id="date-controls">
+                    <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min"></p>
+                    <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max"></p>
+                </div>
+            </div>
+            <div id="map-canvas"/>
         </div>
-
-        <div id="rooms-controls">
-            Anzahl der Zimmer
-            <div id="roomsslider", class="slider-"></div>
-            <input id="rooms-lower-input" class="inputClass">
-            <input id="rooms-upper-input" class="inputClass">
-        </div>
-
-        <div id="size-controls">
-            Wohnfläche
-            <div id="sizeslider", class="slider-"></div>
-            <input id="size-lower-input" class="inputClass">
-            <input id="size-upper-input" class="inputClass">
-        </div>
-
-        <div id="date-controls">
-            <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min"></p>
-            <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max"></p>
 
         <script>
             $(function() {
@@ -193,7 +199,7 @@
             });
         </script>
         
-        <div id="map-canvas"/>
+        
 
     	
     </body>

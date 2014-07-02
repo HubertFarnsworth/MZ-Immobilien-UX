@@ -45,3 +45,57 @@ body { height: 100%; margin: 0; padding: 0 }
 	display: block;
 	margin: 0 auto 10px;
 }
+
+#selection {
+	background-color: #104E8B;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: inherit;
+	color: white;
+	margin-top: 20px;
+}
+
+#selection-slider {
+	width: 25%; 
+	float: left;
+	margin-top: 20px;
+	margin-left: 2%;
+}
+
+#map-canvas{
+	width: 64%;
+	float: left;
+	margin-left: 5%;
+	margin-right: 0; 
+}
+
+#rooms-controls, #size-controls, #date-controls {
+	margin-top: 5%;
+	display: inline-block; 
+}
+
+#moneyslider, #roomsslider, #sizeslider {
+	margin-top: 2%;
+	margin-left: 5%; 
+	width: 100%; 
+	margin-bottom: 2%; 
+}
+
+#money-lower-input, #money-upper-input, #rooms-lower-input, #rooms-upper-input,
+#size-lower-input, #size-upper-input {
+	float: left; 
+	width: 41%;
+	margin-left: 2%;
+	display: inline;
+}
+
+.inputlabel{
+	float: left; 
+	margin-left: 2%; 
+	margin-right: 2%; 
+}
+
+#money-lower-input, #rooms-lower-input, #size-lower-input{
+	margin-left: 5%; 
+}
+
