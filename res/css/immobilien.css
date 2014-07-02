@@ -107,7 +107,7 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #wo-input, #was-input{
 	margin-left: 0;
-
+	width: 80%;
 }
 
 /*Auskommentieren */
