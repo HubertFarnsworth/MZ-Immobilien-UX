@@ -62,24 +62,24 @@
                 </div>
                 <div id="money-controls">
                     Kosten
-                    <div id="moneyslider", class="slider-"></div>
-                    <input id="money-lower-input" class="inputClass">
+                    <div id="moneyslider", class="slider"></div>
+                    <input id="money-lower-input" class="inputClass moneyInput" data-index="0" value="250">
                     <p class="inputlabel">bis</p>
-                    <input id="money-upper-input" class="inputClass">
+                    <input id="money-upper-input" class="inputClass moneyInput" data-index="1" value="400">
                 </div>
                 <div id="rooms-controls">
                     Anzahl der Zimmer
                     <div id="roomsslider", class="slider-"></div>
-                    <input id="rooms-lower-input" class="inputClass">
+                    <input id="rooms-lower-input" class="inputClass roomsInput" data-index="0" value="1">
                     <p class="inputlabel">bis</p>
-                    <input id="rooms-upper-input" class="inputClass">
+                    <input id="rooms-upper-input" class="inputClass roomsInput" data-index="1" value="4">
                 </div>
                 <div id="size-controls">
                     Wohnfläche
                     <div id="sizeslider", class="slider-"></div>
-                    <input id="size-lower-input" class="inputClass">
+                    <input id="size-lower-input" class="inputClass sizeInput" data-index="0" value="20">
                     <p class="inputlabel">bis</p>
-                    <input id="size-upper-input" class="inputClass">
+                    <input id="size-upper-input" class="inputClass sizeInput" data-index="1" value="100">
                 </div>
                 <div id="date-controls">
                     <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min"></p>
@@ -101,110 +101,55 @@
                 });
             });
 
-            $("#moneyslider").noUiSlider({
-                start: [ 250, 400 ],
+            $("#moneyslider").slider({
+                values: [ 250, 400 ],
                 step: 10,
-                connect: true,
-                range: {
-                    'min': [ 100 ],
-                    'max': [ 1000 ]
-                },
-                serialization: {
-                    lower: [
-                      $.Link({
-                        target: $('#money-lower-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                            postfix: '\u20AC'
-                        }
-                      })
-                    ],
-                    
-
-                    upper: [
-                      $.Link({
-                        target: $('#money-upper-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                            postfix: '\u20AC'
-                        }
-                      })
-                    ],
+                min: 100,
+                max: 1000,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
                 }
             });
 
-            $("#roomsslider").noUiSlider({
-                start: [ 1, 6 ],
+            $("input.sliderValue").change(function() {
+                var $this = $(this);
+                $("#moneyslider").slider("values", $this.data("index"), $this.val());
+            });
+
+            $("#roomsslider").slider({
+                values: [ 1, 4 ],
                 step: 1,
-                connect: true,
-                range: {
-                    'min': [ 1 ],
-                    'max': [ 10 ]
-                },
-                serialization: {
-                    lower: [
-                      $.Link({
-                        target: $('#rooms-lower-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                        }
-                      })
-                    ],
-                    
-
-                    upper: [
-                      $.Link({
-                        target: $('#rooms-upper-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                        }
-                      })
-                    ],
+                min: 1,
+                max: 25,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.roomsInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
                 }
             });
 
-            $("#sizeslider").noUiSlider({
-                start: [ 20, 100 ],
-                step: 10,
-                connect: true,
-                range: {
-                    'min': [ 20 ],
-                    'max': [ 800 ]
-                },
-                serialization: {
-                    lower: [
-                      $.Link({
-                        target: $('#size-lower-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                            postfix: 'm²'
-                        }
-                      })
-                    ],
-                    
+            $("input.sliderValue").change(function() {
+                var $this = $(this);
+                $("#roomsslider").slider("values", $this.data("index"), $this.val());
+            });
 
-                    upper: [
-                      $.Link({
-                        target: $('#size-upper-input'),
-                        format: {
-                            // Prefix the value with an Euro symbol
-                            // Write the value using 1 decimal.
-                            decimals: 0,
-                            postfix: 'm²'
-                        }
-                      })
-                    ],
+            $("#sizeslider").slider({
+                values: [ 20, 100 ],
+                step: 10,
+                min: 10,
+                max: 800,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.sizeInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
                 }
+            });
+
+            $("input.sliderValue").change(function() {
+                var $this = $(this);
+                $("#sizeslider").slider("values", $this.data("index"), $this.val());
             });
         </script>
         
