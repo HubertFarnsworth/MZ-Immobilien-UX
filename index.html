@@ -53,7 +53,13 @@
     	</div>
 
         <div id="selection">
-            <div id="selection-slider">
+            <div id="input">
+                <div id="text-input">
+                    <p id="wo-label">Wo?</p>
+                    <input id="wo-input" class="inputClass">
+                    <p id="was-label">Was?</p>
+                    <input id="was-input" class="inputClass">
+                </div>
                 <div id="money-controls">
                     Kosten
                     <div id="moneyslider", class="slider-"></div>
@@ -76,54 +82,23 @@
                     <input id="size-upper-input" class="inputClass">
                 </div>
                 <div id="date-controls">
-                    <p>Einzugsdatum frühestens: <input type="text" placeholder="Datum auswählen.." id="datepicker-min"></p>
-                    <p>Einzugsdatum spätestens: <input type="text" placeholder="Datum auswählen.." id="datepicker-max"></p>
+                    <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min"></p>
+                    <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max"></p>
                 </div>
             </div>
             <div id="map-canvas"/>
         </div>
 
         <script>
-
-        function getTodaysDate (val) {
-            var t = new Date, day, month, year = t.getFullYear();
-            if (t.getDate() < 10) {
-                day = "0" + t.getDate();
-            }
-
-            else {
-                day = t.getDate();
-            }
-
-            if ((t.getMonth() + 1) < 10) {
-                month = "0" + (t.getMonth() + 1 - val);
-            }
-
-            else {
-                month = t.getMonth() + 1 - val;
-            }
-
-            return (day + '.' + month + '.' + year);
-        }
-
             $(function() {
-                $( "#datepicker-min").datepicker({
+                $( "#datepicker-min, #datepicker-max" ).datepicker({
                     inline: true,
                     showOtherMonths: true,
                     dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
                     monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
                     dateFormat: 'dd.mm.yy',
                     firstDay: 1
-                }).val(getTodaysDate(0)); //set today as default value
-
-                $( "#datepicker-max").datepicker({
-                    inline: true,
-                    showOtherMonths: true,
-                    dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-                    monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-                    dateFormat: 'dd.mm.yy',
-                    firstDay: 1
-                }).val(getTodaysDate(-1)); //set today in one month as default value
+                });
             });
 
             $("#moneyslider").noUiSlider({
