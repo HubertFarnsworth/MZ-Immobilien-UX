@@ -10,11 +10,12 @@
         <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0PvpLCbWVhxSK5JsRibDD75qjcfpfZio">
         </script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&amp;language=de"></script>
         <script type="text/javascript">
             function initialize() {
             var mapOptions = {
                 center: new google.maps.LatLng(49.0167, 12.0833),
-                zoom: 13
+                zoom: 13,
             };
             var map = new google.maps.Map(document.getElementById("map-canvas"),
                 mapOptions);
@@ -92,80 +93,92 @@
 
         <script>
 
-            $("#Mieten-Button").click(function() {
-                $("#Mieten-Button").attr('class', 'btn btn-primary');
-                $("#Kaufen-Button").attr('class', 'btn btn-default');
-            });
+        //this is google autocomplete --------
 
-            $("#Kaufen-Button").click(function() {
-                $("#Kaufen-Button").attr('class', 'btn btn-primary');
-                $("#Mieten-Button").attr('class', 'btn btn-default');
-            });
-            
-            $(function() {
-                $( "#datepicker-min, #datepicker-max" ).datepicker({
-                    inline: true,
-                    showOtherMonths: true,
-                    dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-                    monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-                    dateFormat: 'dd.mm.yy',
-                    firstDay: 1
-                });
-            });
+        //var input = $("#wo-input");
+        var input = document.getElementById('wo-input');
+        var options = {
+            componentRestrictions: {country: 'de'}
+        };
 
-            $("#moneyslider").slider({
-                values: [ 250, 400 ],
-                step: 10,
-                min: 100,
-                max: 1000,
-                range: true,
-                slide: function(event, ui) {
-                    for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
-                    }
+        autocomplete = new google.maps.places.Autocomplete(input);
+        //until here google autocomplete -----
+
+
+        $("#Mieten-Button").click(function() {
+            $("#Mieten-Button").attr('class', 'btn btn-primary');
+            $("#Kaufen-Button").attr('class', 'btn btn-default');
+        });
+
+        $("#Kaufen-Button").click(function() {
+            $("#Kaufen-Button").attr('class', 'btn btn-primary');
+            $("#Mieten-Button").attr('class', 'btn btn-default');
+        });
+        
+        $(function() {
+            $( "#datepicker-min, #datepicker-max" ).datepicker({
+                inline: true,
+                showOtherMonths: true,
+                dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+                monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+                dateFormat: 'dd.mm.yy',
+                firstDay: 1
+            });
+        });
+
+        $("#moneyslider").slider({
+            values: [ 250, 400 ],
+            step: 10,
+            min: 100,
+            max: 1000,
+            range: true,
+            slide: function(event, ui) {
+                for (var i = 0; i < ui.values.length; ++i) {
+                    $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
                 }
-            });
+            }
+        });
 
-            $("input.sliderValue").change(function() {
-                var $this = $(this);
-                $("#moneyslider").slider("values", $this.data("index"), $this.val());
-            });
+        $("input.sliderValue").change(function() {
+            var $this = $(this);
+            $("#moneyslider").slider("values", $this.data("index"), $this.val());
+        });
 
-            $("#roomsslider").slider({
-                values: [ 1, 4 ],
-                step: 1,
-                min: 1,
-                max: 25,
-                range: true,
-                slide: function(event, ui) {
-                    for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.roomsInput[data-index=" + i + "]").val(ui.values[i]);
-                    }
+        $("#roomsslider").slider({
+            values: [ 1, 4 ],
+            step: 1,
+            min: 1,
+            max: 25,
+            range: true,
+            slide: function(event, ui) {
+                for (var i = 0; i < ui.values.length; ++i) {
+                    $("input.roomsInput[data-index=" + i + "]").val(ui.values[i]);
                 }
-            });
+            }
+        });
 
-            $("input.sliderValue").change(function() {
-                var $this = $(this);
-                $("#roomsslider").slider("values", $this.data("index"), $this.val());
-            });
+        $("input.sliderValue").change(function() {
+            var $this = $(this);
+            $("#roomsslider").slider("values", $this.data("index"), $this.val());
+        });
 
-            $("#sizeslider").slider({
-                values: [ 20, 100 ],
-                step: 10,
-                min: 10,
-                max: 800,
-                range: true,
-                slide: function(event, ui) {
-                    for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.sizeInput[data-index=" + i + "]").val(ui.values[i]);
-                    }
+        $("#sizeslider").slider({
+            values: [ 20, 100 ],
+            step: 10,
+            min: 10,
+            max: 800,
+            range: true,
+            slide: function(event, ui) {
+                for (var i = 0; i < ui.values.length; ++i) {
+                    $("input.sizeInput[data-index=" + i + "]").val(ui.values[i]);
                 }
-            });
+            }
+        });
 
-            $("input.sliderValue").change(function() {
-                var $this = $(this);
-                $("#sizeslider").slider("values", $this.data("index"), $this.val());
-            });
+        $("input.sliderValue").change(function() {
+            var $this = $(this);
+            $("#sizeslider").slider("values", $this.data("index"), $this.val());
+        });
         </script>
         
         
