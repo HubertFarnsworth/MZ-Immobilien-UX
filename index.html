@@ -159,14 +159,30 @@
         
         //start of datepicker -----------
         $(function() {
-            $( "#datepicker-min, #datepicker-max" ).datepicker({
+            $( "#datepicker-min" ).datepicker({
                 inline: true,
                 showOtherMonths: true,
                 dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
                 monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
                 dateFormat: 'dd.mm.yy',
                 firstDay: 1,
-                minDate: 0
+                minDate: 0,
+                onClose: function( selectedDate ) {
+                    $( "#datepicker-max" ).datepicker( "option", "minDate", selectedDate );
+                }
+            });
+
+            $( "#datepicker-max" ).datepicker({
+                inline: true,
+                showOtherMonths: true,
+                dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+                monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+                dateFormat: 'dd.mm.yy',
+                firstDay: 1,
+                minDate: 0,
+                onClose: function( selectedDate ) {
+                    $( "#datepicker-min" ).datepicker( "option", "minDate", selectedDate );
+                }
             });
         });
         //end of datepicker ------------
