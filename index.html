@@ -107,9 +107,12 @@
         
         //end of mieten/kaufen ------
         $("#Mieten-Button").click(function() {
+            //user clicks on rent-button
+            //give user feedback (change button states)
             $("#Mieten-Button").attr('class', 'btn btn-primary');
             $("#Kaufen-Button").attr('class', 'btn btn-default');
 
+            //refresh moneyslider with rent-values
             $("#moneyslider").slider({
                 values: [ 250, 400 ],
                 step: 10,
@@ -123,14 +126,18 @@
                 }
             });
 
+            //refill money-input-fields with the current values of the slider
             $("#money-lower-input").val(250);
             $("#money-upper-input").val(400);
         });
 
         $("#Kaufen-Button").click(function() {
+            //user clicks on buy-button
+            //give user feedback (change button states)
             $("#Kaufen-Button").attr('class', 'btn btn-primary');
             $("#Mieten-Button").attr('class', 'btn btn-default');
-            
+
+            //refresh moneyslider with buy-values
             $("#moneyslider").slider({
                 values: [ 10000, 250000 ],
                 step: 250,
@@ -144,6 +151,7 @@
                 }
             });
             
+            //refill money-input-fields with the current values of the slider
             $("#money-lower-input").val(10000);
             $("#money-upper-input").val(250000);
         });
