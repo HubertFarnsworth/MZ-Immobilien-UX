@@ -660,7 +660,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
-	z-index: 2;
+	z-index: 1;
 	width: 1.2em;
 	height: 1.2em;
 	cursor: default;
