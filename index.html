@@ -111,24 +111,6 @@
             $("#Kaufen-Button").attr('class', 'btn btn-default');
 
             $("#moneyslider").slider({
-                values: [ 10000, 150000 ],
-                step: 250,
-                min: 1000,
-                max: 800000,
-                range: true,
-                slide: function(event, ui) {
-                    for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
-                    }
-                }
-            });
-        });
-
-        $("#Kaufen-Button").click(function() {
-            $("#Kaufen-Button").attr('class', 'btn btn-primary');
-            $("#Mieten-Button").attr('class', 'btn btn-default');
-            
-            $("#moneyslider").slider({
                 values: [ 250, 400 ],
                 step: 10,
                 min: 50,
@@ -140,11 +122,30 @@
                     }
                 }
             });
+
+            $("#money-lower-input").val(250);
+            $("#money-upper-input").val(400);
+        });
+
+        $("#Kaufen-Button").click(function() {
+            $("#Kaufen-Button").attr('class', 'btn btn-primary');
+            $("#Mieten-Button").attr('class', 'btn btn-default');
             
-            $("input.sliderValue").change(function() {
-                var $this = $(this);
-                $("#moneyslider").slider("values", $this.data("index"), $this.val());
+            $("#moneyslider").slider({
+                values: [ 10000, 250000 ],
+                step: 250,
+                min: 10000,
+                max: 800000,
+                range: true,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
+                }
             });
+            
+            $("#money-lower-input").val(10000);
+            $("#money-upper-input").val(250000);
         });
         //end of mieten/kaufen ----------
         
