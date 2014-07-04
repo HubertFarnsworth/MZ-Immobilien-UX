@@ -56,7 +56,7 @@
                     <p id="wo-label">Wo?</p>
                     <input id="wo-input" class="inputClass" type="text" placeholder="Stadt eingeben">
                     <p id="was-label">Was?</p>
-                    <input id="was-input" class="inputClass">
+                    <input id="was-input" class="inputClass" type="text" placeholder="Immboilienart eingeben">
                 </div>
                 <div id="mieten-kaufen-select">
                     <button type="button" class="btn btn-primary" id="Mieten-Button">Mieten</button>
@@ -93,9 +93,8 @@
 
         <script>
 
-        //this is google autocomplete --------
+        //start of google autocomplete --------
 
-        //var input = $("#wo-input");
         var input = document.getElementById('wo-input');
         var options = {
             types: ['(cities)'],
@@ -103,19 +102,53 @@
         };
 
         autocomplete = new google.maps.places.Autocomplete(input, options);
-        //until here google autocomplete -----
+        //end of google autocomplete -----
 
-
+        
+        //end of mieten/kaufen ------
         $("#Mieten-Button").click(function() {
             $("#Mieten-Button").attr('class', 'btn btn-primary');
             $("#Kaufen-Button").attr('class', 'btn btn-default');
+
+            $("#moneyslider").slider({
+                values: [ 10000, 150000 ],
+                step: 250,
+                min: 1000,
+                max: 800000,
+                range: true,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
+                }
+            });
         });
 
         $("#Kaufen-Button").click(function() {
             $("#Kaufen-Button").attr('class', 'btn btn-primary');
             $("#Mieten-Button").attr('class', 'btn btn-default');
+            
+            $("#moneyslider").slider({
+                values: [ 250, 400 ],
+                step: 10,
+                min: 50,
+                max: 2000,
+                range: true,
+                slide: function(event, ui) {
+                    for (var i = 0; i < ui.values.length; ++i) {
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                    }
+                }
+            });
+            
+            $("input.sliderValue").change(function() {
+                var $this = $(this);
+                $("#moneyslider").slider("values", $this.data("index"), $this.val());
+            });
         });
+        //end of mieten/kaufen ----------
         
+        //start of datepicker -----------
         $(function() {
             $( "#datepicker-min, #datepicker-max" ).datepicker({
                 inline: true,
@@ -126,12 +159,14 @@
                 firstDay: 1
             });
         });
+        //end of datepicker ------------
 
+        //start of sliders -------------
         $("#moneyslider").slider({
             values: [ 250, 400 ],
             step: 10,
             min: 100,
-            max: 1000,
+            max: 2000,
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
@@ -149,7 +184,7 @@
             values: [ 1, 4 ],
             step: 1,
             min: 1,
-            max: 25,
+            max: 20,
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
@@ -167,7 +202,7 @@
             values: [ 20, 100 ],
             step: 10,
             min: 10,
-            max: 800,
+            max: 600,
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
@@ -179,6 +214,25 @@
         $("input.sliderValue").change(function() {
             var $this = $(this);
             $("#sizeslider").slider("values", $this.data("index"), $this.val());
+        });
+        //end of sliders ---------------
+
+        //autocomplete for was-input
+        $(function() {
+            var availableTags = [
+                "Haus",
+                "Wohnung",
+                "Doppelhaushälfte",
+                "Grundstück",
+                "Garage"
+            ];
+
+            $( "#was-input" ).autocomplete({
+                source: availableTags,
+                minLength: 0
+            }).focus(function(){            
+                $(this).trigger('keydown.autocomplete');
+            });
         });
         </script>
         
