@@ -17,73 +17,70 @@
     </head>
 
     <body>
+        <div id="content"></div>
+
+        <script type="text/template" id="startscreen-tpl">
+            <div id="headline">
+                <h1 id="logo">
+                    Mittelbayerische Immobilien
+                </h1>
+                
+            </div>    
+            <div id="navigation-buttons">
+                <button type="button" class="btn btn-default" id="gesuche-button">          Gesuche
+                </button>
+                <button type="button" class="btn btn-default" id="anbieten-button">         Anbieten
+                </button>
+                <button type="button" class="btn btn-default" id="merkliste-button">        Meine Merkliste
+                </button>
+            </div>
+            <div id="selection">
+                <div id="input">
+                    <div id="text-input">
+                        <p id="wo-label">Wo?</p>
+                        <input id="wo-input" class="inputClass" type="text" placeholder="Stadt auswählen">
+                        <p id="was-label">Was?</p>
+                        <input id="was-input" class="inputClass" type="text" placeholder="Immboilienart eingeben">
+                    </div>
+                    <div id="mieten-kaufen-select">
+                        <button type="button" class="btn btn-primary" id="Mieten-Button">Mieten</button>
+                        <button type="button" class="btn btn-default" id="Kaufen-Button">Kaufen</button>
+                    </div>
+                    <div id="money-controls">
+                        Kosten
+                        <div id="moneyslider", class="slider"></div>
+                        <input id="money-lower-input" class="inputClass moneyInput" data-index="0" value="250">
+                        <p class="inputlabel">bis</p>
+                        <input id="money-upper-input" class="inputClass moneyInput" data-index="1" value="400">
+                    </div>
+                    <div id="rooms-controls">
+                        Anzahl der Zimmer
+                        <div id="roomsslider", class="slider-"></div>
+                        <input id="rooms-lower-input" class="inputClass roomsInput" data-index="0" value="1">
+                        <p class="inputlabel">bis</p>
+                        <input id="rooms-upper-input" class="inputClass roomsInput" data-index="1" value="4">
+                    </div>
+                    <div id="size-controls">
+                        Wohnfläche
+                        <div id="sizeslider", class="slider-"></div>
+                        <input id="size-lower-input" class="inputClass sizeInput" data-index="0" value="20">
+                        <p class="inputlabel">bis</p>
+                        <input id="size-upper-input" class="inputClass sizeInput" data-index="1" value="100">
+                    </div>
+                    <div id="date-controls">
+                        <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min" placeholder="Datum auswählen"></p>
+                        <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max" placeholder="Datum auswählen"></p>
+                    </div>
+                </div>
+                <div id="map-canvas"></div>
+            </div>
+        </script>
         <script src="libs/jquery-2.0.3.min.js"></script>
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="libs/jquery-ui-1.11.0.custom/jquery-ui.js"></script>
         <link rel="stylesheet" href="libs/jquery-ui-1.11.0.custom/jquery-ui.css">
         <link href="res/css/datepicker.css" rel="stylesheet" type="text/css"/>
-
-        <div id="headline">
-            <h1 id="logo">
-                Mittelbayerische Immobilien
-            </h1>
-            
-        </div>
-        
-        <div id="navigation-buttons">
-            <button type="button" class="btn btn-default" id="gesuche-button">          Gesuche
-            </button>
-            <button type="button" class="btn btn-default" id="anbieten-button">         Anbieten
-            </button>
-            <button type="button" class="btn btn-default" id="merkliste-button">        Meine Merkliste
-            </button>
-        </div>
-
-        <div id="selection">
-            <div id="input">
-                <div id="text-input">
-                    <p id="wo-label">Wo?</p>
-                    <input id="wo-input" class="inputClass" type="text" placeholder="Stadt auswählen">
-                    <p id="was-label">Was?</p>
-                    <input id="was-input" class="inputClass" type="text" placeholder="Immboilienart eingeben">
-                </div>
-                <div id="mieten-kaufen-select">
-                    <button type="button" class="btn btn-primary" id="Mieten-Button">Mieten</button>
-                    <button type="button" class="btn btn-default" id="Kaufen-Button">Kaufen</button>
-                </div>
-                <div id="money-controls">
-                    Kosten
-                    <div id="moneyslider", class="slider"></div>
-                    <input id="money-lower-input" class="inputClass moneyInput" data-index="0" value="250">
-                    <p class="inputlabel">bis</p>
-                    <input id="money-upper-input" class="inputClass moneyInput" data-index="1" value="400">
-                </div>
-                <div id="rooms-controls">
-                    Anzahl der Zimmer
-                    <div id="roomsslider", class="slider-"></div>
-                    <input id="rooms-lower-input" class="inputClass roomsInput" data-index="0" value="1">
-                    <p class="inputlabel">bis</p>
-                    <input id="rooms-upper-input" class="inputClass roomsInput" data-index="1" value="4">
-                </div>
-                <div id="size-controls">
-                    Wohnfläche
-                    <div id="sizeslider", class="slider-"></div>
-                    <input id="size-lower-input" class="inputClass sizeInput" data-index="0" value="20">
-                    <p class="inputlabel">bis</p>
-                    <input id="size-upper-input" class="inputClass sizeInput" data-index="1" value="100">
-                </div>
-                <div id="date-controls">
-                    <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min" placeholder="Datum auswählen"></p>
-                    <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max" placeholder="Datum auswählen"></p>
-                </div>
-            </div>
-            <div id="map-canvas"/>
-        </div>
-
-        <script>
-
-        
-        </script>
+        <script src="libs/underscore-min.js"></script>
         <script src="src/Immobilien.js"></script>
         <script src="src/MainController.js"></script>
         <script src="src/Startscreen.js"></script>

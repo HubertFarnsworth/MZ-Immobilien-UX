@@ -56,7 +56,7 @@ body { height: 100%; margin: 0; padding: 0 }
 	background-color: #104E8B;
 	margin-left: 10%;
 	margin-right: 10%;
-	height: inherit;
+	overflow: auto;
 	color: white;
 	margin-top: 20px;
 }

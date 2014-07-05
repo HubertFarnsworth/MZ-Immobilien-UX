@@ -4,6 +4,11 @@ Immobilien.Startscreen = (function() {
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
 
+        startScreenTemplate = _.template($("#startscreen-tpl").html());
+        $("#content").html(startScreenTemplate);
+
+        //$("#input").css('background-color', '#F23242');
+
 		googleAutocomplete(); 
 		createMietenKaufenButton();
 		setupDatepicker(); 
