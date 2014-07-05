@@ -3,7 +3,7 @@ html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 
 #logo {
-	background-color: #104E8B;
+	background-color: #175573;
 	color: white; 
 	font-family: serif;
 	margin-top: 0; 
@@ -53,7 +53,7 @@ body { height: 100%; margin: 0; padding: 0 }
 }
 
 #selection {
-	background-color: #104E8B;
+	background-color: #175573;
 	margin-left: 10%;
 	margin-right: 10%;
 	overflow: auto;
@@ -114,5 +114,60 @@ body { height: 100%; margin: 0; padding: 0 }
 #wo-label, #was-label{
 	float: left; 
 	width: 20%; 
+}
+
+#Ergebnis {
+	background-color: #175573;
+	margin-left: 10%;
+	margin-right: 10%;
+	overflow: auto;	
+	margin-top: 2%; 
+	margin-bottom: 0.500%; 
+}
+
+#Startimage{
+	float: left; 
+	height: auto;
+	width: 200px; 
+	height: 150px;  
+}
+
+#description {
+	float: left; 
+}
+
+#immo-headline, #immo-price {
+	font-size: 22px; 
+	color: white; 
+	margin-left: 10%; 
+}
+
+#immo-headline{
+	width: 100%; 
+	float: left;
+}
+
+#immo-price {
+	position: absolute;
+    right: 12%;
+    float: left;
+}
+
+#immo-size {
+	margin-left: 10%; 
+	font-size: 18px;
+	width: 100%; 
+	color: white;  
+}
+
+#immo-rooms, #immo-plz{
+	margin-left: 10%; 
+	font-size: 18px;
+	width: 100%; 
+	color: white; 
+}
+
+#immo-plz {
+
 }
 
