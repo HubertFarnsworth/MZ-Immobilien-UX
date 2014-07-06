@@ -218,35 +218,42 @@ Immobilien.Startscreen = (function() {
         var specialSign;
         var slider;
         var inputID;
+        var oppositeInputID;
 
         switch (id) {
             case 0:
                 inputID = "#money-lower-input";
+                oppositeInputID = "#money-upper-input";
                 specialSign = "€";
                 slider = "#moneyslider"
                 break;
             case 1:
                 inputID = "#money-upper-input";
+                oppositeInputID = "#money-lower-input";
                 specialSign = "€";
                 slider = "#moneyslider"
                 break;
             case 2:
                 inputID = "#rooms-lower-input";
+                oppositeInputID = "#rooms-upper-input";
                 specialSign = "";
                 slider = "#roomsslider"
                 break;
             case 3:
                 inputID = "#rooms-upper-input";
+                oppositeInputID = "#rooms-lower-input";
                 specialSign = "";
                 slider = "#roomsslider"
                 break;
             case 4:
                 inputID = "#size-lower-input";
+                oppositeInputID = "#size-upper-input";
                 specialSign = "m²";
                 slider = "#sizeslider"
                 break;
             case 5:
                 inputID = "#size-upper-input";
+                oppositeInputID = "#size-lower-input";
                 specialSign = "m²";
                 slider = "#sizeslider"
                 break;
