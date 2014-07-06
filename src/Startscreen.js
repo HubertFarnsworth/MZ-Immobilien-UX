@@ -201,7 +201,7 @@ Immobilien.Startscreen = (function() {
         sliderInputChanged(5, $("#size-upper-input").val());
 	},
 
-    sliderInputChanged = function (id, currentValue) {
+    sliderInputChanged = function (id, oldValue) {
         //input fields manually changed by user
         //update the slider
 
@@ -215,7 +215,6 @@ Immobilien.Startscreen = (function() {
         id 5: size-upper-input was changed
         */
 
-        var oldValue = currentValue;
         var specialSign;
         var slider;
         var inputID;
@@ -269,38 +268,45 @@ Immobilien.Startscreen = (function() {
             //check if entered value is below or above the value of the oppsite input
             //if so, user gets notification that this is not allowed
 
-            if (parseInt(id) % 2 != 0) {
-                console.log("nicht null");
-                //input of this field should be lower than opposite input value
-                if (value >=  $(oppositeInputID).val()) {
-                    //is allowed
-                    refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
-                }
-                else {
-                    //is not allowed
-                    //reset input-field to old value
-                    $(inputID).val(oldValue);
-                    //tell user
-                    alert("nicht erlaubt!");
-                }
+            if (parseInt(value) < 0) {
+                //user typed a negative number
+                //reset input-field to old value
+                $(inputID).val(oldValue);
+                //tell user
+                alert("nicht erlaubt!");
             }
 
             else {
-                console.log("null");
-                //input of this field should be lower than opposite input value
-                if (value <=  $(oppositeInputID).val()) {
-                    //is allowed
-                    refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
+                if (parseInt(id) % 2 != 0) {
+                    //input of this field should be lower than opposite input value
+                    if (value >=  $(oppositeInputID).val()) {
+                        //is allowed
+                        refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
+                    }
+                    else {
+                        //is not allowed
+                        //reset input-field to old value
+                        $(inputID).val(oldValue);
+                        //tell user
+                        alert("nicht erlaubt!");
+                    }
                 }
+
                 else {
-                    //is not allowed
-                    //reset input-field to old value
-                    $(inputID).val(oldValue);
-                    //tell user
-                    alert("nicht erlaubt!");
+                    //input of this field should be lower than opposite input value
+                    if (value <=  $(oppositeInputID).val()) {
+                        //is allowed
+                        refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
+                    }
+                    else {
+                        //is not allowed
+                        //reset input-field to old value
+                        $(inputID).val(oldValue);
+                        //tell user
+                        alert("nicht erlaubt!");
+                    }
                 }
             }
-            
             
             
         });
