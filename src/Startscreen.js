@@ -155,8 +155,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged(0);
-        sliderInputChanged(1);
+        sliderInputChanged(0, $("#money-lower-input").val());
+        sliderInputChanged(1, $("#money-upper-input").val());
 
         $("#roomsslider").slider({
             values: [ 1, 4 ],
@@ -171,8 +171,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged(2);
-        sliderInputChanged(3);
+        sliderInputChanged(2, $("#rooms-lower-input").val());
+        sliderInputChanged(3, $("#rooms-upper-input").val());
 
         $("input.sliderValue").change(function() {
             var $this = $(this);
@@ -197,11 +197,11 @@ Immobilien.Startscreen = (function() {
             $("#sizeslider").slider("values", $this.data("index"), $this.val());
         });
 
-        sliderInputChanged(4);
-        sliderInputChanged(5);
+        sliderInputChanged(4, $("#size-lower-input").val());
+        sliderInputChanged(5, $("#size-upper-input").val());
 	},
 
-    sliderInputChanged = function (id) {
+    sliderInputChanged = function (id, currentValue) {
         //input fields manually changed by user
         //update the slider
 
@@ -215,6 +215,7 @@ Immobilien.Startscreen = (function() {
         id 5: size-upper-input was changed
         */
 
+        var oldValue = currentValue;
         var specialSign;
         var slider;
         var inputID;
@@ -277,6 +278,9 @@ Immobilien.Startscreen = (function() {
                 }
                 else {
                     //is not allowed
+                    //reset input-field to old value
+                    $(inputID).val(oldValue);
+                    //tell user
                     alert("nicht erlaubt!");
                 }
             }
@@ -290,6 +294,9 @@ Immobilien.Startscreen = (function() {
                 }
                 else {
                     //is not allowed
+                    //reset input-field to old value
+                    $(inputID).val(oldValue);
+                    //tell user
                     alert("nicht erlaubt!");
                 }
             }
