@@ -155,8 +155,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged("#money-lower-input", 0);
-        sliderInputChanged("#money-upper-input", 0);
+        sliderInputChanged(0);
+        sliderInputChanged(1);
 
         $("#roomsslider").slider({
             values: [ 1, 4 ],
@@ -171,8 +171,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged("#rooms-lower-input", 1);
-        sliderInputChanged("#rooms-upper-input", 1);
+        sliderInputChanged(2);
+        sliderInputChanged(3);
 
         $("input.sliderValue").change(function() {
             var $this = $(this);
@@ -197,47 +197,67 @@ Immobilien.Startscreen = (function() {
             $("#sizeslider").slider("values", $this.data("index"), $this.val());
         });
 
-        sliderInputChanged("#size-lower-input", 2);
-        sliderInputChanged("#size-upper-input", 2);
+        sliderInputChanged(4);
+        sliderInputChanged(5);
 	},
 
-    sliderInputChanged = function (inputID, type) {
+    sliderInputChanged = function (id) {
         //input fields manually changed by user
         //update the slider
 
         /*
-        type: which special sign (€, m², or nothing) after user input will be used
-        type 0: moneyslider-input was changed
-        type 1: roomslider-input was changed
-        type 2: sizeslider-input was changed
+        id: give id of input-field
+        id 0: money-lower-input was changed
+        id 1: money-upper-input was changed
+        id 2: rooms-lower-input was changed
+        id 3: rooms-upper-input was changed
+        id 4: size-lower-input was changed
+        id 5: size-upper-input was changed
         */
 
         var specialSign;
         var slider;
+        var inputID;
 
-        switch (type) {
+        switch (id) {
             case 0:
+                inputID = "#money-lower-input";
                 specialSign = "€";
                 slider = "#moneyslider"
                 break;
             case 1:
+                inputID = "#money-upper-input";
+                specialSign = "€";
+                slider = "#moneyslider"
+                break;
+            case 2:
+                inputID = "#rooms-lower-input";
                 specialSign = "";
                 slider = "#roomsslider"
                 break;
-            case 2:
+            case 3:
+                inputID = "#rooms-upper-input";
+                specialSign = "";
+                slider = "#roomsslider"
+                break;
+            case 4:
+                inputID = "#size-lower-input";
+                specialSign = "m²";
+                slider = "#sizeslider"
+                break;
+            case 5:
+                inputID = "#size-upper-input";
                 specialSign = "m²";
                 slider = "#sizeslider"
                 break;
         }
 
         var signLength = specialSign.length;
-        console.log(slider);
 
         $(inputID).change(function() {
             var value = $(this).val();
             
             if  (value.slice(- signLength) === specialSign) {
-                console.log("true");
                 //user entered special sign as last charater
                 //delete this sign from the value
                 //otherwise input field might have two special signs
