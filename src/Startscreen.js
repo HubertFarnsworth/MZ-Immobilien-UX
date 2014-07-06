@@ -33,14 +33,14 @@ Immobilien.Startscreen = (function() {
                 range: true,
                 slide: function(event, ui) {
                     for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i] + "€");
                     }
                 }
             });
 
             //refill money-input-fields with the current values of the slider
-            $("#money-lower-input").val(250);
-            $("#money-upper-input").val(400);
+            $("#money-lower-input").val(250 + "€");
+            $("#money-upper-input").val(400 + "€");
         });
 
         $("#Kaufen-Button").click(function() {
@@ -58,14 +58,14 @@ Immobilien.Startscreen = (function() {
                 range: true,
                 slide: function(event, ui) {
                     for (var i = 0; i < ui.values.length; ++i) {
-                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                        $("input.moneyInput[data-index=" + i + "]").val(ui.values[i] + "€");
                     }
                 }
             });
             
             //refill money-input-fields with the current values of the slider
-            $("#money-lower-input").val(10000);
-            $("#money-upper-input").val(250000);
+            $("#money-lower-input").val(10000 + "€");
+            $("#money-upper-input").val(250000 + "€");
         });
 	},
 
@@ -150,7 +150,7 @@ Immobilien.Startscreen = (function() {
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
-                    $("input.moneyInput[data-index=" + i + "]").val(ui.values[i]);
+                    $("input.moneyInput[data-index=" + i + "]").val(ui.values[i] + "€");
                 }
             }
         });
@@ -186,7 +186,7 @@ Immobilien.Startscreen = (function() {
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
-                    $("input.sizeInput[data-index=" + i + "]").val(ui.values[i]);
+                    $("input.sizeInput[data-index=" + i + "]").val(ui.values[i] + "m²");
                 }
             }
         });
