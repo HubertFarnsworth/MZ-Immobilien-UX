@@ -273,13 +273,11 @@ Immobilien.Startscreen = (function() {
                 //input of this field should be lower than opposite input value
                 if (value >=  $(oppositeInputID).val()) {
                     //is allowed
-                    console.log("erlaubt");
                     refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                 }
                 else {
                     //is not allowed
                     alert("nicht erlaubt!");
-                    console.log("nicht erlaubt");
                 }
             }
 
@@ -288,13 +286,11 @@ Immobilien.Startscreen = (function() {
                 //input of this field should be lower than opposite input value
                 if (value <=  $(oppositeInputID).val()) {
                     //is allowed
-                    console.log("erlaubt");
                     refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                 }
                 else {
                     //is not allowed
                     alert("nicht erlaubt!");
-                    console.log("nicht erlaubt");
                 }
             }
             
