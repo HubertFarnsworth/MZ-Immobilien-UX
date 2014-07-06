@@ -263,45 +263,59 @@ Immobilien.Startscreen = (function() {
 
         $(inputID).change(function() {
             var value = $(this).val();
+            var current = $(this);
 
             //check if entered value is below or above the value of the oppsite input
             //if so, user gets notification that this is not allowed
 
-            if (id % 2 != 0) {
+            if (parseInt(id) % 2 != 0) {
+                console.log("nicht null");
                 //input of this field should be lower than opposite input value
-                if (value <=  $(oppositeInputID).val()) {
+                if (value >=  $(oppositeInputID).val()) {
                     //is allowed
+                    console.log("erlaubt");
+                    refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                 }
                 else {
                     //is not allowed
                     alert("nicht erlaubt!");
+                    console.log("nicht erlaubt");
                 }
             }
 
             else {
+                console.log("null");
                 //input of this field should be lower than opposite input value
-                if (value >=  $(oppositeInputID).val()) {
+                if (value <=  $(oppositeInputID).val()) {
                     //is allowed
+                    console.log("erlaubt");
+                    refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                 }
                 else {
                     //is not allowed
                     alert("nicht erlaubt!");
+                    console.log("nicht erlaubt");
                 }
             }
             
-            if  (value.slice(- signLength) === specialSign) {
+            
+            
+        });
+    }
+
+    refreshSliderFillInput = function (value, specialSign, signLength, inputID, slider, current) {
+        if  (value.slice(- signLength) === specialSign) {
                 //user entered special sign as last charater
                 //delete this sign from the value
                 //otherwise input field might have two special signs
-                value = $(this).val().slice(0, - signLength);
+                value = current.val().slice(0, - signLength);
             }
 
-            var $this = $(this);
-            $(slider).slider("values", $this.data("index"), value);
+            //var $this = $(this);
+            $(slider).slider("values", current.data("index"), value);
 
             //add special sign to value
             $(inputID).val(value + specialSign);
-        });
     }
 
 	//Setup von Autocomplete für Was-Input
