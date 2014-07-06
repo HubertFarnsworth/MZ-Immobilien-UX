@@ -155,8 +155,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged("#money-lower-input", "#moneyslider", 0);
-        sliderInputChanged("#money-upper-input", "#moneyslider", 0);
+        sliderInputChanged("#money-lower-input", 0);
+        sliderInputChanged("#money-upper-input", 0);
 
         $("#roomsslider").slider({
             values: [ 1, 4 ],
@@ -171,8 +171,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        sliderInputChanged("#rooms-lower-input", "#roomsslider", 1);
-        sliderInputChanged("#rooms-upper-input", "#roomsslider", 1);
+        sliderInputChanged("#rooms-lower-input", 1);
+        sliderInputChanged("#rooms-upper-input", 1);
 
         $("input.sliderValue").change(function() {
             var $this = $(this);
@@ -197,11 +197,11 @@ Immobilien.Startscreen = (function() {
             $("#sizeslider").slider("values", $this.data("index"), $this.val());
         });
 
-        sliderInputChanged("#size-lower-input", "#sizeslider", 2);
-        sliderInputChanged("#size-upper-input", "#sizeslider", 2);
+        sliderInputChanged("#size-lower-input", 2);
+        sliderInputChanged("#size-upper-input", 2);
 	},
 
-    sliderInputChanged = function (inputID, sliderID, type) {
+    sliderInputChanged = function (inputID, type) {
         //input fields manually changed by user
         //update the slider
 
@@ -222,22 +222,26 @@ Immobilien.Startscreen = (function() {
                 break;
             case 1:
                 specialSign = "";
-                slider = "#sizeslider"
+                slider = "#roomsslider"
                 break;
             case 2:
                 specialSign = "m²";
-                slider = "#roomsslider"
+                slider = "#sizeslider"
                 break;
         }
+
+        var signLength = specialSign.length;
+        console.log(slider);
 
         $(inputID).change(function() {
             var value = $(this).val();
             
-            if  (value.slice(-1) === specialSign) {
+            if  (value.slice(- signLength) === specialSign) {
+                console.log("true");
                 //user entered special sign as last charater
                 //delete this sign from the value
                 //otherwise input field might have two special signs
-                value = $(this).val().slice(0, -1);
+                value = $(this).val().slice(0, - signLength);
             }
 
             var $this = $(this);
