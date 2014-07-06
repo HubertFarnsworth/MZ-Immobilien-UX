@@ -263,6 +263,31 @@ Immobilien.Startscreen = (function() {
 
         $(inputID).change(function() {
             var value = $(this).val();
+
+            //check if entered value is below or above the value of the oppsite input
+            //if so, user gets notification that this is not allowed
+
+            if (id % 2 != 0) {
+                //input of this field should be lower than opposite input value
+                if (value <=  $(oppositeInputID).val()) {
+                    //is allowed
+                }
+                else {
+                    //is not allowed
+                    alert("nicht erlaubt!");
+                }
+            }
+
+            else {
+                //input of this field should be lower than opposite input value
+                if (value >=  $(oppositeInputID).val()) {
+                    //is allowed
+                }
+                else {
+                    //is not allowed
+                    alert("nicht erlaubt!");
+                }
+            }
             
             if  (value.slice(- signLength) === specialSign) {
                 //user entered special sign as last charater
