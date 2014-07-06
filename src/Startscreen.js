@@ -12,7 +12,7 @@ Immobilien.Startscreen = (function() {
 		googleAutocomplete(); 
 		createMietenKaufenButton();
 		setupDatepicker(); 
-		setupSlider(); 
+		setupSliders(); 
 		setupAutocompleteWas(); 
 	},
 
@@ -141,11 +141,11 @@ Immobilien.Startscreen = (function() {
 	},
 
 	//Setup der Slider für Kosten, Zimmer, Wohnfläche
-	setupSlider = function() {
+	setupSliders = function() {
 		 $("#moneyslider").slider({
             values: [ 250, 400 ],
             step: 10,
-            min: 100,
+            min: 50,
             max: 2000,
             range: true,
             slide: function(event, ui) {
@@ -155,10 +155,8 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        $("input.sliderValue").change(function() {
-            var $this = $(this);
-            $("#moneyslider").slider("values", $this.data("index"), $this.val());
-        });
+        sliderInputChanged("#money-lower-input", "#moneyslider", 0);
+        sliderInputChanged("#money-upper-input", "#moneyslider", 0);
 
         $("#roomsslider").slider({
             values: [ 1, 4 ],
@@ -172,6 +170,9 @@ Immobilien.Startscreen = (function() {
                 }
             }
         });
+
+        sliderInputChanged("#rooms-lower-input", "#roomsslider", 1);
+        sliderInputChanged("#rooms-upper-input", "#roomsslider", 1);
 
         $("input.sliderValue").change(function() {
             var $this = $(this);
@@ -195,7 +196,57 @@ Immobilien.Startscreen = (function() {
             var $this = $(this);
             $("#sizeslider").slider("values", $this.data("index"), $this.val());
         });
+
+        sliderInputChanged("#size-lower-input", "#sizeslider", 2);
+        sliderInputChanged("#size-upper-input", "#sizeslider", 2);
 	},
+
+    sliderInputChanged = function (inputID, sliderID, type) {
+        //input fields manually changed by user
+        //update the slider
+
+        /*
+        type: which special sign (€, m², or nothing) after user input will be used
+        type 0: moneyslider-input was changed
+        type 1: roomslider-input was changed
+        type 2: sizeslider-input was changed
+        */
+
+        var specialSign;
+        var slider;
+
+        switch (type) {
+            case 0:
+                specialSign = "€";
+                slider = "#moneyslider"
+                break;
+            case 1:
+                specialSign = "";
+                slider = "#sizeslider"
+                break;
+            case 2:
+                specialSign = "m²";
+                slider = "#roomsslider"
+                break;
+        }
+
+        $(inputID).change(function() {
+            var value = $(this).val();
+            
+            if  (value.slice(-1) === specialSign) {
+                //user entered special sign as last charater
+                //delete this sign from the value
+                //otherwise input field might have two special signs
+                value = $(this).val().slice(0, -1);
+            }
+
+            var $this = $(this);
+            $(slider).slider("values", $this.data("index"), value);
+
+            //add special sign to value
+            $(inputID).val(value + specialSign);
+        });
+    }
 
 	//Setup von Autocomplete für Was-Input
 	setupAutocompleteWas = function () {
