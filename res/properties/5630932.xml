@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>5630932</id> <!-- id des Objekts -->
+
+	<city>Regensbur</city> <!-- Stadt -->
+	<zipcode>93055</zipcode> <!-- PLZ -->
+	<streetname>Glockenbecherweg</streetname> <!-- Straße -->
+	<housenumber>14</housenumber> <!-- Hausnummer -->
+
+	<description>EG: Großzügige Diele mit Garderobe Offene hoch-und neuwertige Einbauküche (zur Ablöse, Preis nach Vereinbarung) Gäste WC, Abstellraum, großer Wohnen-Essen-Bereich mit Terasse nahtloser Übergang vom Wohnzimmer zu Terasse und Garten Große Terasse mit Süd-Ausrichtung Zusätzliche Vorratsräume vor dem Haus 1.OG: Hochwertiges Badezimmer mit Wanne und Dusche Breite Verglasung für viel natürliches Licht in Ihren Räumen Großzügige Räume mit sehr guter Möblierbarkeit 2.OG: Großzügige vielseitig nutzbare Galerie Große Dachterasse nach Süden Großes helles Schlafzimmer Hauswirtschaftsraum (Anschluss für Waschmachine, etc.)</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>4,5</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Neuwertig</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
+	<living_space>113</living_space> <!-- Wohnfläche -->
+	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>890</price> <!-- Kaufpreis -->
+	<extra_cost>286</extra_cost> <!-- Nebenkosten -->
+	<caution>1890</caution> <!-- Kaution -->
+	<floors>3</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2012</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Terrassenwohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>01/09/2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Garten</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>y</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>n</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>jogi@nationalmannschaft.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>9802346544</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Carport</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount></parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>rent</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>50</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>
