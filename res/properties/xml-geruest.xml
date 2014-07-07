@@ -16,6 +16,8 @@
 	<provision></provision> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent></buy_or_rent> <!-- buy oder rent --> 
 	<price></price> <!-- Kaufpreis -->
+	<extra_cost></extra_cost> <!-- Nebenkosten -->
+	<caution></caution> <!-- Kaution -->
 	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype></heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent></rent> <!--vermietet? y oder n -->
@@ -23,10 +25,12 @@
 	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra></extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
 	<cellar></cellar> <!-- Größe des Kellers in m², 0 bis n -->
+	<built_in_kitchen></built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email></email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone></telephone> <!-- Kontak: Telefonnummer -->
 
+	<parking_space></parking_space> <!-- Art des Stellplatzes -->
 	<parking_space_amount></parking_space_amount> <!-- Anzahl: 0 bis n -->
 	<parking_space_buy_or_rent></parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
 	<parking_space_price></parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
