@@ -27,7 +27,7 @@ Immobilien.Startscreen = (function() {
 
             //refresh moneyslider with rent-values
             $("#moneyslider").slider({
-                values: [ 250, 400 ],
+                values: [ 50, 400 ],
                 step: 10,
                 min: 50,
                 max: 2000,
