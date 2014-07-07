@@ -7,13 +7,13 @@ body { height: 100%; margin: 0; padding: 0 }
 	color: white; 
 	font-family: serif;
 	margin-top: 0; 
-	margin-right: 10%;
-	margin-left: 10%;  
+	margin-right: 15%;
+	margin-left: 15%;  
 	padding-left: 1%; 
 }
 
 #navigation-buttons{
-	margin-left: 11%;
+	margin-left: 15%;
 }
 
 #anbieten-button{
@@ -23,7 +23,7 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #merkliste-button{
 	float: right; 
-	margin-right: 12%;  
+	margin-right: 18%;  
 	margin-left: 0;  
 }
 
@@ -38,6 +38,7 @@ body { height: 100%; margin: 0; padding: 0 }
 	margin-right: 10%;
 	margin-left: 10%;
 	margin-top: 2%;
+	margin-bottom: 2%; 
 }
 
 #controls-left {
@@ -54,11 +55,12 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #selection {
 	background-color: #175573;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 15%;
+	margin-right: 15%;
 	overflow: auto;
 	color: white;
-	margin-top: 20px;
+	margin-top: 10px;
+	border-style: solid;
 }
 
 #input {
@@ -90,7 +92,7 @@ body { height: 100%; margin: 0; padding: 0 }
 #money-lower-input, #money-upper-input, #rooms-lower-input, #rooms-upper-input,
 #size-lower-input, #size-upper-input {
 	float: left; 
-	width: 41%;
+	width: 40%;
 	margin-left: 2%;
 	display: inline;
 }
@@ -118,8 +120,8 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #Ergebnis {
 	background-color: #175573;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 15%;
+	margin-right: 15%;
 	overflow: auto;	
 	margin-top: 2%; 
 	margin-bottom: 0.500%; 
@@ -149,7 +151,7 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #immo-price {
 	position: absolute;
-    right: 12%;
+    right: 16%;
     float: left;
 }
 
@@ -165,9 +167,5 @@ body { height: 100%; margin: 0; padding: 0 }
 	font-size: 18px;
 	width: 100%; 
 	color: white; 
-}
-
-#immo-plz {
-
 }
 
