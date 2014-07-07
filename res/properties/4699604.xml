@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>4699604</id> <!-- id des Objekts -->
+
+	<city></city> <!-- Stadt -->
+	<zipcode>93052</zipcode> <!-- PLZ -->
+	<streetname></streetname> <!-- Straße -->
+	<housenumber></housenumber> <!-- Hausnummer -->
+
+	<description>Freistehender Bungalow, hell, gro&#x00DF;er Garten, gro&#x00DF;e. Garage, Keller, 5 Zimmer. Ruhige Nebenstra&#x00DF;e, Uni N&#x00E4;he>Wohn- und Schlafr&#x00E4;ume Parkett, K&#x00FC;che / Diele Flie&#x00DF;envon Privat, keine Provision</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>5</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Gepflegt</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>550</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>130</living_space> <!-- Wohnfläche -->
+	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>1380</price> <!-- Kaufpreis -->
+	<extra_cost></extra_cost> <!-- Nebenkosten -->
+	<caution>4200</caution> <!-- Kaution -->
+	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent></rent> <!--vermietet? y oder n -->
+	<type>Bungalow</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Balkon/Terrasse, Garten</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>666</cellar> <!-- Größe des Kellers in m², 0 bis n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email></email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>015754198621</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Garage</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount></parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent></parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price></parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

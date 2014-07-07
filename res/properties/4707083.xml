@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id></id> <!-- id des Objekts -->
+
+	<city></city> <!-- Stadt -->
+	<zipcode>94327</zipcode> <!-- PLZ -->
+	<streetname></streetname> <!-- Straße -->
+	<housenumber></housenumber> <!-- Hausnummer -->
+
+	<description>l&#x00E4;ndl. Lage zw. SR u. DEG, 5 min zur A3, eig. Eingang, gr. u. helle Zi., 1.OG + DG, Pferde-Tierh.-Gem&#x00FC;seanbau m&#x00F6;gl. Wohnen auf dem Lande in einer Wohnung mit eigenem Eingang, &#x00FC;ber zwei Etagen 1.OG+DG&#xd;&#xa;&#x00D6;lzentralheizung, zus&#x00E4;tzl. kann ein Holzofen angeschlossen werden,&#xd;&#xa;solare Brauchwassererw&#x00E4;rmung, Parkett-Kork-u. Fliesenb&#x00F6;den.&#xd;&#xa;Stall-Weidezupacht f&#x00FC;r Pferde-Tierhaltung ist m&#x00F6;glich (bis zu vier Pferde), auch eigener Gem&#x00FC;segarten kann gerne gestaltet werden, aber kein Muss. &#xd;&#xa;Verkehrsg&#x00FC;nstige, dennoch ruhige Lage zwischen Straubing und Deggendorf, Anschlussstelle A3 ist in 5min erreichbar. Das Haus wurde in 2000 komplett renoviert mit neuen Fenstern, Heizung, B&#x00F6;den etc.Das Objekt ist auch geeignet f&#x00FC;r kreative Menschen, Handwerker, K&#x00FC;nstler, Musiker, etc.</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>5</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Gepflegt</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
+	<living_space>170</living_space> <!-- Wohnfläche -->
+	<provision></provision> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent></buy_or_rent> <!-- buy oder rent --> 
+	<price></price> <!-- Kaufpreis -->
+	<extra_cost></extra_cost> <!-- Nebenkosten -->
+	<caution></caution> <!-- Kaution -->
+	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Öl</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent></rent> <!--vermietet? y oder n -->
+	<type>Etagenwohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Garten</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar></cellar> <!-- Größe des Kellers in m², 0 bis n -->
+	<built_in_kitchen></built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>sonnenblume9@t-online.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>015122317970</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Parkplatz</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount></parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent></parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price></parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>
