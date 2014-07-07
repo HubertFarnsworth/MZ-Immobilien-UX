@@ -297,15 +297,17 @@ Immobilien.Startscreen = (function() {
             var value = $(this).val();
             var current = $(this);
 
+
+
             //check if entered value is below or above the value of the oppsite input
             //if so, user gets notification that this is not allowed
 
-            if (parseInt(value) < 0) {
+            if (parseInt(value) <= 0) {
                 //user typed a negative number
                 //reset input-field to old value
                 $(inputID).val(oldValue);
                 //tell user
-                alert("nicht erlaubt!");
+                alert("Fehlerhafte Eingabe!");
             }
 
             else {
@@ -320,7 +322,7 @@ Immobilien.Startscreen = (function() {
                         //reset input-field to old value
                         $(inputID).val(oldValue);
                         //tell user
-                        alert("nicht erlaubt!");
+                        alert("Fehlerhafte Eingabe!");
                     }
                 }
 
@@ -335,7 +337,7 @@ Immobilien.Startscreen = (function() {
                         //reset input-field to old value
                         $(inputID).val(oldValue);
                         //tell user
-                        alert("nicht erlaubt!");
+                        alert("Fehlerhafte Eingabe!");
                     }
                 }
             }
