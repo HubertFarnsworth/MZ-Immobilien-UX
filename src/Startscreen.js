@@ -14,6 +14,7 @@ Immobilien.Startscreen = (function() {
 		setupDatepicker(); 
 		setupSliders(); 
 		setupAutocompleteWas(); 
+        setupTopButtons();
 	},
 
 	//Funktionen für Mieten/Kaufen-Buttons werden gesetzt
@@ -68,6 +69,37 @@ Immobilien.Startscreen = (function() {
             $("#money-upper-input").val(250000 + "€");
         });
 	},
+
+    setupTopButtons = function () {
+
+        $("#gesuche-button").attr('class', 'btn btn-primary');
+        $("#anbieten-button").attr('class', 'btn btn-default');
+        $("#merkliste-button").attr('class', 'btn btn-default');
+
+        $("#gesuche-button").click(function() {
+            //user clicks on gesuche-button
+            //give user feedback (change button states)
+            $("#gesuche-button").attr('class', 'btn btn-primary');
+            $("#anbieten-button").attr('class', 'btn btn-default');
+            $("#merkliste-button").attr('class', 'btn btn-default');
+        });
+
+        $("#anbieten-button").click(function() {
+            //user clicks on anbieten-button
+            //give user feedback (change button states)
+            $("#gesuche-button").attr('class', 'btn btn-default');
+            $("#anbieten-button").attr('class', 'btn btn-primary');
+            $("#merkliste-button").attr('class', 'btn btn-default');
+        });
+
+        $("#merkliste-button").click(function() {
+            //user clicks on merkliste-button
+            //give user feedback (change button states)
+            $("#gesuche-button").attr('class', 'btn btn-default');
+            $("#anbieten-button").attr('class', 'btn btn-default');
+            $("#merkliste-button").attr('class', 'btn btn-primary');
+        });
+    },
 
 	//Google-Autocomplete für Wo-Input 
 	googleAutocomplete = function () {
