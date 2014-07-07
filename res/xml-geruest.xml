@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+<city></city> <!-- Stadt -->
+<zipcode></zipcode> <!-- PLZ -->
+<streetname></streetname> <!-- Straße -->
+<housenumber></housenumber> <!-- Hausnummer -->
+
+<description></description>  <!-- Fließtext vom Verkäufer -->
+<number_of_rooms></number_of_rooms> <!-- Anzahl der Zimmer -->
+<status></status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+<size_of_property></size_of_property> <!-- Grundstücksfläche -->
+<living_space></living_space> <!-- Wohnfläche -->
+<provision></provision> <!-- Provisionspreis, 0 bis n -->
+<buy_or_rent></buy_or_rent> <!-- buy oder rent --> 
+<price></price> <!-- Kaufpreis -->
+<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
+<heatingtype></heatingtype> <!-- Öl, Zentralheizung, etc. -->
+<rent></rent> <!--vermietet? y oder n -->
+<type></type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
+<extra></extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+<cellar></cellar> <!-- Größe des Kellers in m², 0 bis n -->
+
+<email></email> <!-- Kontakt: E-Mail-Adresse -->
+<telephone></telephone> <!-- Kontak: Telefonnummer -->
+
+<parking_space_amount></parking_space_amount> <!-- Anzahl: 0 bis n -->
+<parking_space_buy_or_rent></parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+<parking_space_price></parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>
