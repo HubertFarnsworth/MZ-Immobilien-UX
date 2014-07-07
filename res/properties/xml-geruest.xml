@@ -18,13 +18,14 @@
 	<price></price> <!-- Kaufpreis -->
 	<extra_cost></extra_cost> <!-- Nebenkosten -->
 	<caution></caution> <!-- Kaution -->
+	<floors></floors> <!-- Anzahl der Etagen -->
 	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype></heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent></rent> <!--vermietet? y oder n -->
 	<type></type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra></extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar></cellar> <!-- Größe des Kellers in m², 0 bis n -->
+	<cellar></cellar> <!-- Keller y oder n -->
 	<built_in_kitchen></built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email></email> <!-- Kontakt: E-Mail-Adresse -->
