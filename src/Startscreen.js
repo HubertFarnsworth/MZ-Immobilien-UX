@@ -175,7 +175,7 @@ Immobilien.Startscreen = (function() {
 	//Setup der Slider für Kosten, Zimmer, Wohnfläche
 	setupSliders = function() {
 		 $("#moneyslider").slider({
-            values: [ 250, 400 ],
+            values: [ 50, 400 ],
             step: 10,
             min: 50,
             max: 2000,
