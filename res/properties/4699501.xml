@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>4699501</id> <!-- id des Objekts -->
+
+	<city>Maxhütte-Haidhof</city> <!-- Stadt -->
+	<zipcode>93142</zipcode> <!-- PLZ -->
+	<streetname>Schillerstraße</streetname> <!-- Straße -->
+	<housenumber>24</housenumber> <!-- Hausnummer -->
+
+	<description>Erstbezug, schöne Lage, 450 Quadratmeter Grund, gehobene Ausstattung, großer Wohn-Essbereich, 3 Schlafzimmer, modernes Bad mit begehbarer Dusche, Gäste-WC, Speiseraum, Hobbyraum, Gästezimmer im Keller, Fußbodenheizung, große Terrasse, Garage+2 Stellplätze, Solar Warmwasser, von privat an NR </description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>4</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>neuwertig</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>450</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>125</living_space> <!-- Wohnfläche -->
+	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>950</price> <!-- Kaufpreis -->
+	<extra_cost></extra_cost> <!-- Nebenkosten -->
+	<caution>0</caution> <!-- Kaution -->
+	<floors>2</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2014</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Zentralheizung</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Einfamilienhaus</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>10102014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Garten; Balkon; Terrasse</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>y</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email></email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0175/2868067</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Garage</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>2</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>buy</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>0</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>
