@@ -9,21 +9,14 @@ Immobilien.Startscreen = (function() {
 
         //$("#input").css('background-color', '#F23242');
 
-        setupXmlToJson();
 		googleAutocomplete(); 
 		createMietenKaufenButton();
 		setupDatepicker(); 
 		setupSliders(); 
 		setupAutocompleteWas(); 
         setupTopButtons();
+        setupCheckbox();
 	},
-
-    setupXmlToJson = function () {
-        var json = $.getJSON("res/properties/5123397.json");
-        //var data = eval("(" +json.responseText + ")");
-        console.log(json);
-
-    },
 
 	//Funktionen für Mieten/Kaufen-Buttons werden gesetzt
 	createMietenKaufenButton = function () {
@@ -367,7 +360,7 @@ Immobilien.Startscreen = (function() {
 
             //add special sign to value
             $(inputID).val(value + specialSign);
-    }
+    },
 
 	//Setup von Autocomplete für Was-Input
 	setupAutocompleteWas = function () {
@@ -387,7 +380,11 @@ Immobilien.Startscreen = (function() {
                 $(this).trigger('keydown.autocomplete');
             });
         });
-	};
+	},
+
+    setupCheckbox = function () {
+        $("#checkbox-provision").prettyCheckable();
+    };
 
 	that.init = init;
 
