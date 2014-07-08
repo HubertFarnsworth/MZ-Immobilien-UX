@@ -9,6 +9,7 @@ Immobilien.Startscreen = (function() {
 
         //$("#input").css('background-color', '#F23242');
 
+        setupXmlToJson();
 		googleAutocomplete(); 
 		createMietenKaufenButton();
 		setupDatepicker(); 
@@ -16,6 +17,13 @@ Immobilien.Startscreen = (function() {
 		setupAutocompleteWas(); 
         setupTopButtons();
 	},
+
+    setupXmlToJson = function () {
+        var json = $.getJSON("res/properties/5123397.json");
+        //var data = eval("(" +json.responseText + ")");
+        console.log(json);
+
+    },
 
 	//Funktionen für Mieten/Kaufen-Buttons werden gesetzt
 	createMietenKaufenButton = function () {
