@@ -1,5 +1,7 @@
 Immobilien.Startscreen = (function() {
 	var that = {},
+    map = null,
+    geocoder = null,
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -9,7 +11,7 @@ Immobilien.Startscreen = (function() {
 
         //$("#input").css('background-color', '#F23242');
 
-		googleAutocomplete(); 
+		setupGoogleComponents();
 		createMietenKaufenButton();
 		setupDatepicker(); 
 		setupSliders(); 
@@ -103,11 +105,10 @@ Immobilien.Startscreen = (function() {
     },
 
 	//Google-Autocomplete für Wo-Input 
-	googleAutocomplete = function () {
+	setupGoogleComponents = function () {
 		google.maps.event.addDomListener(window, 'load', initialize);
 
         function initialize() {
-            var map;
             var mapOptions = {
                 center: new google.maps.LatLng(49.0167, 11.0833),
                 zoom: 7,
@@ -131,11 +132,15 @@ Immobilien.Startscreen = (function() {
             }
         }
 
+        geocoder = new google.maps.Geocoder();
+
         var input = document.getElementById('wo-input');
         var options = {
             types: ['(cities)'],
             componentRestrictions: {country: 'de'}
         };
+        placeMarkersOnMap();
+
 	},
 
 	//Datepicker-Funktion
@@ -384,6 +389,34 @@ Immobilien.Startscreen = (function() {
 
     setupCheckbox = function () {
         $("#checkbox-provision").prettyCheckable();
+    },
+
+    placeMarkersOnMap = function() {
+
+        var address = "Regensburg";
+        var latitude, longitude;
+        map = new google.maps.Map(document.getElementById("map-canvas"));
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                latitude = results[0].geometry.location.lat();
+                longitude = results[0].geometry.location.lng();
+                console.log(latitude, longitude);
+            }
+        });
+
+        var myLatlng = new google.maps.LatLng(49,12);
+        console.log(map);
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: myLatlng,
+            animation: google.maps.Animation.DROP,
+            title: 'asd'
+        });
+        console.log(marker);
+        marker.setMap(map);
     };
 
 	that.init = init;
