@@ -1,6 +1,6 @@
 Immobilien.Startscreen = (function() {
 	var that = {},
-    map = null,
+    map,
     geocoder = null,
 
 	init = function() {
@@ -115,6 +115,7 @@ Immobilien.Startscreen = (function() {
             };
             map = new google.maps.Map(document.getElementById("map-canvas"),
                 mapOptions);
+            console.log(map);
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
@@ -130,16 +131,18 @@ Immobilien.Startscreen = (function() {
                 }
 
             }
+            
         }
 
         geocoder = new google.maps.Geocoder();
+        placeMarkersOnMap();
 
         var input = document.getElementById('wo-input');
         var options = {
             types: ['(cities)'],
             componentRestrictions: {country: 'de'}
         };
-        placeMarkersOnMap();
+        
 
 	},
 
