@@ -321,7 +321,7 @@ Immobilien.Startscreen = (function() {
             else {
                 if (parseInt(id) % 2 != 0) {
                     //input of this field should be lower than opposite input value
-                    if (value >=  $(oppositeInputID).val()) {
+                    if (value >=  parseInt($(oppositeInputID).val())) {
                         //is allowed
                         refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                     }
@@ -330,13 +330,14 @@ Immobilien.Startscreen = (function() {
                         //reset input-field to old value
                         $(inputID).val(oldValue);
                         //tell user
+                        console.log(value, $(oppositeInputID).val());
                         alert("Fehlerhafte Eingabe!");
                     }
                 }
 
                 else {
                     //input of this field should be lower than opposite input value
-                    if (value <=  $(oppositeInputID).val()) {
+                    if (value <=  parseInt($(oppositeInputID).val())) {
                         //is allowed
                         refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                     }
