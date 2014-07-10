@@ -6,11 +6,12 @@
         <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="res/css/immobilien.css">
 
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC0PvpLCbWVhxSK5JsRibDD75qjcfpfZio&libraries=places&sensor=false&amp;language=de"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0PvpLCbWVhxSK5JsRibDD75qjcfpfZio&libraries=places&sensor=false&amp;language=de"></script>
         
     </head>
     <body>
         <div id="content"></div>
+        <div id="results"></div>
 
         <script type="text/template" id="startscreen-tpl">
             <div id="headline">
@@ -67,16 +68,19 @@
                 </div>
                 <div id="map-canvas"></div>
             </div>
+            
+        </script>
+        <script type="text/template" id="results-tpl">
             <div id="Ergebnis"> 
                 <div id="Startimage">
                     <img src="res/image/4696025_1.jpg" height="100%" width="100%"></img>
                 </div>
                 <div id="description">
-                    <p id="immo-headline">6 Zimmer Haus</p>
-                    <p id="immo-price"> Preis: 980.000 € </p>
-                    <p id="immo-size"> Wohnfläche: 1285 qm </p>
-                    <p id="immo-rooms"> Zimmeranzahl: 6 </p>
-                    <p id="immo-plz"> 93077 Bad Abbach </p>
+                    <p id="immo-headline"></p>
+                    <p id="immo-price"></p>
+                    <p id="immo-size"></p>
+                    <p id="immo-rooms"></p>
+                    <p id="immo-plz"> </p>
                 </div>
             </div>
         </script>
@@ -91,6 +95,7 @@
         <script src="src/Immobilien.js"></script>
         <script src="src/MainController.js"></script>
         <script src="src/Startscreen.js"></script>
+        <script src="src/Results.js"></script>
 
         <script>
                 Immobilien.init();

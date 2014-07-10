@@ -9,6 +9,11 @@ Immobilien.Startscreen = (function() {
         startScreenTemplate = _.template($("#startscreen-tpl").html());
         $("#content").html(startScreenTemplate);
 
+
+        /*var xmlDoc=loadXMLDoc("res/properties/4696025.xml");
+        var x = xmlDoc.getElementsByTagName("city")[0].innerHTML;
+        console.log(x);*/
+
         //$("#input").css('background-color', '#F23242');
 
 		setupGoogleComponents();
@@ -73,8 +78,8 @@ Immobilien.Startscreen = (function() {
         });
 	},
 
+    //Setup der Navigationsbuttons
     setupTopButtons = function () {
-
         $("#gesuche-button").attr('class', 'btn btn-primary');
         $("#anbieten-button").attr('class', 'btn btn-default');
         $("#merkliste-button").attr('class', 'btn btn-default');
@@ -129,11 +134,8 @@ Immobilien.Startscreen = (function() {
                 } else {
                     $('wo-input').placeholder = 'Stadt eingeben';
                 }
-
-            }
-            
+            }       
         }
-
         geocoder = new google.maps.Geocoder();
         placeMarkersOnMap();
 
@@ -141,9 +143,7 @@ Immobilien.Startscreen = (function() {
         var options = {
             types: ['(cities)'],
             componentRestrictions: {country: 'de'}
-        };
-        
-
+        };      
 	},
 
 	//Datepicker-Funktion
@@ -255,7 +255,6 @@ Immobilien.Startscreen = (function() {
         id 4: size-lower-input was changed
         id 5: size-upper-input was changed
         */
-
         var specialSign;
         var slider;
         var inputID;
