@@ -315,7 +315,7 @@ Immobilien.Startscreen = (function() {
                 //reset input-field to old value
                 $(inputID).val(oldValue);
                 //tell user
-                alert("Fehlerhafte Eingabe!");
+                alert("Fehlerhafte Eingabe! Der Wert muss größer als Null sein.");
             }
 
             else {
@@ -331,7 +331,7 @@ Immobilien.Startscreen = (function() {
                         $(inputID).val(oldValue);
                         //tell user
                         console.log(value, $(oppositeInputID).val());
-                        alert("Fehlerhafte Eingabe!");
+                        alert("Fehlerhafte Eingabe! Der Wert darf nicht unter dem minimal-Wert liegen.");
                     }
                 }
 
@@ -346,7 +346,7 @@ Immobilien.Startscreen = (function() {
                         //reset input-field to old value
                         $(inputID).val(oldValue);
                         //tell user
-                        alert("Fehlerhafte Eingabe!");
+                        alert("Fehlerhafte Eingabe! Der Wert darf nicht über dem maximal-Wert liegen.");
                     }
                 }
             }
