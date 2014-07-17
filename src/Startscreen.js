@@ -182,8 +182,9 @@ Immobilien.Startscreen = (function() {
             map: map,
             position: myLatlng,
             animation: google.maps.Animation.DROP,
-            title: 'asd'
+            icon: 'res/markers/marker1.png'
         });
+        
         console.log(marker);
         marker.setMap(map);
 
