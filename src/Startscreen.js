@@ -154,7 +154,7 @@ Immobilien.Startscreen = (function() {
             }
         });
 
-        var myLatlng = new google.maps.LatLng(49,12);
+        var myLatlng = new google.maps.LatLng(49,12.1);
         console.log(map);
 
         var marker = new google.maps.Marker({
