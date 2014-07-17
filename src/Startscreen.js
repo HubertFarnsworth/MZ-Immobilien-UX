@@ -113,13 +113,16 @@ Immobilien.Startscreen = (function() {
 	setupGoogleComponents = function () {
 		google.maps.event.addDomListener(window, 'load', initialize);
 
-        function initialize() {
-            var mapOptions = {
+        var mapOptions = {
                 center: new google.maps.LatLng(49.0167, 11.0833),
                 zoom: 7,
             };
-            map = new google.maps.Map(document.getElementById("map-canvas"),
-                mapOptions);
+
+        map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);   
+
+        function initialize() {
+            //hier war mapOptions und new map-aufruf
             console.log(map);
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -137,7 +140,31 @@ Immobilien.Startscreen = (function() {
             }       
         }
         geocoder = new google.maps.Geocoder();
-        placeMarkersOnMap();
+        
+        var address = "Regensburg";
+        var latitude, longitude;
+        //map = new google.maps.Map(document.getElementById("map-canvas"));
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                latitude = results[0].geometry.location.lat();
+                longitude = results[0].geometry.location.lng();
+                console.log(latitude, longitude);
+            }
+        });
+
+        var myLatlng = new google.maps.LatLng(49,12);
+        console.log(map);
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: myLatlng,
+            animation: google.maps.Animation.DROP,
+            title: 'asd'
+        });
+        console.log(marker);
+        marker.setMap(map);
 
         var input = document.getElementById('wo-input');
         var options = {
