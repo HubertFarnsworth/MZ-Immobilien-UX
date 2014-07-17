@@ -1,6 +1,6 @@
 Immobilien.Startscreen = (function() {
 	var that = {},
-    map,
+    globalMap = null,
     geocoder = null,
 
 	init = function() {
@@ -146,14 +146,16 @@ Immobilien.Startscreen = (function() {
             //hier war mapOptions und new map-aufruf
             console.log(map);
 
+            globalMap = map;
+
             //call this function whenever new results need to be displayed
             //parameters: map & adress as string
             
             var address1 = "Am Vitusbach 12, Regensburg";
             var address2 = "Geibelplatz, Regensburg";
 
-            placeMarkersOnMap(map, address1);
-            placeMarkersOnMap(map, address2);
+            placeMarkersOnMap(address1);
+            placeMarkersOnMap(address2);
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
@@ -425,7 +427,7 @@ Immobilien.Startscreen = (function() {
         $("#checkbox-provision").prettyCheckable();
     },
 
-    placeMarkersOnMap = function(map, address) {
+    placeMarkersOnMap = function(address) {
 
         geocoder = new google.maps.Geocoder();
 
@@ -440,13 +442,11 @@ Immobilien.Startscreen = (function() {
                 console.log(latitude, longitude);
 
                 var marker = new google.maps.Marker({
-                    map: map,
+                    map: globalMap,
                     position: results[0].geometry.location,
                     animation: google.maps.Animation.DROP,
                     icon: 'res/markers/marker1.png'
                 });
-
-                marker.setMap(map);
             }
         });
 
