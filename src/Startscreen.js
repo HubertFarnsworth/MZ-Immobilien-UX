@@ -29,7 +29,7 @@ Immobilien.Startscreen = (function() {
 
     setupScrollButtons = function () {
         $(document).ready(function(){
-    //Check to see if the window is top if not then display button
+        //Check to see if the window is top if not then display button
             $(window).scroll(function(){
                 if ($(this).scrollTop() > 100) {
                     $('.scrollToTop').fadeIn();
@@ -38,7 +38,7 @@ Immobilien.Startscreen = (function() {
                 }
             });
     
-    //Click event to scroll to top
+        //Click event to scroll to top
             $('.scrollToTop').click(function(){
                 $('html, body').animate({scrollTop : 0},800);
                 return false;
@@ -146,6 +146,15 @@ Immobilien.Startscreen = (function() {
             //hier war mapOptions und new map-aufruf
             console.log(map);
 
+            //call this function whenever new results need to be displayed
+            //parameters: map & adress as string
+            
+            var address1 = "Am Vitusbach 12, Regensburg";
+            var address2 = "Geibelplatz, Regensburg";
+
+            placeMarkersOnMap(map, address1);
+            placeMarkersOnMap(map, address2);
+
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
             google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
@@ -160,33 +169,6 @@ Immobilien.Startscreen = (function() {
                 }
             }       
         }
-        geocoder = new google.maps.Geocoder();
-        
-        var address = "Regensburg";
-        var latitude, longitude;
-        //map = new google.maps.Map(document.getElementById("map-canvas"));
-
-        geocoder.geocode( { 'address': address}, function(results, status) {
-
-            if (status == google.maps.GeocoderStatus.OK) {
-                latitude = results[0].geometry.location.lat();
-                longitude = results[0].geometry.location.lng();
-                console.log(latitude, longitude);
-            }
-        });
-
-        var myLatlng = new google.maps.LatLng(49,12.1);
-        console.log(map);
-
-        var marker = new google.maps.Marker({
-            map: map,
-            position: myLatlng,
-            animation: google.maps.Animation.DROP,
-            icon: 'res/markers/marker1.png'
-        });
-        
-        console.log(marker);
-        marker.setMap(map);
 
         var input = document.getElementById('wo-input');
         var options = {
@@ -443,32 +425,32 @@ Immobilien.Startscreen = (function() {
         $("#checkbox-provision").prettyCheckable();
     },
 
-    placeMarkersOnMap = function() {
+    placeMarkersOnMap = function(map, address) {
 
-        var address = "Regensburg";
-        var latitude, longitude;
-        map = new google.maps.Map(document.getElementById("map-canvas"));
+        geocoder = new google.maps.Geocoder();
+
+        var latitude, longitude, asd;
 
         geocoder.geocode( { 'address': address}, function(results, status) {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 latitude = results[0].geometry.location.lat();
                 longitude = results[0].geometry.location.lng();
+
                 console.log(latitude, longitude);
+
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    animation: google.maps.Animation.DROP,
+                    icon: 'res/markers/marker1.png'
+                });
+
+                marker.setMap(map);
             }
         });
 
-        var myLatlng = new google.maps.LatLng(49,12);
-        console.log(map);
-
-        var marker = new google.maps.Marker({
-            map: map,
-            position: myLatlng,
-            animation: google.maps.Animation.DROP,
-            title: 'asd'
-        });
-        console.log(marker);
-        marker.setMap(map);
+        
     };
 
 	that.init = init;
