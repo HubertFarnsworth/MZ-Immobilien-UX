@@ -3,7 +3,7 @@
 
 	<id></id> <!-- id des Objekts -->
 
-	<city></city> <!-- Stadt -->
+	<city>Bogen</city> <!-- Stadt -->
 	<zipcode>94327</zipcode> <!-- PLZ -->
 	<streetname></streetname> <!-- Straße -->
 	<housenumber></housenumber> <!-- Hausnummer -->
@@ -15,7 +15,7 @@
 	<living_space>170</living_space> <!-- Wohnfläche -->
 	<provision></provision> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent></buy_or_rent> <!-- buy oder rent --> 
-	<price></price> <!-- Kaufpreis -->
+	<price>100.000</price> <!-- Kaufpreis -->
 	<extra_cost></extra_cost> <!-- Nebenkosten -->
 	<caution></caution> <!-- Kaution -->
 	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->

@@ -15,9 +15,9 @@
 	<living_space>115</living_space> <!-- Wohnfläche -->
 	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>buy</buy_or_rent> <!-- buy oder rent --> 
-	<price>750€</price> <!-- Kaufpreis -->
-	<extra_cost>150€</extra_cost> <!-- Nebenkosten -->
-	<caution>1500€</caution> <!-- Kaution -->
+	<price>750</price> <!-- Kaufpreis -->
+	<extra_cost>150</extra_cost> <!-- Nebenkosten -->
+	<caution>1500</caution> <!-- Kaution -->
 	<floors>1</floors> <!-- Anzahl der Etagen -->
 	<year_of_construction>1972</year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->

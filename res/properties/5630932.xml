@@ -3,7 +3,7 @@
 
 	<id>5630932</id> <!-- id des Objekts -->
 
-	<city>Regensbur</city> <!-- Stadt -->
+	<city>Regensburg</city> <!-- Stadt -->
 	<zipcode>93055</zipcode> <!-- PLZ -->
 	<streetname>Glockenbecherweg</streetname> <!-- Straße -->
 	<housenumber>14</housenumber> <!-- Hausnummer -->
