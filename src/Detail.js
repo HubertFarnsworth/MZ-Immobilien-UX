@@ -4,6 +4,7 @@ Immobilien.Detail = (function() {
 
 	init = function() {
 	console.log("Detail.js aufgerufen");
+		
 	},
 
 	startDetail = function (id) {
@@ -11,6 +12,10 @@ Immobilien.Detail = (function() {
 		$("#content").html(detailTemplate);
 
 	    document.getElementById("test-Text").innerHTML = id;
+
+	    $(document).on("click", "#backToStart", function(event){
+      		Immobilien.MainController.init(); 
+    	});
 	};
 
 	that.init = init;
