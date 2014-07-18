@@ -17,6 +17,15 @@ Immobilien.Results = (function() {
       var PropertyID = event.target.id;
       Immobilien.MainController.startDetail(PropertyID); 
     });
+
+    $( ".Property" ).mouseenter(function() {
+      $(this).addClass("hover");
+    });
+
+    $( ".Property" ).mouseleave(function() {
+      $(this).removeClass("hover");
+    });
+
 	},
 
   getData = function () {
