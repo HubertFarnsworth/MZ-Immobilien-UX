@@ -6,14 +6,15 @@ Immobilien.Results = (function() {
 
 	init = function() {
 		console.log("Results.js aufgerufen");
+    getData(); 
 
 		var resultsTemplate = _.template($("#results-tpl").html());
-    //var resultingHtml = resultsTemplate({datalist : data})
+    var resultingHtml = resultsTemplate({Properties : data});
 
-    //$("#results").html(resultingHtml);
-    $("#results").html(resultsTemplate);
+    $("#results").html(resultingHtml);
+    //$("#results").html(resultsTemplate);
 
-    getData();      
+         
 	},
 
   getData = function () {
@@ -33,7 +34,7 @@ Immobilien.Results = (function() {
         for (var i = 0; i < xmlArray.length; i++) {
           //setText(xmlArray[i]);
           //data["Wohnung" + i] = immo;
-          data["Wohnung " + (i+1)] = getImmoData(xmlArray[i]); 
+          data[i] = getImmoData(xmlArray[i]); 
         }
         console.log(data);
   },

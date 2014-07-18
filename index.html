@@ -12,6 +12,7 @@
     <body>
         <div id="content"></div>
         <div id="results"></div>
+        <button class="scrollToTop btn btn-default">Zu den Sucheinstellungen</button>
         
 
         <script type="text/template" id="startscreen-tpl">
@@ -72,19 +73,21 @@
             
         </script>
         <script type="text/template" id="results-tpl">
-                <div id="Ergebnis"> 
+            <% _.each (Properties, function(Property) { %>
+                <div id="Property"> 
                     <div id="Startimage">
                         <img src="res/image/4696025_1.jpg" height="100%" width="100%"></img>
                     </div>
                     <div id="description">
-                        <p id="immo-headline"></p>
-                        <p id="immo-price"></p>
-                        <p id="immo-size"></p>
-                        <p id="immo-rooms"></p>
-                        <p id="immo-plz"> </p>
+                        <p id="immo-headline"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
+                        <p id="immo-price"> Preis: <%= Property.price %>€ </p>
+                        <p id="immo-size"> Wohnfläche: <%=Property.size%>qm </p>
+                        <p id="immo-rooms"> Zimmeranzahl: <%= Property.rooms %> </p>
+                        <p id="immo-plz"> <%= Property.plz %> <%= Property.city %> </p>
                     </div>
                 </div>
-                <button class="scrollToTop btn btn-default">Zu den Sucheinstellungen</button>
+                
+            <% }); %>
         </script>
         <script src="libs/jquery-2.0.3.min.js"></script>
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
