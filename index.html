@@ -76,7 +76,7 @@
             <% _.each (Properties, function(Property) { %>
                 <div id="Property"> 
                     <div id="Startimage">
-                        <img src="res/image/4696025_1.jpg" height="100%" width="100%"></img>
+                        <img src="res/image/<%= Property.id%>_1.jpg" height="100%" width="100%"></img>
                     </div>
                     <div id="description">
                         <p id="immo-headline"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>

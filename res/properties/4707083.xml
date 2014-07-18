@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<id></id> <!-- id des Objekts -->
+	<id>4707083</id> <!-- id des Objekts -->
 
 	<city>Bogen</city> <!-- Stadt -->
 	<zipcode>94327</zipcode> <!-- PLZ -->
