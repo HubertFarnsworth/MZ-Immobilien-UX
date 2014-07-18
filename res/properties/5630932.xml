@@ -9,7 +9,7 @@
 	<housenumber>14</housenumber> <!-- Hausnummer -->
 
 	<description>EG: Großzügige Diele mit Garderobe Offene hoch-und neuwertige Einbauküche (zur Ablöse, Preis nach Vereinbarung) Gäste WC, Abstellraum, großer Wohnen-Essen-Bereich mit Terasse nahtloser Übergang vom Wohnzimmer zu Terasse und Garten Große Terasse mit Süd-Ausrichtung Zusätzliche Vorratsräume vor dem Haus 1.OG: Hochwertiges Badezimmer mit Wanne und Dusche Breite Verglasung für viel natürliches Licht in Ihren Räumen Großzügige Räume mit sehr guter Möblierbarkeit 2.OG: Großzügige vielseitig nutzbare Galerie Große Dachterasse nach Süden Großes helles Schlafzimmer Hauswirtschaftsraum (Anschluss für Waschmachine, etc.)</description>  <!-- Fließtext vom Verkäufer -->
-	<number_of_rooms>4,5</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<number_of_rooms>4</number_of_rooms> <!-- Anzahl der Zimmer -->
 	<status>Neuwertig</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
 	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
 	<living_space>113</living_space> <!-- Wohnfläche -->

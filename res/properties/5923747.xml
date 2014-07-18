@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<id>5923747/id> <!-- id des Objekts -->
+	<id>5923747</id> <!-- id des Objekts -->
 
 	<city>Regensburg</city> <!-- Stadt -->
 	<zipcode>93051</zipcode> <!-- PLZ -->

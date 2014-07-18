@@ -3,7 +3,7 @@
 
 	<id>4699501</id> <!-- id des Objekts -->
 
-	<city>Maxhütte-Haidhof</city> <!-- Stadt -->
+	<city>Maxhuette-Haidhof</city> <!-- Stadt -->
 	<zipcode>93142</zipcode> <!-- PLZ -->
 	<streetname>Schillerstraße</streetname> <!-- Straße -->
 	<housenumber>24</housenumber> <!-- Hausnummer -->
