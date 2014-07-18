@@ -12,9 +12,11 @@ Immobilien.Results = (function() {
     var resultingHtml = resultsTemplate({Properties : data});
 
     $("#results").html(resultingHtml);
-    //$("#results").html(resultsTemplate);
 
-         
+    $(document).on("click", ".Property", function(event){
+      var PropertyID = event.target.id;
+      Immobilien.MainController.startDetail(PropertyID); 
+    });
 	},
 
   getData = function () {
@@ -67,8 +69,7 @@ Immobilien.Results = (function() {
 	},
 
 
-	loadXMLDoc = function (filename)
-        {
+	loadXMLDoc = function (filename) {
             if (window.XMLHttpRequest)
               {
               xhttp=new XMLHttpRequest();
@@ -80,7 +81,7 @@ Immobilien.Results = (function() {
             xhttp.open("GET",filename,false);
             xhttp.send();
             return xhttp.responseXML;
-    };
+  };
 
 	that.init = init;
 

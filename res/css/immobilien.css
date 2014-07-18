@@ -114,7 +114,7 @@
 	width: 20%; 
 }
 
-#Property {
+.Property {
 	background-color: #175573;
 	margin-left: 15%;
 	margin-right: 15%;
@@ -123,42 +123,43 @@
 	margin-bottom: 0.500%; 
 }
 
-#Startimage{
+.Startimage{
 	float: left; 
 	height: auto;
 	width: 200px; 
 	height: 150px;  
+	padding: 7px;
 }
 
-#description {
+.description {
 	float: left; 
 }
 
-#immo-headline, #immo-price {
+.immo-headline, .immo-price {
 	font-size: 22px; 
 	color: white; 
 	margin-left: 10%; 
 }
 
-#immo-headline{
+.immo-headline{
 	width: 100%; 
 	float: left;
 }
 
-#immo-price {
+.immo-price {
 	position: absolute;
     right: 16%;
     float: left;
 }
 
-#immo-size {
+.immo-size {
 	margin-left: 10%; 
 	font-size: 18px;
 	width: 100%; 
 	color: white;  
 }
 
-#immo-rooms, #immo-plz{
+.immo-rooms, .immo-plz{
 	margin-left: 10%; 
 	font-size: 18px;
 	width: 100%; 

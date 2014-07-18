@@ -69,25 +69,41 @@
                     </div>
                 </div>
                 <div id="map-canvas"></div>
-            </div>
-            
+            </div>        
         </script>
         <script type="text/template" id="results-tpl">
             <% _.each (Properties, function(Property) { %>
-                <div id="Property"> 
-                    <div id="Startimage">
-                        <img src="res/image/<%= Property.id%>_1.jpg" height="100%" width="100%"></img>
+                <div class="Property" id="<%= Property.id %>">
+                    <div class="Startimage" id="<%= Property.id %>">
+                        <img id="<%= Property.id %>" src="res/image/<%= Property.id%>_1.jpg" height="100%" width="100%"></img>
                     </div>
-                    <div id="description">
-                        <p id="immo-headline"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
-                        <p id="immo-price"> Preis: <%= Property.price %>€ </p>
-                        <p id="immo-size"> Wohnfläche: <%=Property.size%>qm </p>
-                        <p id="immo-rooms"> Zimmeranzahl: <%= Property.rooms %> </p>
-                        <p id="immo-plz"> <%= Property.plz %> <%= Property.city %> </p>
+                    <div class="description" id="<%= Property.id %>">
+                        <p class="immo-headline" id="<%= Property.id %>"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
+                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
+                        <p class="immo-size" id="<%= Property.id %>"> Wohnfläche: <%=Property.size%>qm </p>
+                        <p class="immo-rooms" id="<%= Property.id %>"> Zimmeranzahl: <%= Property.rooms %> </p>
+                        <p class="immo-plz" id="<%= Property.id %>"> <%= Property.plz %> <%= Property.city %> </p>
                     </div>
                 </div>
-                
             <% }); %>
+        </script> 
+        <script type="text/template" id="detail-tpl">
+            <div id="headline">
+                <h1 id="logo">
+                    Mittelbayerische Immobilien
+                </h1>
+            </div>    
+            <div id="navigation-buttons">
+                <button type="button" class="btn btn-default" id="gesuche-button">          Gesuche
+                </button>
+                <button type="button" class="btn btn-default" id="anbieten-button">         Anbieten
+                </button>
+                <button type="button" class="btn btn-default" id="merkliste-button">        Meine Merkliste
+                </button>
+            </div>
+            <div id="test">
+                <p id="test-Text"> </p>
+            </div>
         </script>
         <script src="libs/jquery-2.0.3.min.js"></script>
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
@@ -101,6 +117,7 @@
         <script src="src/MainController.js"></script>
         <script src="src/Startscreen.js"></script>
         <script src="src/Results.js"></script>
+        <script src="src/Detail.js"></script>
 
         <script>
                 Immobilien.init();
