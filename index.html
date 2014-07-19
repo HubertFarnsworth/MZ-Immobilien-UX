@@ -33,39 +33,39 @@
                 <div id="input">
                     <div id="text-input">
                         <p id="wo-label">Wo?</p>
-                        <input id="wo-input" class="inputClass" type="text" placeholder="Stadt auswählen">
+                        <input id="wo-input" class="inputClass userInput" type="text" placeholder="Stadt auswählen">
                         <p id="was-label">Was?</p>
-                        <input id="was-input" class="inputClass" type="text" placeholder="Immboilienart eingeben">
+                        <input id="was-input" class="inputClass userInput" type="text" placeholder="Immboilienart eingeben">
                     </div>
                     <div id="mieten-kaufen-select">
-                        <button type="button" class="btn btn-primary" id="Mieten-Button">Mieten</button>
-                        <button type="button" class="btn btn-default" id="Kaufen-Button">Kaufen</button>
+                        <button type="button" class="btn btn-primary userInputButton" id="Mieten-Button">Mieten</button>
+                        <button type="button" class="btn btn-default userInputButton" id="Kaufen-Button">Kaufen</button>
                     </div>
                     <div id="money-controls">
                         Kosten
                         <div id="moneyslider", class="slider"></div>
-                        <input id="money-lower-input" class="inputClass moneyInput" data-index="0" value="50€">
+                        <input id="money-lower-input" class="inputClass moneyInput sliderInput" data-index="0" value="50€">
                         <p class="inputlabel">bis</p>
-                        <input id="money-upper-input" class="inputClass moneyInput" data-index="1" value="400€">
+                        <input id="money-upper-input" class="inputClass moneyInput sliderInput" data-index="1" value="400€">
                     </div>
                     <div id="rooms-controls">
                         Anzahl der Zimmer
-                        <div id="roomsslider", class="slider-"></div>
-                        <input id="rooms-lower-input" class="inputClass roomsInput" data-index="0" value="1">
+                        <div id="roomsslider", class="slider"></div>
+                        <input id="rooms-lower-input" class="inputClass roomsInput sliderInput" data-index="0" value="1">
                         <p class="inputlabel">bis</p>
-                        <input id="rooms-upper-input" class="inputClass roomsInput" data-index="1" value="4">
+                        <input id="rooms-upper-input" class="inputClass roomsInput sliderInput" data-index="1" value="4">
                     </div>
                     <div id="size-controls">
                         Wohnfläche
-                        <div id="sizeslider", class="slider-"></div>
-                        <input id="size-lower-input" class="inputClass sizeInput" data-index="0" value="10m²">
+                        <div id="sizeslider", class="slider"></div>
+                        <input id="size-lower-input" class="inputClass sizeInput sliderInput" data-index="0" value="10m²">
                         <p class="inputlabel">bis</p>
-                        <input id="size-upper-input" class="inputClass sizeInput" data-index="1" value="100m²">
+                        <input id="size-upper-input" class="inputClass sizeInput sliderInput" data-index="1" value="100m²">
                     </div>
-                    <input type="checkbox" class="myClass" value="yes" id="checkbox-provision" name="answer"/> <label for="checkbox-provision">Provisionsfrei</label>
+                    <input type="checkbox" class="myClass userInput" value="yes" id="checkbox-provision" name="answer"/> <label for="checkbox-provision">Provisionsfrei</label>
                     <div id="date-controls">
-                        <p>Einzugsdatum frühestens: <input type="text" id="datepicker-min" placeholder="Datum auswählen"></p>
-                        <p>Einzugsdatum spätestens: <input type="text" id="datepicker-max" placeholder="Datum auswählen"></p>
+                        <p>Einzugsdatum frühestens: <input type="text" class="userInput" id="datepicker-min" placeholder="Datum auswählen"></p>
+                        <p>Einzugsdatum spätestens: <input type="text" class="userInput" id="datepicker-max" placeholder="Datum auswählen"></p>
                     </div>
                 </div>
                 <div id="map-canvas"></div>
