@@ -24,7 +24,7 @@ Immobilien.Startscreen = (function() {
         setupTopButtons();
         setupCheckbox();
         setupScrollButtons(); 
-        
+        setupInputListener();
 	},
 
     setupScrollButtons = function () {
@@ -363,7 +363,6 @@ Immobilien.Startscreen = (function() {
                         //reset input-field to old value
                         $(inputID).val(oldValue);
                         //tell user
-                        console.log(value, $(oppositeInputID).val());
                         alert("Fehlerhafte Eingabe! Der Wert darf nicht unter dem minimal-Wert liegen.");
                     }
                 }
@@ -449,8 +448,26 @@ Immobilien.Startscreen = (function() {
                 });
             }
         });
+    },
 
-        
+    setupInputListener = function() {
+        //sets up listeners for all input-fields
+
+        $(".userInput").change( function() {
+            console.log("input element changed");
+        });
+
+        $(".slider").slider({
+            change: function(event, ui) {
+                /*
+                * problem: this function is called whenever
+                * the user clicks on Mieten or Kaufen
+                */
+                console.log("slider changed!");
+            }
+        });
+
+        console.log("listeners are ready!");
     };
 
 	that.init = init;
