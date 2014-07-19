@@ -13,11 +13,11 @@
 	<status>Gepflegt</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
 	<size_of_property>550</size_of_property> <!-- Grundstücksfläche -->
 	<living_space>130</living_space> <!-- Wohnfläche -->
-	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
 	<price>1380</price> <!-- Kaufpreis -->
 	<extra_cost></extra_cost> <!-- Nebenkosten -->
-	<caution>4200</caution> <!-- Kaution -->
+	<bail>4200</bail> <!-- Kaution -->
 	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent></rent> <!--vermietet? y oder n -->

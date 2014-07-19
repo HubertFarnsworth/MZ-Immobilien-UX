@@ -13,11 +13,11 @@
 	<status>Neuwertig</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
 	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
 	<living_space>113</living_space> <!-- Wohnfläche -->
-	<provision>0</provision> <!-- Provisionspreis, 0 bis n -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
 	<price>890</price> <!-- Kaufpreis -->
 	<extra_cost>286</extra_cost> <!-- Nebenkosten -->
-	<caution>1890</caution> <!-- Kaution -->
+	<bail>1890</bail> <!-- Kaution -->
 	<floors>3</floors> <!-- Anzahl der Etagen -->
 	<year_of_construction>2012</year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
