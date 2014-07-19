@@ -20,6 +20,7 @@ Immobilien.Results = (function() {
 
     $( ".Property" ).mouseenter(function() {
       $(this).addClass("hover");
+      $(this).css("cursor", "pointer");
     });
 
     $( ".Property" ).mouseleave(function() {
