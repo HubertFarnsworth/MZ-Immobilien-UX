@@ -423,7 +423,7 @@ Immobilien.Startscreen = (function() {
 	},
 
     setupCheckbox = function () {
-        $("#checkbox-provision").prettyCheckable();
+        $("#checkbox-commission").prettyCheckable();
     },
 
     placeMarkersOnMap = function(address) {
@@ -455,6 +455,7 @@ Immobilien.Startscreen = (function() {
 
         $(".userInput").change( function() {
             console.log("input element changed");
+            getInputValues();
         });
 
         $(".slider").slider({
@@ -464,10 +465,51 @@ Immobilien.Startscreen = (function() {
                 * the user clicks on Mieten or Kaufen
                 */
                 console.log("slider changed!");
+                getInputValues();
             }
         });
 
         console.log("listeners are ready!");
+    },
+
+    getInputValues = function() {
+        //get input values from input fields
+
+        var city = null,
+        type = null,
+        rent = null,
+        moneyMin = null,
+        moneyMax = null,
+        roomsMin = null,
+        roomsMax = null,
+        sizeMin = null,
+        sizeMax = null,
+        commission = null,
+        dateMin = null,
+        dateMax = null;
+
+        city = $("#wo-input").val();
+        type = $("#was-input").val();
+        
+        /*
+        * rent contains true or false:
+        * checks if Mieten-Button contains "btn-primary" in classes
+        * if yes, button is active and user searches to rent
+        * otherwise, user searches to buy
+        */
+        rent = ($("#Mieten-Button").attr('class').indexOf("btn-primary") > 0);
+        moneyMin = $("#money-lower-input").val();
+        moneyMax = $("#money-upper-input").val();
+        roomsMin = $("#rooms-lower-input").val();
+        roomsMax = $("#rooms-upper-input").val();
+        sizeMin = $("#size-lower-input").val();
+        sizeMax = $("#size-upper-input").val();
+        commission = $("#checkbox-commission").is(':checked'); //checkbox; true or false
+        dateMin = $("#datepicker-min").val();
+        dateMax = $("#datepicker-max").val();
+
+        console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
+        
     };
 
 	that.init = init;
