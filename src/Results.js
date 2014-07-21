@@ -32,7 +32,17 @@ Immobilien.Results = (function() {
       $(this).removeClass("hover");
     });
 
+    setupScrollButtons(); 
+
 	},
+
+  setupScrollButtons = function () {
+        //Click event to scroll to top
+            $('.scrollToTop').click(function(){
+                $('html, body').animate({scrollTop : 0},800);
+                return false;
+            });
+    },
 
   getData = function () {
         var xmlArray = new Array(); 

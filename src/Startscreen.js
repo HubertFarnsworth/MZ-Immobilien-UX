@@ -18,29 +18,9 @@ Immobilien.Startscreen = (function() {
 		setupAutocompleteWas(); 
         setupTopButtons();
         setupCheckbox();
-        setupScrollButtons(); 
         setupInputListener();
         loadRessources(); 
 	},
-
-    setupScrollButtons = function () {
-        $(document).ready(function(){
-        //Check to see if the window is top if not then display button
-            $(window).scroll(function(){
-                if ($(this).scrollTop() > 100) {
-                    $('.scrollToTop').fadeIn();
-                } else {
-                    $('.scrollToTop').fadeOut();
-                }
-            });
-    
-        //Click event to scroll to top
-            $('.scrollToTop').click(function(){
-                $('html, body').animate({scrollTop : 0},800);
-                return false;
-            });
-        });
-    },
 
 	//Funktionen für Mieten/Kaufen-Buttons werden gesetzt
 	createMietenKaufenButton = function () {
@@ -605,7 +585,7 @@ Immobilien.Startscreen = (function() {
     immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
     immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
     immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
-    
+
 
 
     return immo; 
