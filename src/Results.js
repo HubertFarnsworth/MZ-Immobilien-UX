@@ -4,7 +4,10 @@ Immobilien.Results = (function() {
 
 	init = function() {
 		console.log("Results.js aufgerufen");
-    getData(); 
+    //getData();
+
+    data = Immobilien.Startscreen.getRessources();
+    console.log(data); 
 
 		var resultsTemplate = _.template($("#results-tpl").html());
     var resultingHtml = resultsTemplate({Properties : data});

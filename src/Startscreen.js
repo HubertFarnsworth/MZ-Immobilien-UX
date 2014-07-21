@@ -3,6 +3,7 @@ Immobilien.Startscreen = (function() {
     globalMap = null,
     geocoder = null,
     enteredValues = new Array(); 
+    ressources = new Array (); 
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -19,6 +20,7 @@ Immobilien.Startscreen = (function() {
         setupCheckbox();
         setupScrollButtons(); 
         setupInputListener();
+        loadRessources(); 
 	},
 
     setupScrollButtons = function () {
@@ -523,17 +525,73 @@ Immobilien.Startscreen = (function() {
         dateMax = $("#datepicker-max").val();
         enteredValues["dateMax"] = dateMax;
 
+        Immobilien.MainController.startResults();
+
         console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
         console.log(enteredValues);
-        
     },
 
     getEnteredData = function () {
         return enteredValues; 
-    }
+    },
+
+    //load XML-Files from res-folder
+    loadRessources = function() {
+        var xmlArray = new Array(); 
+        xmlArray[0] = loadXMLDoc("res/properties/4696025.xml");
+        xmlArray[1] = loadXMLDoc("res/properties/4699501.xml");
+        xmlArray[2] = loadXMLDoc("res/properties/4699604.xml");
+        xmlArray[3] = loadXMLDoc("res/properties/4700505.xml");
+        xmlArray[4] = loadXMLDoc("res/properties/4703070.xml");
+        xmlArray[5] = loadXMLDoc("res/properties/4704162.xml");
+        xmlArray[6] = loadXMLDoc("res/properties/4707083.xml");
+        xmlArray[7] = loadXMLDoc("res/properties/5123397.xml");
+        xmlArray[8] = loadXMLDoc("res/properties/5135982.xml");
+        xmlArray[9] = loadXMLDoc("res/properties/5630932.xml");
+        xmlArray[10] = loadXMLDoc("res/properties/5923747.xml");
+
+        for (var i = 0; i < xmlArray.length; i++) {
+          ressources[i] = getImmoData(xmlArray[i]); 
+        }
+    },
+
+    //loads one xml file 
+    loadXMLDoc = function (filename) {
+            if (window.XMLHttpRequest)
+              {
+              xhttp=new XMLHttpRequest();
+              }
+            else // code for IE5 and IE6
+              {
+              xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+            xhttp.open("GET",filename,false);
+            xhttp.send();
+            return xhttp.responseXML;
+    },
+
+    //gets the data from xml file
+    getImmoData = function (xml) {
+    var immo = new Array();
+
+    immo ["id"] = xml.getElementsByTagName("id")[0].innerHTML;
+    immo ["rooms"] = xml.getElementsByTagName("number_of_rooms")[0].innerHTML; 
+    immo ["type"] =  xml.getElementsByTagName("type")[0].innerHTML; 
+    immo ["city"] =  xml.getElementsByTagName("city")[0].innerHTML;
+    immo ["plz"] =  xml.getElementsByTagName("zipcode")[0].innerHTML;
+    immo ["size"] =  xml.getElementsByTagName("living_space")[0].innerHTML;
+    immo ["price"] =  xml.getElementsByTagName("price")[0].innerHTML;
+
+    return immo; 
+    },
+
+    getRessources = function() {
+        return ressources; 
+    };
 
 	that.init = init;
-    that.getEnteredData = getEnteredData; 
+    that.getEnteredData = getEnteredData;
+    that.getRessources = getRessources;  
 
 	return that;
 }());

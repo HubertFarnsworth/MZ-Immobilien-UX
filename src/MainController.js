@@ -6,11 +6,16 @@ Immobilien.MainController = (function() {
 		console.log("MainController.js aufgerufen");
 
 		Startscreen = Immobilien.Startscreen;
-		Results = Immobilien.Results;
+		//Results = Immobilien.Results;
 		
 		Startscreen.init(); 
-		Results.init(); 
+		//Results.init(); 
 	},
+
+	startResults = function() {
+		Results = Immobilien.Results;
+		Results.init(); 
+	}
 
 	startDetail = function(id)  {
 		Detail = Immobilien.Detail; 
@@ -19,6 +24,7 @@ Immobilien.MainController = (function() {
 
 	that.init = init;
 	that.startDetail = startDetail;
+	that.startResults = startResults; 
 
 	return that;
 }());
