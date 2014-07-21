@@ -205,7 +205,7 @@
 
 #add-merkliste{
 	position: absolute;
-	right: 16%; 
+	right: 15.1%; 
 }
 
 #immo-headline, #add-merkliste {
@@ -226,7 +226,7 @@
 #map-content {
 	padding: 1%; 
 	background-color: white; 
-	height: 300px; 
+	height: 0px; 
 	margin-top: 5%; 
 }
 
