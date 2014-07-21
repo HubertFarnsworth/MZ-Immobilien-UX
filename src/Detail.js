@@ -24,10 +24,9 @@ Immobilien.Detail = (function() {
 		//Sets the Text 
 		informations = data; 
 		setText();
-		setupTopButtons(); 
 
 		//Zurück zum Hauptmenü
-	    $(document).on("click", "#backToStart", function(event){
+	    $(document).on("click", "#backToSearch", function(event){
       		Immobilien.MainController.init(); 
     	});
 
@@ -109,38 +108,7 @@ Immobilien.Detail = (function() {
 
 	setText = function () {
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
-	},
-
-	//Setup der Navigationsbuttons
-    setupTopButtons = function () {
-        $("#gesuche-button").attr('class', 'btn btn-primary');
-        $("#anbieten-button").attr('class', 'btn btn-default');
-        $("#merkliste-button").attr('class', 'btn btn-default');
-
-        $("#gesuche-button").click(function() {
-            //user clicks on gesuche-button
-            //give user feedback (change button states)
-            $("#gesuche-button").attr('class', 'btn btn-primary');
-            $("#anbieten-button").attr('class', 'btn btn-default');
-            $("#merkliste-button").attr('class', 'btn btn-default');
-        });
-
-        $("#anbieten-button").click(function() {
-            //user clicks on anbieten-button
-            //give user feedback (change button states)
-            $("#gesuche-button").attr('class', 'btn btn-default');
-            $("#anbieten-button").attr('class', 'btn btn-primary');
-            $("#merkliste-button").attr('class', 'btn btn-default');
-        });
-
-        $("#merkliste-button").click(function() {
-            //user clicks on merkliste-button
-            //give user feedback (change button states)
-            $("#gesuche-button").attr('class', 'btn btn-default');
-            $("#anbieten-button").attr('class', 'btn btn-default');
-            $("#merkliste-button").attr('class', 'btn btn-primary');
-        });
-    };
+	};
 
 	that.init = init;
 	that.startDetail = startDetail; 
