@@ -2,8 +2,10 @@ Immobilien.Detail = (function() {
 	var that = {},
 	informations = new Array (), 
 	map = false, 
-
-
+    images = true, 
+    data = false, 
+    des = false,
+    contact = false, 
 
 	init = function() {
 	console.log("Detail.js aufgerufen");	
@@ -24,6 +26,7 @@ Immobilien.Detail = (function() {
 		setText();
 		setupTopButtons(); 
 
+		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToStart", function(event){
       		Immobilien.MainController.init(); 
     	});
@@ -42,6 +45,66 @@ Immobilien.Detail = (function() {
     			map = true;
     		}
     	});
+
+        //Minimieren bzw. maximieren der Bildergalerie
+        $(document).on("click", "#images-size-button", function(event){
+            if (images === true) {
+                $("#images-content").height(0);
+                $("#images-size-button").removeClass("glyphicon-minus");
+                $("#images-size-button").addClass("glyphicon-plus");
+                images = false; 
+            } else {
+                $("#images-content").height(300);
+                $("#images-size-button").removeClass("glyphicon-plus");
+                $("#images-size-button").addClass("glyphicon-minus");
+                images = true;
+            }
+        });
+
+        //Minimieren bzw. maximieren der Objektdaten
+        $(document).on("click", "#data-size-button", function(event){
+            if (data === true) {
+                $("#data-content").height(0);
+                $("#data-size-button").removeClass("glyphicon-minus");
+                $("#data-size-button").addClass("glyphicon-plus");
+                data = false; 
+            } else {
+                $("#data-content").height(300);
+                $("#data-size-button").removeClass("glyphicon-plus");
+                $("#data-size-button").addClass("glyphicon-minus");
+                data = true;
+            }
+        });
+
+        //Minimieren bzw. maximieren der Objektbeschreibungen
+        $(document).on("click", "#des-size-button", function(event){
+            if (des === true) {
+                $("#des-content").height(0);
+                $("#des-size-button").removeClass("glyphicon-minus");
+                $("#des-size-button").addClass("glyphicon-plus");
+                des = false; 
+            } else {
+                $("#des-content").height(300);
+                $("#des-size-button").removeClass("glyphicon-plus");
+                $("#des-size-button").addClass("glyphicon-minus");
+                des = true;
+            }
+        });
+
+        //Minimieren bzw. maximieren des Kontaktformulars
+        $(document).on("click", "#contact-size-button", function(event){
+            if (contact === true) {
+                $("#contact-content").height(0);
+                $("#contact-size-button").removeClass("glyphicon-minus");
+                $("#contact-size-button").addClass("glyphicon-plus");
+                contact = false; 
+            } else {
+                $("#contact-content").height(300);
+                $("#contact-size-button").removeClass("glyphicon-plus");
+                $("#contact-size-button").addClass("glyphicon-minus");
+                contact = true;
+            }
+        });
 	},
 
 	setText = function () {

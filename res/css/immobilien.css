@@ -183,7 +183,7 @@
     background-color: #F7AD37;
 }
 
-#detail-head, #map, #images, #immo-data, #immo-des, #kontakt{
+#detail-head, #map, #images, #immo-data, #immo-des, #contakt{
 	background-color: #175573;
 	color: white; 
 	margin: 0;
@@ -196,7 +196,6 @@
 
 #detail-head {
 	height: 50px; 
-
 }
 
 #immo-headline{
@@ -213,20 +212,29 @@
 	float: left;
 }
 
-#map-text, #map-size {
+#map-text, #map-size, #images-text, #images-size, #data-text, #data-size, #des-text, #des-size, #contact-text, #contact-size {
 	overflow: auto;
 	float: left;
 }
 
-#map-size {
+#map-size, #images-size, #data-size, #des-size, #contact-size  {
 	position: absolute;
 	right: 16%; 
 }
 
-#map-content {
+#map-content, #images-content, #data-content, #des-content, #contact-content{
 	padding: 1%; 
 	background-color: white; 
 	height: 0px; 
 	margin-top: 5%; 
 }
+
+#images-content {
+	height: 300px; 
+}
+
+#data-size, #map-size, #images-size, #des-size, #contact-size {
+	overflow: hidden;
+}
+
 

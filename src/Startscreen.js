@@ -8,14 +8,7 @@ Immobilien.Startscreen = (function() {
 
         startScreenTemplate = _.template($("#startscreen-tpl").html());
         $("#content").html(startScreenTemplate);
-
-
-        /*var xmlDoc=loadXMLDoc("res/properties/4696025.xml");
-        var x = xmlDoc.getElementsByTagName("city")[0].innerHTML;
-        console.log(x);*/
-
-        //$("#input").css('background-color', '#F23242');
-
+        
 		setupGoogleComponents();
 		createMietenKaufenButton();
 		setupDatepicker(); 
