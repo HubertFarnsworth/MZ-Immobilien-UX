@@ -1,8 +1,6 @@
 Immobilien.Results = (function() {
 	var that = {},
   data = new Array(),
-   
-
 
 	init = function() {
 		console.log("Results.js aufgerufen");
@@ -15,7 +13,11 @@ Immobilien.Results = (function() {
 
     $(document).on("click", ".Property", function(event){
       var PropertyID = event.target.id;
-      Immobilien.MainController.startDetail(PropertyID); 
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].id === PropertyID) {
+          Immobilien.MainController.startDetail(data[i]);
+        }
+      }
     });
 
     $( ".Property" ).mouseenter(function() {
@@ -44,27 +46,11 @@ Immobilien.Results = (function() {
         xmlArray[10] = loadXMLDoc("res/properties/5923747.xml");
 
         for (var i = 0; i < xmlArray.length; i++) {
-          //setText(xmlArray[i]);
-          //data["Wohnung" + i] = immo;
           data[i] = getImmoData(xmlArray[i]); 
         }
-        console.log(data);
   },
 
 	getImmoData = function (xml) {
-		/*var rooms = xml.getElementsByTagName("number_of_rooms")[0].innerHTML;
-    var type = xml.getElementsByTagName("type")[0].innerHTML;
-    var city = xml.getElementsByTagName("city")[0].innerHTML;
-    var plz = xml.getElementsByTagName("zipcode")[0].innerHTML;
-    var size = xml.getElementsByTagName("living_space")[0].innerHTML;
-    var price = xml.getElementsByTagName("price")[0].innerHTML;
-
-    document.getElementById("immo-headline").innerHTML = rooms + " Zimmer " + type;
-		document.getElementById("immo-plz").innerHTML = plz + " " + city;
-		document.getElementById("immo-size").innerHTML = "Wohnfläche: " + size + " qm"; 
-		document.getElementById("immo-price").innerHTML = "Preis: " + price + " €";
-		document.getElementById("immo-rooms").innerHTML = "Zimmeranzahl: " + rooms;*/
-
     var immo = new Array();
 
     immo ["id"] = xml.getElementsByTagName("id")[0].innerHTML;

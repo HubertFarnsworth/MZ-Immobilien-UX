@@ -12,8 +12,6 @@
     <body>
         <div id="content"></div>
         <div id="results"></div>
-        <button class="scrollToTop btn btn-default">Zu den Sucheinstellungen</button>
-        
 
         <script type="text/template" id="startscreen-tpl">
             <div id="headline">
@@ -86,8 +84,9 @@
                     </div>
                 </div>
             <% }); %>
+            <button class="scrollToTop btn btn-default">Zu den Sucheinstellungen</button>
         </script> 
-        <script type="text/template" id="detail-tpl">
+        <script type="text/template" id="detail-tpl-top">
             <div id="headline">
                 <h1 id="logo">
                     Mittelbayerische Immobilien
@@ -101,9 +100,36 @@
                 <button type="button" class="btn btn-default" id="merkliste-button">        Meine Merkliste
                 </button>
             </div>
-            <div id="test">
-                <p id="test-Text"> </p>
-                <button class="btn btn-default" id="backToStart">Zurück</button>
+            <div id="detail-head">
+                <p id="immo-headline"> </p>
+                <button class="btn btn-default" id="add-merkliste"> Zur Merkliste hinzufügen</button>
+            </div>
+        </script>
+        <script type="text/template" id="detail-tpl-bot">
+            <div id="informations">
+                <div id="map">
+                    <div id="map-text">
+                        <p >Karte</p>
+                    </div>
+                    <div id="map-size">
+                        <button  class="glyphicon glyphicon-plus btn btn-default"> 
+                        </button>
+                    </div>
+                    <div id="map-content">
+                    </div>
+                </div>
+                <div id="images">
+                    <p>Bilder</p>
+                </div>
+                <div id="immo-data">
+                    <p>Objektdaten</p>
+                </div>
+                <div id="immo-des">
+                    <p>Objektbeschreibung</p>
+                </div>
+                <div id="kontakt">
+                    <p>Kontakt</p>
+                </div>
             </div>
         </script>
         <script src="libs/jquery-2.0.3.min.js"></script>

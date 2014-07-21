@@ -1,21 +1,33 @@
 Immobilien.Detail = (function() {
 	var that = {},
+	informations = new Array (), 
 
 
 	init = function() {
-	console.log("Detail.js aufgerufen");
-		
+	console.log("Detail.js aufgerufen");	
 	},
 
-	startDetail = function (id) {
-		var detailTemplate = _.template($("#detail-tpl").html());
-		$("#content").html(detailTemplate);
+	startDetail = function (data) {
+		//Scolls to 0,0
+		window.scrollTo(0, 0);
 
-	    document.getElementById("test-Text").innerHTML = id;
+		//Templates
+		var detailTemplateTop = _.template($("#detail-tpl-top").html());
+		var detailTemplateBot = _.template($("#detail-tpl-bot").html());
+		$("#content").html(detailTemplateTop);
+		$("#results").html(detailTemplateBot);
+
+		//Sets the Text 
+		informations = data; 
+		setText();
 
 	    $(document).on("click", "#backToStart", function(event){
       		Immobilien.MainController.init(); 
     	});
+	},
+
+	setText = function () {
+		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
 	};
 
 	that.init = init;

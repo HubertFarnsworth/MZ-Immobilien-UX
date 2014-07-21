@@ -1,4 +1,4 @@
-#logo {
+#logo  {
 	background-color: #175573;
 	color: white; 
 	font-family: serif;
@@ -181,5 +181,52 @@
 
 .hover{
     background-color: #F7AD37;
+}
+
+#detail-head, #map, #images, #immo-data, #immo-des, #kontakt{
+	background-color: #175573;
+	color: white; 
+	margin: 0;
+	margin-top: 1%; 
+	margin-right: 15%;
+	margin-left: 15%;  
+	font-size: 20px;
+	padding: 0.5%; 
+}
+
+#detail-head {
+	height: 50px; 
+
+}
+
+#immo-headline{
+	text-decoration: underline;
+}
+
+#add-merkliste{
+	position: absolute;
+	right: 16%; 
+}
+
+#immo-headline, #add-merkliste {
+	overflow: auto;
+	float: left;
+}
+
+#map-text, #map-size {
+	overflow: auto;
+	float: left;
+}
+
+#map-size {
+	position: absolute;
+	right: 16%; 
+}
+
+#map-content {
+	padding: 1%; 
+	background-color: white; 
+	height: 300px; 
+	margin-top: 5%; 
 }
 
