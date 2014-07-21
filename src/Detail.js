@@ -66,11 +66,13 @@ Immobilien.Detail = (function() {
                 $("#data-content").height(0);
                 $("#data-size-button").removeClass("glyphicon-minus");
                 $("#data-size-button").addClass("glyphicon-plus");
+                $("#data-content-text").css({"visibility":"hidden"});
                 data = false; 
             } else {
                 $("#data-content").height(300);
                 $("#data-size-button").removeClass("glyphicon-plus");
                 $("#data-size-button").addClass("glyphicon-minus");
+                $("#data-content-text").css({"visibility":"visible"});
                 data = true;
             }
         });
@@ -81,11 +83,13 @@ Immobilien.Detail = (function() {
                 $("#des-content").height(0);
                 $("#des-size-button").removeClass("glyphicon-minus");
                 $("#des-size-button").addClass("glyphicon-plus");
+                $("#des-content-text").css({"visibility":"hidden"});
                 des = false; 
             } else {
                 $("#des-content").height(300);
                 $("#des-size-button").removeClass("glyphicon-plus");
                 $("#des-size-button").addClass("glyphicon-minus");
+                $("#des-content-text").css({"visibility":"visible"});
                 des = true;
             }
         });
@@ -107,7 +111,10 @@ Immobilien.Detail = (function() {
 	},
 
 	setText = function () {
+        console.log(informations);
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
+        document.getElementById("des-content-text").innerHTML = informations.description;
+        document.getElementById("data-content-text").innerHTML = informations.streetname + " " + informations.housenumber;
 	};
 
 	that.init = init;

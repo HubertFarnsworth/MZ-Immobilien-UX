@@ -581,6 +581,32 @@ Immobilien.Startscreen = (function() {
     immo ["plz"] =  xml.getElementsByTagName("zipcode")[0].innerHTML;
     immo ["size"] =  xml.getElementsByTagName("living_space")[0].innerHTML;
     immo ["price"] =  xml.getElementsByTagName("price")[0].innerHTML;
+    immo ["description"] = xml.getElementsByTagName("description")[0].innerHTML;
+    immo ["streetname"] = xml.getElementsByTagName("streetname")[0].innerHTML;
+    immo ["housenumber"] = xml.getElementsByTagName("housenumber")[0].innerHTML;
+    immo ["status"] = xml.getElementsByTagName("status")[0].innerHTML;
+    immo ["size_of_property"] = xml.getElementsByTagName("size_of_property")[0].innerHTML;
+    immo ["living_space"] = xml.getElementsByTagName("living_space")[0].innerHTML;
+    immo ["commission"] = xml.getElementsByTagName("commission")[0].innerHTML;
+    immo ["buy_or_rent"] = xml.getElementsByTagName("buy_or_rent")[0].innerHTML;
+    immo ["extra_cost"] = xml.getElementsByTagName("extra_cost")[0].innerHTML;
+    immo ["bail"] = xml.getElementsByTagName("bail")[0].innerHTML;
+    immo ["floors"] = xml.getElementsByTagName("floors")[0].innerHTML;
+    immo ["year_of_construction"] = xml.getElementsByTagName("year_of_construction")[0].innerHTML;
+    immo ["heatingtype"] = xml.getElementsByTagName("heatingtype")[0].innerHTML;
+    immo ["rent"] = xml.getElementsByTagName("rent")[0].innerHTML;
+    immo ["vacant_from"] = xml.getElementsByTagName("vacant_from")[0].innerHTML;
+    immo ["extra"] = xml.getElementsByTagName("extra")[0].innerHTML;
+    immo ["cellar"] = xml.getElementsByTagName("cellar")[0].innerHTML;
+    immo ["built_in_kitchen"] = xml.getElementsByTagName("built_in_kitchen")[0].innerHTML;
+    immo ["email"] = xml.getElementsByTagName("email")[0].innerHTML;
+    immo ["telephone"] = xml.getElementsByTagName("telephone")[0].innerHTML;
+    immo ["parking_space"] = xml.getElementsByTagName("parking_space")[0].innerHTML;
+    immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
+    immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
+    immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
+    
+
 
     return immo; 
     },

@@ -237,4 +237,9 @@
 	overflow: hidden;
 }
 
+#des-content-text, #data-content-text {
+	visibility: hidden; 
+	color: black; 
+}
+
 

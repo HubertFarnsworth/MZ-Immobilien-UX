@@ -18,6 +18,7 @@
 	<price>100000</price> <!-- Kaufpreis -->
 	<extra_cost></extra_cost> <!-- Nebenkosten -->
 	<bail></bail> <!-- Kaution -->
+	<floors>3</floors> <!-- Anzahl der Etagen -->
 	<year_of_construction></year_of_construction> <!-- Jahr des Baus -->
 	<heatingtype>Öl</heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent></rent> <!--vermietet? y oder n -->
