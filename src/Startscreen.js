@@ -2,6 +2,7 @@ Immobilien.Startscreen = (function() {
 	var that = {},
     globalMap = null,
     geocoder = null,
+    enteredValues = new Array(); 
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -467,7 +468,6 @@ Immobilien.Startscreen = (function() {
 
     getInputValues = function() {
         //get input values from input fields
-
         var city = null,
         type = null,
         rent = null,
@@ -482,7 +482,10 @@ Immobilien.Startscreen = (function() {
         dateMax = null;
 
         city = $("#wo-input").val();
+        enteredValues["city"] = city;
+
         type = $("#was-input").val();
+        enteredValues["type"] = type;
         
         /*
         * rent contains true or false:
@@ -491,21 +494,46 @@ Immobilien.Startscreen = (function() {
         * otherwise, user searches to buy
         */
         rent = ($("#Mieten-Button").attr('class').indexOf("btn-primary") > 0);
+        enteredValues["rent"] = rent;
+
         moneyMin = $("#money-lower-input").val();
+        enteredValues["moneyMin"] = moneyMin;
+
         moneyMax = $("#money-upper-input").val();
+        enteredValues["moneyMax"] = moneyMax;
+
         roomsMin = $("#rooms-lower-input").val();
+        enteredValues["roomsMin"] = roomsMin;
+
         roomsMax = $("#rooms-upper-input").val();
+        enteredValues["roomsMax"] = roomsMax;
+
         sizeMin = $("#size-lower-input").val();
+        enteredValues["sizeMin"] = sizeMin;
+
         sizeMax = $("#size-upper-input").val();
+        enteredValues["sizeMax"] = sizeMax;
+
         commission = $("#checkbox-commission").is(':checked'); //checkbox; true or false
+        enteredValues["comission"] = commission;
+
         dateMin = $("#datepicker-min").val();
+        enteredValues["dateMin"] = dateMin;
+
         dateMax = $("#datepicker-max").val();
+        enteredValues["dateMax"] = dateMax;
 
         console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
+        console.log(enteredValues);
         
-    };
+    },
+
+    getEnteredData = function () {
+        return enteredValues; 
+    }
 
 	that.init = init;
+    that.getEnteredData = getEnteredData; 
 
 	return that;
 }());
