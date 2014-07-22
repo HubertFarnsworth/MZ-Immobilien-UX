@@ -8,6 +8,8 @@ Immobilien.Detail = (function() {
     des = false,
     contact = false,
     globalMap = null,
+    latitude = null,
+    longitude = null,
 
 	init = function() {
 	   console.log("Detail.js aufgerufen");	
@@ -130,46 +132,27 @@ Immobilien.Detail = (function() {
 
         placeMarkersOnMap(address);
 
-        console.log(getGeoData(address));
-        var locationData = getGeoData(address);
-        var lat = locationData["latitude"];
-        var lng = locationData["longitude"];
-
-        console.log(lat, lng);
+        setGeoData(address);
 
         var mapOptions = {
-            center: new google.maps.LatLng(lat, lng),
-            zoom: 12,
+            center: new google.maps.LatLng(latitude, longitude),
+            zoom: 15,
         };
 
         globalMap = new google.maps.Map(document.getElementById("map-content"),
                 mapOptions);
     },
 
-    getGeoData = function (address) {
+    setGeoData = function (address) {
         geocoder = new google.maps.Geocoder();
-
-        var latitude, longitude;
-        var latlng = new Array();
 
         geocoder.geocode( { 'address': address}, function(results, status) {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 latitude = results[0].geometry.location.lat();
                 longitude = results[0].geometry.location.lng();
-
-                console.log(latitude, longitude);
-
-                
-                latlng["0"] = latitude;
-                latlng["1"] = longitude;
-
-                
             }
         });
-
-        console.log(latlng);
-        return latlng;
     },
 
     placeMarkersOnMap = function(address) {
