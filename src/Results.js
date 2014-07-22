@@ -41,7 +41,11 @@ Immobilien.Results = (function() {
 
   setupScrollButtons = function () {
     $(".scrollToResults").css({"visibility":"visible"});
-    $(".scrollToResults").text(numberOfResults + " Treffer");
+    if (numberOfResults === 0) {
+      $(".scrollToResults").text(numberOfResults + " Treffer gefunden");
+    } else {
+      $(".scrollToResults").text(numberOfResults + " Treffer anzeigen");
+    }
         //Click event to scroll to top
             $('.scrollToTop').click(function(){
                 $('html, body').animate({scrollTop : 0},800);

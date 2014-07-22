@@ -167,11 +167,12 @@
 }
 
 .scrollToResults{
-	margin-left: 90%;
+	margin-left: 84%;
 	margin-top: 1%; 
 	float: left; 
 	margin-bottom: 2%; 
 	visibility: hidden;
+	overflow: hidden;
 }
 
 .scrollToTop{
