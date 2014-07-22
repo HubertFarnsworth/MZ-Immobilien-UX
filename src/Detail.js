@@ -12,6 +12,8 @@ Immobilien.Detail = (function() {
 	},
 
 	startDetail = function (data) {
+        console.log("detail started");
+        //setupMap();
 		//Scolls to 0,0
 		window.scrollTo(0, 0);
 

@@ -468,7 +468,6 @@ Immobilien.Startscreen = (function() {
 
         type = $("#was-input").val();
         enteredValues["type"] = type;
-        
         /*
         * rent contains true or false:
         * checks if Mieten-Button contains "btn-primary" in classes
@@ -478,7 +477,7 @@ Immobilien.Startscreen = (function() {
         rent = ($("#Mieten-Button").attr('class').indexOf("btn-primary") > 0);
         enteredValues["rent"] = rent;
 
-        moneyMin = $("#money-lower-input").val();
+        moneyMin = parseInt($("#money-lower-input").val());
         enteredValues["moneyMin"] = moneyMin;
 
         moneyMax = $("#money-upper-input").val();
@@ -500,7 +499,9 @@ Immobilien.Startscreen = (function() {
         enteredValues["comission"] = commission;
 
         dateMin = $("#datepicker-min").val();
-        enteredValues["dateMin"] = dateMin;
+        dateMinNew = dateMin.split('.').join("");
+        enteredValues["dateMin"] = dateMinNew;
+        
 
         dateMax = $("#datepicker-max").val();
         enteredValues["dateMax"] = dateMax;
