@@ -2,17 +2,19 @@ Immobilien.Results = (function() {
 	var that = {},
   database = new Array(),
   enteredData = new Array(),
+  searchResults, 
+  numberOfResults,
 
 	init = function() {
 		console.log("Results.js aufgerufen");
     //getData();
 
     database = Immobilien.Startscreen.getRessources();
-    filterData(); 
+    filterDataBase(); 
     console.log(database); 
 
 		var resultsTemplate = _.template($("#results-tpl").html());
-    var resultingHtml = resultsTemplate({Properties : database});
+    var resultingHtml = resultsTemplate({Properties : searchResults});
 
     $("#results").html(resultingHtml);
 
@@ -39,7 +41,7 @@ Immobilien.Results = (function() {
 
   setupScrollButtons = function () {
     $(".scrollToResults").css({"visibility":"visible"});
-    $(".scrollToResults").text("Zu den " + database.length + " Suchergebnissen");
+    $(".scrollToResults").text(numberOfResults + " Treffer");
         //Click event to scroll to top
             $('.scrollToTop').click(function(){
                 $('html, body').animate({scrollTop : 0},800);
@@ -86,7 +88,6 @@ Immobilien.Results = (function() {
     return immo; 
 	},
 
-
 	loadXMLDoc = function (filename) {
             if (window.XMLHttpRequest)
               {
@@ -101,9 +102,46 @@ Immobilien.Results = (function() {
             return xhttp.responseXML;
   },
 
-  filterData = function () {
+  filterDataBase = function () {
     enteredData = Immobilien.MainController.getEnteredData();
-    console.log(enteredData);
+    searchResults = new Array(); 
+    numberOfResults = 0; 
+    for (var i = 0 ; i < database.length; i++) {
+      if (filterCityName(i) && filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i)){
+        searchResults[i] = database[i];
+        numberOfResults++;
+      }
+    }
+  },
+
+  filterCityName = function(index) {
+    if ((database[index].city.toLowerCase().indexOf(enteredData.city.toLowerCase()) > -1) || (enteredData.city.toLowerCase().indexOf(database[index].city.toLowerCase()) > -1) ){
+      return true; 
+    }
+  },
+
+  filterType = function (index) {
+    if ((database[index].type.toLowerCase().indexOf(enteredData.type.toLowerCase()) > -1)){
+      return true; 
+    }
+  },
+
+  filterCosts = function (index) {
+    if ((enteredData.moneyMin <= database[index].price)&&(enteredData.moneyMax >= database[index].price)){
+      return true; 
+    }
+  },
+
+  filterRooms = function (index) {
+    if ((enteredData.roomsMin <= database[index].rooms)&&(enteredData.roomsMax >= database[index].rooms)){
+      return true; 
+    }
+  },
+
+  filterSpace = function (index) {
+    if ((enteredData.sizeMin <= database[index].living_space)&&(enteredData.sizeMax >= database[index].living_space)){
+      return true; 
+    }
   };
 
 	that.init = init;

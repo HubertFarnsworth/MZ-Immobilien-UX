@@ -10,7 +10,10 @@ ToDo:
 - Autocomplete-Bug beheben
 - Autosuggest Reihenhaus
 - startscreen neu zeichnen, wenn auf zurück-button geclickt wird
-
+- start - Suche Button
+- Mieten, Kaufen umschalten => neue Suche
+- Detailansicht
+- Max-Wert der Slider setzen
 
 
 
