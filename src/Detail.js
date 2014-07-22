@@ -123,7 +123,14 @@ Immobilien.Detail = (function() {
 
     setupMap = function () {
         console.log("map called");
-        google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load');
+
+
+
+        var address = informations.city + ", " + informations.streetname + " " + informations.housenumber;
+        console.log(address);
+
+        placeMarkersOnMap(address);
 
         var mapOptions = {
             center: new google.maps.LatLng(49.0167, 11.0833),
@@ -131,22 +138,7 @@ Immobilien.Detail = (function() {
         };
 
         globalMap = new google.maps.Map(document.getElementById("map-content"),
-                mapOptions);   
-
-        
-        function initialize() {
-            console.log("map init");
-            //hier war mapOptions und new map-aufruf
-
-            //call this function whenever new results need to be displayed
-            //parameters: map & adress as string
-            
-            var address1 = "Am Vitusbach 12, Regensburg";
-            var address2 = "Geibelplatz, Regensburg";
-
-            placeMarkersOnMap(address1);
-            placeMarkersOnMap(address2);
-        }
+                mapOptions);
     },
 
     placeMarkersOnMap = function(address) {
