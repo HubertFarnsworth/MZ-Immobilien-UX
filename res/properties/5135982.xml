@@ -23,7 +23,7 @@
 	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent>n</rent> <!--vermietet? y oder n -->
 	<type>Terrassenwohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
-	<vacant_from>01/09/2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<vacant_from>01.09.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Garten</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
 	<cellar>y</cellar> <!-- Keller y oder n -->
 	<built_in_kitchen>n</built_in_kitchen> <!-- Einbauküche, y oder n -->

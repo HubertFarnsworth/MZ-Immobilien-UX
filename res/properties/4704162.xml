@@ -13,7 +13,7 @@
 	<status>Renoviert</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
 	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
 	<living_space>75</living_space> <!-- Wohnfläche -->
-	<commission></commission> <!-- Provisionspreis, 0 bis n -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
 	<price>430</price> <!-- Kaufpreis -->
 	<extra_cost>40</extra_cost> <!-- Nebenkosten -->
@@ -23,7 +23,7 @@
 	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
 	<rent>y</rent> <!--vermietet? y oder n -->
 	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
-	<vacant_from>01/08/2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<vacant_from>01.08.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Balkon</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
 	<cellar>y</cellar> <!-- Keller y oder n -->
 	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->

@@ -491,18 +491,18 @@ Immobilien.Startscreen = (function() {
         enteredValues["roomsMax"] = parseInt($("#rooms-upper-input").val());
         enteredValues["sizeMin"] = parseInt($("#size-lower-input").val());
         enteredValues["sizeMax"] = parseInt($("#size-upper-input").val());
-        enteredValues["comission"] = $("#checkbox-commission").is(':checked'); //checkbox; true or false
+        enteredValues["commission"] = $("#checkbox-commission").is(':checked'); //checkbox; true or false
 
         dateMin = $("#datepicker-min").val();
         enteredValues["dateMin"] = dateMin.split('.').join("");
         
         dateMax = $("#datepicker-max").val();
-        enteredValues["dateMin"] = dateMin.split('.').join("");
+        enteredValues["dateMax"] = dateMax.split('.').join("");
 
         Immobilien.MainController.startResults();
 
         //console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
-        //console.log(enteredValues);
+        console.log(enteredValues);
     },
 
     getEnteredData = function () {
@@ -579,6 +579,7 @@ Immobilien.Startscreen = (function() {
         immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
         immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
         immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
+        immo ["commission"] = xml.getElementsByTagName("commission")[0].innerHTML;
 
         return immo; 
     },

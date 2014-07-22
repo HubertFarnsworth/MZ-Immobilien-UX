@@ -13,7 +13,7 @@
 	<status>Gepflegt</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
 	<size_of_property></size_of_property> <!-- Grundstücksfläche -->
 	<living_space>57</living_space> <!-- Wohnfläche -->
-	<commission></commission> <!-- Provisionspreis, 0 bis n -->
+	<commission>950</commission> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
 	<price>470</price> <!-- Kaufpreis -->
 	<extra_cost>110</extra_cost> <!-- Nebenkosten -->
