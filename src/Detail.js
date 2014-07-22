@@ -1,7 +1,8 @@
 Immobilien.Detail = (function() {
 	var that = {},
 	informations = new Array (), 
-	map = false, 
+	map = false,
+    firstload = true,
     images = true, 
     data = false, 
     des = false,
@@ -13,6 +14,7 @@ Immobilien.Detail = (function() {
 
 	startDetail = function (data) {
         console.log("detail started");
+
         //setupMap();
 		//Scolls to 0,0
 		window.scrollTo(0, 0);
@@ -26,6 +28,8 @@ Immobilien.Detail = (function() {
 		//Sets the Text 
 		informations = data; 
 		setText();
+        setupMap();
+        
 
 		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToSearch", function(event){
@@ -40,9 +44,13 @@ Immobilien.Detail = (function() {
       			$("#map-size-button").addClass("glyphicon-plus");
       			map = false; 
     		} else {
-    			$("#map-content").height(300);
+    			$("#map-content").height(400);
     			$("#map-size-button").removeClass("glyphicon-plus");
       			$("#map-size-button").addClass("glyphicon-minus");
+                if (firstload) {
+                    setupMap();
+                    firstload = false;    
+                }
     			map = true;
     		}
     	});
@@ -123,7 +131,7 @@ Immobilien.Detail = (function() {
         map = new google.maps.Map(document.getElementById("map-content"),
                 mapOptions);   
 
-        /*
+        
         function initialize() {
             //hier war mapOptions und new map-aufruf
             console.log(map);
@@ -139,7 +147,6 @@ Immobilien.Detail = (function() {
             placeMarkersOnMap(address1);
             placeMarkersOnMap(address2);
         }
-        */
     },
 
 	setText = function () {
