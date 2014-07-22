@@ -8,7 +8,7 @@ Immobilien.Detail = (function() {
     contact = false, 
 
 	init = function() {
-	console.log("Detail.js aufgerufen");	
+	   console.log("Detail.js aufgerufen");	
 	},
 
 	startDetail = function (data) {
@@ -109,6 +109,36 @@ Immobilien.Detail = (function() {
             }
         });
 	},
+
+    setupMap = function () {
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        var mapOptions = {
+            center: new google.maps.LatLng(49.0167, 11.0833),
+            zoom: 7,
+        };
+
+        map = new google.maps.Map(document.getElementById("map-content"),
+                mapOptions);   
+
+        /*
+        function initialize() {
+            //hier war mapOptions und new map-aufruf
+            console.log(map);
+
+            globalMap = map;
+
+            //call this function whenever new results need to be displayed
+            //parameters: map & adress as string
+            
+            var address1 = "Am Vitusbach 12, Regensburg";
+            var address2 = "Geibelplatz, Regensburg";
+
+            placeMarkersOnMap(address1);
+            placeMarkersOnMap(address2);
+        }
+        */
+    },
 
 	setText = function () {
         console.log(informations);
