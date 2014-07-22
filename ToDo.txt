@@ -7,3 +7,4 @@ ToDo:
 - Platzhalterseite für "Biete"
 - XML-Files überarbeiten + Bilder suchen/speichern
 - Bugfix mehrmaliges Starten der Detail.js 
+- Button zu den Suchergebnissen 
