@@ -8,3 +8,4 @@ ToDo:
 - XML-Files überarbeiten + Bilder suchen/speichern
 - Bugfix mehrmaliges Starten der Detail.js 
 - Button zu den Suchergebnissen 
+- Autocomplete-Bug beheben

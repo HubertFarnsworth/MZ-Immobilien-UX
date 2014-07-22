@@ -474,41 +474,24 @@ Immobilien.Startscreen = (function() {
         * if yes, button is active and user searches to rent
         * otherwise, user searches to buy
         */
-        rent = ($("#Mieten-Button").attr('class').indexOf("btn-primary") > 0);
-        enteredValues["rent"] = rent;
-
-        moneyMin = parseInt($("#money-lower-input").val());
-        enteredValues["moneyMin"] = moneyMin;
-
-        moneyMax = $("#money-upper-input").val();
-        enteredValues["moneyMax"] = moneyMax;
-
-        roomsMin = $("#rooms-lower-input").val();
-        enteredValues["roomsMin"] = roomsMin;
-
-        roomsMax = $("#rooms-upper-input").val();
-        enteredValues["roomsMax"] = roomsMax;
-
-        sizeMin = $("#size-lower-input").val();
-        enteredValues["sizeMin"] = sizeMin;
-
-        sizeMax = $("#size-upper-input").val();
-        enteredValues["sizeMax"] = sizeMax;
-
-        commission = $("#checkbox-commission").is(':checked'); //checkbox; true or false
-        enteredValues["comission"] = commission;
+        enteredValues["rent"] = $("#Mieten-Button").attr('class').indexOf("btn-primary") > 0;
+        enteredValues["moneyMin"] = parseInt($("#money-lower-input").val());
+        enteredValues["moneyMax"] = parseInt($("#money-upper-input").val());
+        enteredValues["roomsMin"] = parseInt($("#rooms-lower-input").val());
+        enteredValues["roomsMax"] = parseInt($("#rooms-upper-input").val());
+        enteredValues["sizeMin"] = parseInt($("#size-lower-input").val());
+        enteredValues["sizeMax"] = parseInt($("#size-upper-input").val());
+        enteredValues["comission"] = $("#checkbox-commission").is(':checked'); //checkbox; true or false
 
         dateMin = $("#datepicker-min").val();
-        dateMinNew = dateMin.split('.').join("");
-        enteredValues["dateMin"] = dateMinNew;
+        enteredValues["dateMin"] = dateMin.split('.').join("");
         
-
         dateMax = $("#datepicker-max").val();
-        enteredValues["dateMax"] = dateMax;
+        enteredValues["dateMin"] = dateMin.split('.').join("");
 
         Immobilien.MainController.startResults();
 
-        console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
+        //console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
         console.log(enteredValues);
     },
 
