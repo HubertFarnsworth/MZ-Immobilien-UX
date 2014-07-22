@@ -1,7 +1,6 @@
 ToDo:
 
 - Suche 
-- Suchergebnisse-Button
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
 - Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
