@@ -6,6 +6,7 @@
 	margin-right: 15%;
 	margin-left: 15%;  
 	padding-left: 1%; 
+	margin-top: 1%;
 }
 
 #navigation-buttons{
@@ -180,7 +181,7 @@
 }
 
 .hover{
-    background-color: #F7AD37;
+    background-color: #36648B;
 }
 
 #detail-head, #map, #images, #immo-data, #immo-des, #contakt{

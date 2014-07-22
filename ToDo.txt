@@ -1,0 +1,9 @@
+ToDo:
+
+- Suche 
+- Suchergebnisse-Button
+- Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
+- Merkliste
+- Platzhalterseite für "Biete"
+- XML-Files überarbeiten + Bilder suchchen/speichern
+- 
