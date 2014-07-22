@@ -1,16 +1,13 @@
 ToDo:
 
-- Suche 
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
 - Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
 - XML-Files überarbeiten + Bilder suchen/speichern
 - Bugfix mehrmaliges Starten der Detail.js 
-- Button zu den Suchergebnissen 
 - Autocomplete-Bug beheben
 - Autosuggest Reihenhaus
 - startscreen neu zeichnen, wenn auf zurück-button geclickt wird
-- start - Suche Button
 - Mieten, Kaufen umschalten => neue Suche
 - Detailansicht
 - Max-Wert der Slider setzen
@@ -18,3 +15,10 @@ ToDo:
 
 
 ??? Pfeil bei Suchergebnissen
+
+
+
+Check:
+- Suche
+- Button zu den Suchergebnissen 
+- start - Suche Button
