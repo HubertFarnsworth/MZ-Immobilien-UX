@@ -46,17 +46,24 @@ Immobilien.Results = (function() {
     } else {
       $(".scrollToResults").text(numberOfResults + " Treffer anzeigen");
     }
-        //Click event to scroll to top
-            $('.scrollToTop').click(function(){
-                $('html, body').animate({scrollTop : 0},800);
-                return false;
-            });
 
-            $('.scrollToResults').click(function(){
-                $('html, body').animate({scrollTop : $("#results").offset().top},800);
-                $(".scrollToResults").css({"visibility":"visible"});
-                return false;
-            });
+    if (numberOfResults !== 0) {
+      $(".scrollToTop").css({"visibility":"visible"});
+      $('.scrollToTop').click(function(){
+      $('html, body').animate({scrollTop : 0},800);
+      return false;
+      });
+    } else {
+      $(".scrollToTop").css({"visibility":"hidden"});
+    }
+    
+    if (numberOfResults !== 0) {
+      $('.scrollToResults').click(function(){
+        $('html, body').animate({scrollTop : $("#results").offset().top},800);
+        $(".scrollToResults").css({"visibility":"visible"});
+        return false;
+      });  
+    }
   },
 
   getData = function () {
@@ -116,6 +123,7 @@ Immobilien.Results = (function() {
         numberOfResults++;
       }
     }
+    Immobilien.MainController.setMarkersForResults(searchResults);
   },
 
   filterCityName = function(index) {
