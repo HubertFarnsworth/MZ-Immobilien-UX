@@ -119,7 +119,7 @@ Immobilien.Results = (function() {
     numberOfResults = 0; 
     for (var i = 0 ; i < database.length; i++) {
       if (filterCityName(i) && filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i)){
-        searchResults[i] = database[i];
+        searchResults[numberOfResults] = database[i];
         numberOfResults++;
       }
     }
