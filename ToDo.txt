@@ -3,7 +3,7 @@ ToDo:
 - Suche 
 - Suchergebnisse-Button
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
-- Merkliste
+- Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
-- XML-Files überarbeiten + Bilder suchchen/speichern
+- XML-Files überarbeiten + Bilder suchen/speichern
 - 
