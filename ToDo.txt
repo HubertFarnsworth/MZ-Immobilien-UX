@@ -10,3 +10,8 @@ ToDo:
 - Autocomplete-Bug beheben
 - Autosuggest Reihenhaus
 - startscreen neu zeichnen, wenn auf zurück-button geclickt wird
+
+
+
+
+??? Pfeil bei Suchergebnissen
