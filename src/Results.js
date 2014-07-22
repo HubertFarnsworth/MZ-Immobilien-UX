@@ -33,16 +33,23 @@ Immobilien.Results = (function() {
     });
 
     setupScrollButtons(); 
-
 	},
 
   setupScrollButtons = function () {
+    $(".scrollToResults").css({"visibility":"visible"});
+    $(".scrollToResults").text("Zu den " + data.length + " Suchergebnissen");
         //Click event to scroll to top
             $('.scrollToTop').click(function(){
                 $('html, body').animate({scrollTop : 0},800);
                 return false;
             });
-    },
+
+            $('.scrollToResults').click(function(){
+                $('html, body').animate({scrollTop : $("#results").offset().top},800);
+                $(".scrollToResults").css({"visibility":"visible"});
+                return false;
+            });
+  },
 
   getData = function () {
         var xmlArray = new Array(); 

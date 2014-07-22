@@ -35,7 +35,6 @@
 	margin-right: 10%;
 	margin-left: 10%;
 	margin-top: 2%;
-	margin-bottom: 2%; 
 }
 
 #controls-left {
@@ -75,7 +74,7 @@
 }
 
 #rooms-controls, #size-controls, #date-controls {
-	margin-top: 5%;
+	margin-top: 1%;
 	display: inline-block; 
 }
 
@@ -165,6 +164,14 @@
 	font-size: 18px;
 	width: 100%; 
 	color: white; 
+}
+
+.scrollToResults{
+	margin-left: 77%;
+	margin-top: 1%; 
+	float: left; 
+	margin-bottom: 2%; 
+	visibility: hidden;
 }
 
 .scrollToTop{
