@@ -26,10 +26,15 @@ Immobilien.MainController = (function() {
 		return enteredData;
 	}
 
+	setMarkersForResults = function(results) {
+		Startscreen.setMarkersForResults(results);
+	}
+
 	that.init = init;
 	that.startDetail = startDetail;
 	that.startResults = startResults; 
 	that.getEnteredData = getEnteredData;
+	that.setMarkersForResults = setMarkersForResults;
 
 	return that;
 }());
