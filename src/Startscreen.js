@@ -386,7 +386,8 @@ Immobilien.Startscreen = (function() {
                 "Wohnung",
                 "Doppelhaushälfte",
                 "Grundstück",
-                "Garage"
+                "Garage",
+                "Reihenhaus"
             ];
 
             $( "#was-input" ).autocomplete({
@@ -492,7 +493,7 @@ Immobilien.Startscreen = (function() {
         Immobilien.MainController.startResults();
 
         //console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
-        console.log(enteredValues);
+        //console.log(enteredValues);
     },
 
     getEnteredData = function () {
@@ -569,8 +570,6 @@ Immobilien.Startscreen = (function() {
     immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
     immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
     immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
-
-
 
     return immo; 
     },

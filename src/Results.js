@@ -1,24 +1,26 @@
 Immobilien.Results = (function() {
 	var that = {},
-  data = new Array(),
+  database = new Array(),
+  enteredData = new Array(),
 
 	init = function() {
 		console.log("Results.js aufgerufen");
     //getData();
 
-    data = Immobilien.Startscreen.getRessources();
-    console.log(data); 
+    database = Immobilien.Startscreen.getRessources();
+    filterData(); 
+    console.log(database); 
 
 		var resultsTemplate = _.template($("#results-tpl").html());
-    var resultingHtml = resultsTemplate({Properties : data});
+    var resultingHtml = resultsTemplate({Properties : database});
 
     $("#results").html(resultingHtml);
 
     $(document).on("click", ".Property", function(event){
       var PropertyID = event.target.id;
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].id === PropertyID) {
-          Immobilien.MainController.startDetail(data[i]);
+      for (var i = 0; i < database.length; i++) {
+        if (database[i].id === PropertyID) {
+          Immobilien.MainController.startDetail(database[i]);
         }
       }
     });
@@ -37,7 +39,7 @@ Immobilien.Results = (function() {
 
   setupScrollButtons = function () {
     $(".scrollToResults").css({"visibility":"visible"});
-    $(".scrollToResults").text("Zu den " + data.length + " Suchergebnissen");
+    $(".scrollToResults").text("Zu den " + database.length + " Suchergebnissen");
         //Click event to scroll to top
             $('.scrollToTop').click(function(){
                 $('html, body').animate({scrollTop : 0},800);
@@ -97,6 +99,11 @@ Immobilien.Results = (function() {
             xhttp.open("GET",filename,false);
             xhttp.send();
             return xhttp.responseXML;
+  },
+
+  filterData = function () {
+    enteredData = Immobilien.MainController.getEnteredData();
+    console.log(enteredData);
   };
 
 	that.init = init;

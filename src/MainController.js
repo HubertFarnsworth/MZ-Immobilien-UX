@@ -7,7 +7,6 @@ Immobilien.MainController = (function() {
 
 		Startscreen = Immobilien.Startscreen;
 		//Results = Immobilien.Results;
-		
 		Startscreen.init(); 
 		//Results.init(); 
 	},
@@ -20,11 +19,17 @@ Immobilien.MainController = (function() {
 	startDetail = function(id)  {
 		Detail = Immobilien.Detail; 
 		Detail.startDetail(id); 
-	};
+	},
+
+	getEnteredData = function() {
+		var enteredData = Immobilien.Startscreen.getEnteredData(); 
+		return enteredData;
+	}
 
 	that.init = init;
 	that.startDetail = startDetail;
 	that.startResults = startResults; 
+	that.getEnteredData = getEnteredData;
 
 	return that;
 }());
