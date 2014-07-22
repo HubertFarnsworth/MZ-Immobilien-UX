@@ -582,7 +582,9 @@ Immobilien.Startscreen = (function() {
         //gets result-array from Results.js and sets markers for every result
         clearOverlays();
 
-        for (int i = 0; i < results.length; i++) {
+        console.log(results);
+
+        for (var i = 0; i < results.length; i++) {
             var address = results[i].city + ", " + results[i].streetname + " " + results[i].housenumber;
             placeMarkerOnMap(addr, i);
             console.log(address);
