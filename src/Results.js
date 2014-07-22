@@ -50,7 +50,7 @@ Immobilien.Results = (function() {
     if (numberOfResults !== 0) {
       $(".scrollToTop").css({"visibility":"visible"});
       $('.scrollToTop').click(function(){
-      $('html, body').animate({scrollTop : 0},800);
+      $('html, body').animate({scrollTop : 0},300);
       return false;
       });
     } else {
@@ -59,7 +59,7 @@ Immobilien.Results = (function() {
     
     if (numberOfResults !== 0) {
       $('.scrollToResults').click(function(){
-        $('html, body').animate({scrollTop : $("#results").offset().top},800);
+        $('html, body').animate({scrollTop : $("#results").offset().top},300);
         $(".scrollToResults").css({"visibility":"visible"});
         return false;
       });  

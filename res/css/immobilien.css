@@ -121,6 +121,7 @@
 	overflow: auto;	
 	margin-top: 1%; 
 	margin-bottom: 0.500%; 
+	padding: 1%;
 }
 
 .Startimage{
@@ -128,7 +129,6 @@
 	height: auto;
 	width: 200px; 
 	height: 150px;  
-	padding: 7px;
 }
 
 .description {
@@ -176,11 +176,11 @@
 }
 
 .scrollToTop{
-	width:15%;  
+	width:16%;  
 	height:2%;
 	text-align:center; 
 	font-weight: bold;
-	margin-left: 70%;
+	margin-left: 69%;
 	margin-right: 15%; 
 	margin-bottom: 10px; 
 }
