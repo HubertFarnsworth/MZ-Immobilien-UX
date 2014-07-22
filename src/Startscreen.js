@@ -2,8 +2,9 @@ Immobilien.Startscreen = (function() {
 	var that = {},
     globalMap = null,
     geocoder = null,
-    enteredValues = new Array(); 
-    ressources = new Array (); 
+    enteredValues = new Array(),
+    ressources = new Array (),
+    markersArray = new Array(),
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -130,8 +131,8 @@ Immobilien.Startscreen = (function() {
             var address1 = "Am Vitusbach 12, Regensburg";
             var address2 = "Geibelplatz, Regensburg";
 
-            placeMarkersOnMap(address1);
-            placeMarkersOnMap(address2);
+            placeMarkerOnMap(address1, 1);
+            placeMarkerOnMap(address2, 2);
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
@@ -403,11 +404,11 @@ Immobilien.Startscreen = (function() {
         $("#checkbox-commission").prettyCheckable();
     },
 
-    placeMarkersOnMap = function(address) {
+    placeMarkerOnMap = function(address, id) {
 
         geocoder = new google.maps.Geocoder();
 
-        var latitude, longitude, asd;
+        var latitude, longitude;
 
         geocoder.geocode( { 'address': address}, function(results, status) {
 
@@ -417,11 +418,14 @@ Immobilien.Startscreen = (function() {
 
                 console.log(latitude, longitude);
 
+                //path for numbered icons
+                var iconPath = "res/markers/marker" + id + ".png";
+
                 var marker = new google.maps.Marker({
                     map: globalMap,
                     position: results[0].geometry.location,
                     animation: google.maps.Animation.DROP,
-                    icon: 'res/markers/marker1.png'
+                    icon: iconPath
                 });
             }
         });
@@ -537,41 +541,66 @@ Immobilien.Startscreen = (function() {
 
     //gets the data from xml file
     getImmoData = function (xml) {
-    var immo = new Array();
+        var immo = new Array();
 
-    immo ["id"] = xml.getElementsByTagName("id")[0].innerHTML;
-    immo ["rooms"] = xml.getElementsByTagName("number_of_rooms")[0].innerHTML; 
-    immo ["type"] =  xml.getElementsByTagName("type")[0].innerHTML; 
-    immo ["city"] =  xml.getElementsByTagName("city")[0].innerHTML;
-    immo ["plz"] =  xml.getElementsByTagName("zipcode")[0].innerHTML;
-    immo ["size"] =  xml.getElementsByTagName("living_space")[0].innerHTML;
-    immo ["price"] =  xml.getElementsByTagName("price")[0].innerHTML;
-    immo ["description"] = xml.getElementsByTagName("description")[0].innerHTML;
-    immo ["streetname"] = xml.getElementsByTagName("streetname")[0].innerHTML;
-    immo ["housenumber"] = xml.getElementsByTagName("housenumber")[0].innerHTML;
-    immo ["status"] = xml.getElementsByTagName("status")[0].innerHTML;
-    immo ["size_of_property"] = xml.getElementsByTagName("size_of_property")[0].innerHTML;
-    immo ["living_space"] = xml.getElementsByTagName("living_space")[0].innerHTML;
-    immo ["commission"] = xml.getElementsByTagName("commission")[0].innerHTML;
-    immo ["buy_or_rent"] = xml.getElementsByTagName("buy_or_rent")[0].innerHTML;
-    immo ["extra_cost"] = xml.getElementsByTagName("extra_cost")[0].innerHTML;
-    immo ["bail"] = xml.getElementsByTagName("bail")[0].innerHTML;
-    immo ["floors"] = xml.getElementsByTagName("floors")[0].innerHTML;
-    immo ["year_of_construction"] = xml.getElementsByTagName("year_of_construction")[0].innerHTML;
-    immo ["heatingtype"] = xml.getElementsByTagName("heatingtype")[0].innerHTML;
-    immo ["rent"] = xml.getElementsByTagName("rent")[0].innerHTML;
-    immo ["vacant_from"] = xml.getElementsByTagName("vacant_from")[0].innerHTML;
-    immo ["extra"] = xml.getElementsByTagName("extra")[0].innerHTML;
-    immo ["cellar"] = xml.getElementsByTagName("cellar")[0].innerHTML;
-    immo ["built_in_kitchen"] = xml.getElementsByTagName("built_in_kitchen")[0].innerHTML;
-    immo ["email"] = xml.getElementsByTagName("email")[0].innerHTML;
-    immo ["telephone"] = xml.getElementsByTagName("telephone")[0].innerHTML;
-    immo ["parking_space"] = xml.getElementsByTagName("parking_space")[0].innerHTML;
-    immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
-    immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
-    immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
+        immo ["id"] = xml.getElementsByTagName("id")[0].innerHTML;
+        immo ["rooms"] = xml.getElementsByTagName("number_of_rooms")[0].innerHTML; 
+        immo ["type"] =  xml.getElementsByTagName("type")[0].innerHTML; 
+        immo ["city"] =  xml.getElementsByTagName("city")[0].innerHTML;
+        immo ["plz"] =  xml.getElementsByTagName("zipcode")[0].innerHTML;
+        immo ["size"] =  xml.getElementsByTagName("living_space")[0].innerHTML;
+        immo ["price"] =  xml.getElementsByTagName("price")[0].innerHTML;
+        immo ["description"] = xml.getElementsByTagName("description")[0].innerHTML;
+        immo ["streetname"] = xml.getElementsByTagName("streetname")[0].innerHTML;
+        immo ["housenumber"] = xml.getElementsByTagName("housenumber")[0].innerHTML;
+        immo ["status"] = xml.getElementsByTagName("status")[0].innerHTML;
+        immo ["size_of_property"] = xml.getElementsByTagName("size_of_property")[0].innerHTML;
+        immo ["living_space"] = xml.getElementsByTagName("living_space")[0].innerHTML;
+        immo ["commission"] = xml.getElementsByTagName("commission")[0].innerHTML;
+        immo ["buy_or_rent"] = xml.getElementsByTagName("buy_or_rent")[0].innerHTML;
+        immo ["extra_cost"] = xml.getElementsByTagName("extra_cost")[0].innerHTML;
+        immo ["bail"] = xml.getElementsByTagName("bail")[0].innerHTML;
+        immo ["floors"] = xml.getElementsByTagName("floors")[0].innerHTML;
+        immo ["year_of_construction"] = xml.getElementsByTagName("year_of_construction")[0].innerHTML;
+        immo ["heatingtype"] = xml.getElementsByTagName("heatingtype")[0].innerHTML;
+        immo ["rent"] = xml.getElementsByTagName("rent")[0].innerHTML;
+        immo ["vacant_from"] = xml.getElementsByTagName("vacant_from")[0].innerHTML;
+        immo ["extra"] = xml.getElementsByTagName("extra")[0].innerHTML;
+        immo ["cellar"] = xml.getElementsByTagName("cellar")[0].innerHTML;
+        immo ["built_in_kitchen"] = xml.getElementsByTagName("built_in_kitchen")[0].innerHTML;
+        immo ["email"] = xml.getElementsByTagName("email")[0].innerHTML;
+        immo ["telephone"] = xml.getElementsByTagName("telephone")[0].innerHTML;
+        immo ["parking_space"] = xml.getElementsByTagName("parking_space")[0].innerHTML;
+        immo ["parking_space_amount"] = xml.getElementsByTagName("parking_space_amount")[0].innerHTML;
+        immo ["parking_space_buy_or_rent"] = xml.getElementsByTagName("parking_space_buy_or_rent")[0].innerHTML;
+        immo ["parking_space_price"] = xml.getElementsByTagName("parking_space_price")[0].innerHTML;
 
-    return immo; 
+        return immo; 
+    },
+
+    setMarkersForResults = function (results) {
+        //gets result-array from Results.js and sets markers for every result
+        clearOverlays();
+
+        for (int i = 0; i < results.length; i++) {
+            var address = results[i].city + ", " + results[i].streetname + " " + results[i].housenumber;
+            placeMarkerOnMap(addr, i);
+            console.log(address);
+        }
+
+        //markersArray.push(marker);
+    },
+
+    deleteMarkers = function () {
+        //deletes all markers on the map
+
+    },
+
+    clearOverlays = function () {
+        for (var i = 0; i < markersArray.length; i++ ) {
+            markersArray[i].setMap(null);
+        }
+        markersArray.length = 0;
     },
 
     getRessources = function() {
@@ -580,7 +609,8 @@ Immobilien.Startscreen = (function() {
 
 	that.init = init;
     that.getEnteredData = getEnteredData;
-    that.getRessources = getRessources;  
+    that.getRessources = getRessources;
+    that.setMarkersForResults = setMarkersForResults;
 
 	return that;
 }());
