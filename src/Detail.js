@@ -6,7 +6,8 @@ Immobilien.Detail = (function() {
     images = true, 
     data = false, 
     des = false,
-    contact = false, 
+    contact = false,
+    globalMap = null,
 
 	init = function() {
 	   console.log("Detail.js aufgerufen");	
@@ -121,6 +122,7 @@ Immobilien.Detail = (function() {
 	},
 
     setupMap = function () {
+        console.log("map called");
         google.maps.event.addDomListener(window, 'load', initialize);
 
         var mapOptions = {
@@ -128,15 +130,13 @@ Immobilien.Detail = (function() {
             zoom: 7,
         };
 
-        map = new google.maps.Map(document.getElementById("map-content"),
+        globalMap = new google.maps.Map(document.getElementById("map-content"),
                 mapOptions);   
 
         
         function initialize() {
+            console.log("map init");
             //hier war mapOptions und new map-aufruf
-            console.log(map);
-
-            globalMap = map;
 
             //call this function whenever new results need to be displayed
             //parameters: map & adress as string
@@ -147,6 +147,30 @@ Immobilien.Detail = (function() {
             placeMarkersOnMap(address1);
             placeMarkersOnMap(address2);
         }
+    },
+
+    placeMarkersOnMap = function(address) {
+
+        geocoder = new google.maps.Geocoder();
+
+        var latitude, longitude, asd;
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                latitude = results[0].geometry.location.lat();
+                longitude = results[0].geometry.location.lng();
+
+                console.log(latitude, longitude);
+
+                var marker = new google.maps.Marker({
+                    map: globalMap,
+                    position: results[0].geometry.location,
+                    animation: google.maps.Animation.DROP,
+                    icon: 'res/markers/marker1.png'
+                });
+            }
+        });
     },
 
 	setText = function () {
