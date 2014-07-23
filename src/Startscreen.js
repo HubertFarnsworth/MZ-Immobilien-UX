@@ -3,6 +3,7 @@ Immobilien.Startscreen = (function() {
     globalMap = null,
     autocomplete  = null,
     geocoder = null,
+    enteredPlace = false,
     enteredValues = new Array(),
     ressources = new Array (),
     markersArray = new Array(),
@@ -145,6 +146,7 @@ Immobilien.Startscreen = (function() {
             map.panTo(place.geometry.location);
             map.setZoom(13);
             console.log("place ", place.name);
+            enteredPlace = true;
             getInputValues();
         } else {
             $('wo-input').placeholder = 'Stadt eingeben';
@@ -468,7 +470,13 @@ Immobilien.Startscreen = (function() {
 
         //city = $("#wo-input").val();
         console.log(autocomplete);
-        city = autocomplete.getPlace().name;
+        if (enteredPlace) {
+            city = autocomplete.getPlace().name;
+        }
+        else {
+            city = "";
+        }
+        
         console.log("Stadt: ", city);
         enteredValues["city"] = city;
 
