@@ -33,6 +33,7 @@ Immobilien.Detail = (function() {
 		setText();
         setupMap();
         
+        setupGalleria();
 
 		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToSearch", function(event){
@@ -62,11 +63,17 @@ Immobilien.Detail = (function() {
         $(document).on("click", "#images-size-button", function(event){
             if (images === true) {
                 $("#images-content").height(0);
+                $('.galleria').data('galleria').destroy();
+                var img = document.getElementById("image1");
+                img.style.visibility = "hidden";
+                var img = document.getElementById("image2");
+                img.style.visibility = "hidden";
                 $("#images-size-button").removeClass("glyphicon-minus");
                 $("#images-size-button").addClass("glyphicon-plus");
                 images = false; 
             } else {
-                $("#images-content").height(300);
+                $("#images-content").height(400);
+                setupGalleria();
                 $("#images-size-button").removeClass("glyphicon-plus");
                 $("#images-size-button").addClass("glyphicon-minus");
                 images = true;
@@ -122,6 +129,20 @@ Immobilien.Detail = (function() {
             }
         });
 	},
+
+    setupGalleria = function () {
+
+        createHTMLTags(),
+
+        Galleria.loadTheme('./libs/galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+
+    },
+
+    createHTMLTags = function () {
+        //creates html-tags for the pictures
+        //needed for the gallery
+    },
 
     setupMap = function () {
         console.log("map called");
