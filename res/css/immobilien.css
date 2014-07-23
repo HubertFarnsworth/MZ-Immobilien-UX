@@ -252,10 +252,21 @@
 	overflow: hidden;
 }
 
-#des-content-text, #data-content-list {
+#des-content-text, #data-content-list, #contact-content {
 	visibility: hidden; 
 	color: white; 
-	font-size: 12px; 
+	font-size: 14px; 
+}
+
+#telephone, #e-mail {
+	color: white; 
+	font-size: 14px; 
+}
+
+#write-email, #e-mail {
+	float: left; 
+	margin-right: 5%; 
+	margin-top: 2%; 
 }
 
 

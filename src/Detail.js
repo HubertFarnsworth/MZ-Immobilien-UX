@@ -107,7 +107,7 @@ Immobilien.Detail = (function() {
                 $("#des-content-text").css({"visibility":"hidden"});
                 des = false; 
             } else {
-                $("#des-content").height(250);
+                $("#des-content").height(200);
                 $("#des-size-button").removeClass("glyphicon-plus");
                 $("#des-size-button").addClass("glyphicon-minus");
                 $("#des-content-text").css({"visibility":"visible"});
@@ -121,14 +121,25 @@ Immobilien.Detail = (function() {
                 $("#contact-content").height(0);
                 $("#contact-size-button").removeClass("glyphicon-minus");
                 $("#contact-size-button").addClass("glyphicon-plus");
+                $("#contact-content").css({"visibility":"hidden"});
                 contact = false; 
             } else {
-                $("#contact-content").height(300);
+                $("#contact-content").height(100);
                 $("#contact-size-button").removeClass("glyphicon-plus");
                 $("#contact-size-button").addClass("glyphicon-minus");
+                $("#contact-content").css({"visibility":"visible"});
                 contact = true;
             }
         });
+
+        $(document).on("click", "#write-email", function(event){
+            console.log("write email");
+            var link = "mailto:domi.bauer@arcor.de"
+             + "?cc="
+             + "&subject=" + escape("MZ-Immobilien: Interesse an Objekt #" + informations.id)
+             + "&body=" + escape("Hallo, ich interessiere mich fuer Ihr Objekt in der " + informations.streetname + " " + informations.housenumber + ", " + informations.plz + " " + informations.city +". Bitte senden Sie mir einen Besichtigungsterm zu.");
+            window.location.href = link;
+        }); 
 	},
 
     setupGalleria = function () {
