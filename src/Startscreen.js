@@ -125,15 +125,6 @@ Immobilien.Startscreen = (function() {
 
             globalMap = map;
 
-            //call this function whenever new results need to be displayed
-            //parameters: map & adress as string
-            
-            //var address1 = "Am Vitusbach 12, Regensburg";
-            //var address2 = "Geibelplatz, Regensburg";
-
-            //placeMarkerOnMap(address1, 1);
-            //placeMarkerOnMap(address2, 2);
-
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
             google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
@@ -416,8 +407,6 @@ Immobilien.Startscreen = (function() {
                 latitude = results[0].geometry.location.lat();
                 longitude = results[0].geometry.location.lng();
 
-                console.log(latitude, longitude);
-
                 //path for numbered icons
                 var iconPath = "res/markers/marker" + parseInt(id + 1) + ".png";
 
@@ -432,8 +421,6 @@ Immobilien.Startscreen = (function() {
                 //google.maps.event.addListener(marker,"click",function(){});
             }
         });
-
-
     },
 
     setupInputListener = function() {
@@ -444,18 +431,20 @@ Immobilien.Startscreen = (function() {
             getInputValues();
         });
 
+        $(".userInputButton").click( function() {
+            console.log("rent/buy clicked");
+            getInputValues();
+        });
+
         $(".slider").slider({
             change: function(event, ui) {
                 /*
                 * problem: this function is called whenever
                 * the user clicks on Mieten or Kaufen
                 */
-                console.log("slider changed!");
                 getInputValues();
             }
         });
-
-        console.log("listeners are ready!");
     },
 
     getInputValues = function() {
@@ -587,20 +576,15 @@ Immobilien.Startscreen = (function() {
 
     setMarkersForResults = function (results) {
         //gets result-array from Results.js and sets markers for every result
-        clearOverlays();
 
-        console.log(results);
+        //delete previous markers
+        clearOverlays();
 
         for (var i = 0; i < results.length; i++) {
             var address = results[i].city + ", " + results[i].streetname + " " + results[i].housenumber;
             placeMarkerOnMap(address, i);
             console.log(address);
         }
-    },
-
-    deleteMarkers = function () {
-        //deletes all markers on the map
-
     },
 
     clearOverlays = function () {
