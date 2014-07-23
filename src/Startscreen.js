@@ -633,7 +633,42 @@ Immobilien.Startscreen = (function() {
 
     setEnteredValues = function () {
         var values = Immobilien.Results.getEnteredData();
+
+        //Bug
+        $("#wo-input").val(values.city);
+        $("#was-input").val(values.type);
+
+        if (values.rent === true) {
+            $("#Mieten-Button").attr('class', 'btn btn-primary');
+            $("#Kaufen-Button").attr('class', 'btn btn-default');
+        } else {
+            $("#Mieten-Button").attr('class', 'btn btn-default');
+            $("#Kaufen-Button").attr('class', 'btn btn-primary');
+        }
+
+        //Slider-Bug
+        $("#money-lower-input").val(values.moneyMin);
+        $("#money-upper-input").val(values.moneyMax);
+
+        $("#rooms-upper-input").val(values.roomsMax);
+        $("#rooms-lower-input").val(values.roomsMin);
+
+        $("#size-upper-input").val(values.sizeMax);
+        $("#size-lower-input").val(values.sizeMin);
+
+        //Bug
+        $("#checkbox-commission").attr('checked',true);
+
+        if (values.dateMin != "") {
+            $("#datepicker-min").val(values.dateMin.toString().substring(0,2) + "." + values.dateMin.toString().substring(2,4) + "." + values.dateMin.toString().substring(4,8));
+        }
         
+        if (values.dateMax != "") {
+            $("#datepicker-max").val(values.dateMax.toString().substring(0,2) + "." + values.dateMax.toString().substring(2,4) + "." + values.dateMax.toString().substring(4,8));
+        }
+
+
+
     };
 
 
