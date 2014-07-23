@@ -4,11 +4,12 @@ Immobilien.Results = (function() {
   enteredData = new Array(),
   searchResults, 
   numberOfResults,
+  firstSearch = false,
 
 	init = function() {
 		console.log("Results.js aufgerufen");
     //getData();
-
+    firstSearch = true; 
     database = Immobilien.Startscreen.getRessources();
     filterDataBase(); 
     console.log(database); 
@@ -250,10 +251,15 @@ Immobilien.Results = (function() {
 
   getEnteredData = function () {
     return enteredData; 
+  },
+
+  getFirstSearch = function () {
+    return firstSearch; 
   };
 
 	that.init = init;
   that.getEnteredData = getEnteredData;  
+  that.getFirstSearch = getFirstSearch; 
 
 	return that;
 

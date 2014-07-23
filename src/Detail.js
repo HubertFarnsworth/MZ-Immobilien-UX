@@ -247,7 +247,17 @@ Immobilien.Detail = (function() {
         appendLi ("Stellplatz: " +  informations.parking_space);
         appendLi ("Verfügbare Stellplätze: " +  informations.parking_space_amount);
         appendLi ("Kosten für Stellplatz: " +  informations.parking_space_price +" €");
-        appendLi ("Verfügbar ab: " +  informations.vacant_from);
+        if (informations.vacant_from != "") {
+          appendLi ("Verfügbar ab: " +  informations.vacant_from);  
+        } else {
+           appendLi ("Verfügbar ab: sofort"); 
+        }
+
+        document.getElementById("telephone").innerHTML = informations.telephone;
+        document.getElementById("e-mail").innerHTML = informations.email;
+
+
+        
 	},
 
     appendLi = function (content) {

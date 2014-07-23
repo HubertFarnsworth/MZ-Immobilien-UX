@@ -32,6 +32,10 @@ Immobilien.MainController = (function() {
 
 	reloadStartscreen = function () {
 		Startscreen.reloadStartscreen(); 
+	},
+
+	loadMerkliste = function() {
+		Immobilien.Merkliste.init(); 
 	};
 
 
@@ -41,6 +45,7 @@ Immobilien.MainController = (function() {
 	that.getEnteredData = getEnteredData;
 	that.setMarkersForResults = setMarkersForResults;
 	that.reloadStartscreen = reloadStartscreen; 
+	that.loadMerkliste = loadMerkliste; 
 
 	return that;
 }());

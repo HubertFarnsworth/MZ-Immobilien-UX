@@ -4,6 +4,7 @@ Immobilien.Startscreen = (function() {
     autocomplete  = null,
     geocoder = null,
     enteredPlace = false,
+    resLoaded = false, 
     enteredValues = new Array(),
     ressources = new Array (),
     markersArray = new Array(),
@@ -22,7 +23,11 @@ Immobilien.Startscreen = (function() {
         setupTopButtons();
         setupCheckbox();
         setupInputListener();
-        loadRessources(); 
+        if(resLoaded === false) {
+            loadRessources(); 
+            resLoaded = true; 
+        }
+        
 	},
 
 	//Funktionen für Mieten/Kaufen-Buttons werden gesetzt
@@ -106,6 +111,8 @@ Immobilien.Startscreen = (function() {
             $("#gesuche-button").attr('class', 'btn btn-default');
             $("#anbieten-button").attr('class', 'btn btn-default');
             $("#merkliste-button").attr('class', 'btn btn-primary');
+
+            Immobilien.MainController.loadMerkliste(); 
         });
     },
 
