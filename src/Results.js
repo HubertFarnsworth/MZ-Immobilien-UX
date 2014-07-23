@@ -174,14 +174,19 @@ Immobilien.Results = (function() {
   },
 
   filterBuyRent = function (index) {
-    if (enteredData.rent === false) {
-      if (database[index].buy_or_rent.equals("buy")) {
-        
+    if (enteredData.rent === true) {
+      if (database[index].buy_or_rent == "rent") {
+        return true; 
+      } else if (database[index].buy_or_rent == "buy") {
+        return false; 
       }
     } else {
-      console.log("notrent");
+      if (database[index].buy_or_rent == "rent") {
+        return false; 
+      } else if (database[index].buy_or_rent == "buy") {
+        return true; 
+      }
     }
-    return true; 
   },
 
   filterDate = function (index) {

@@ -1,6 +1,6 @@
 ToDo:
 
-- Suche
+
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
 - Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
@@ -12,6 +12,7 @@ ToDo:
 - Detailansicht
 - Max-Wert der Slider setzen
 - Punkte bei Preisangabe setzen
+- wenn man in preiseingabe €-zeichen eingibt kommt ein fehler. 
 
 
 
@@ -24,3 +25,4 @@ Check:
 - Button zu den Suchergebnissen 
 - start - Suche Button
 - XML-Files überarbeiten + Bilder suchen/speichern
+- Suche
