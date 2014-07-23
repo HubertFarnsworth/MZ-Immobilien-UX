@@ -118,7 +118,7 @@ Immobilien.Results = (function() {
     searchResults = new Array(); 
     numberOfResults = 0; 
     for (var i = 0 ; i < database.length; i++) {
-      if (filterCityName(i) && filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i){
+      if (filterCityName(i) && filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i)){
         searchResults[numberOfResults] = database[i];
         numberOfResults++;
       }
@@ -169,9 +169,9 @@ Immobilien.Results = (function() {
       return true;
     }
     return false;
-  },
+  };
 
-  filterDate = function (index) {
+  /*filterDate = function (index) {
     var vacantFrom = database[index].vacant_from;
     var cleanVacantFrom = vacantFrom.split('.').join("");
 
@@ -200,13 +200,8 @@ Immobilien.Results = (function() {
 
       return false; 
     }
-    
-    
-
-    
-
-    return false; 
-  };
+     return false; 
+  };*/
 
 	that.init = init;
 
