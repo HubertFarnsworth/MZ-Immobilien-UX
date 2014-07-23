@@ -79,13 +79,13 @@ Immobilien.Detail = (function() {
                 $("#data-content").height(0);
                 $("#data-size-button").removeClass("glyphicon-minus");
                 $("#data-size-button").addClass("glyphicon-plus");
-                $("#data-content-text").css({"visibility":"hidden"});
+                $("#data-content-list").css({"visibility":"hidden"});
                 data = false; 
             } else {
-                $("#data-content").height(300);
+                $("#data-content").height(400);
                 $("#data-size-button").removeClass("glyphicon-plus");
                 $("#data-size-button").addClass("glyphicon-minus");
-                $("#data-content-text").css({"visibility":"visible"});
+                $("#data-content-list").css({"visibility":"visible"});
                 data = true;
             }
         });
@@ -99,7 +99,7 @@ Immobilien.Detail = (function() {
                 $("#des-content-text").css({"visibility":"hidden"});
                 des = false; 
             } else {
-                $("#des-content").height(300);
+                $("#des-content").height(250);
                 $("#des-size-button").removeClass("glyphicon-plus");
                 $("#des-size-button").addClass("glyphicon-minus");
                 $("#des-content-text").css({"visibility":"visible"});
@@ -183,13 +183,36 @@ Immobilien.Detail = (function() {
         console.log(informations);
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
         document.getElementById("des-content-text").innerHTML = informations.description;
-        //document.getElementById("data-content-list").innerHTML = informations.streetname + " " + informations.housenumber;
 
+        appendLi ("Objektnummer: " +  informations.id);
+        appendLi ("Kaltmiete: " +  informations.price);
+        appendLi ("Nebenkosten: " +  informations.extra_cost);
+        appendLi ("Gesamtmiete: " +  informations.bail);
+        appendLi ("Provision: " +  informations.commission);
+        appendLi ("Adresse: " + informations.streetname + " " + informations.housenumber + ", " + informations.plz + " " + informations.city);
+        appendLi ("Anzahl der Zimmer: " +  informations.rooms);
+        appendLi ("Wohnfläche: " +  informations.size + "qm");
+        appendLi ("Objektzustand: " +  informations.status);
+        appendLi ("Anzahl der Etagen: " +  informations.floors);
+        appendLi ("Baujahr: " +  informations.year_of_construction);
+        appendLi ("Befeuerung: " +  informations.heatingtype);
+        appendLi ("Verfügbar ab: " +  informations.vacant_from);
+        appendLi ("Extras: " +  informations.extra);
+        appendLi ("Keller: " +  informations.cellar);
+        appendLi ("Küche: " +  informations.built_in_kitchen);
+        appendLi ("Baujahr: " +  informations.year_of_construction);
+        appendLi ("Stellplatz: " +  informations.parking_space);
+        appendLi ("Verfügbare Stellplätze: " +  informations.parking_space_amount);
+        appendLi ("Kosten für Stellplatz: " +  informations.parking_space_price);
+	},
+
+    appendLi = function (content) {
         var ul = document.getElementById("data-content-list");
         var li = document.createElement("li");
-        li.appendChild(document.createTextNode("Addresse: " + informations.streetname + " " + informations.housenumber));
+        li.appendChild(document.createTextNode(content));
         ul.appendChild(li);
-	};
+
+    }
 
 	that.init = init;
 	that.startDetail = startDetail; 

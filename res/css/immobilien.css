@@ -233,7 +233,7 @@
 
 #map-content, #images-content, #data-content, #des-content, #contact-content{
 	padding: 1%; 
-	background-color: white; 
+	background-color: #175573; 
 	height: 0px; 
 	margin-top: 5%; 
 }
@@ -246,9 +246,10 @@
 	overflow: hidden;
 }
 
-#des-content-text, #data-content-text {
+#des-content-text, #data-content-list {
 	visibility: hidden; 
-	color: black; 
+	color: white; 
+	font-size: 12px; 
 }
 
 
