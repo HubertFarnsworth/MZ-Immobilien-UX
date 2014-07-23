@@ -197,7 +197,7 @@ Immobilien.Startscreen = (function() {
             values: [ 50, 400 ],
             step: 10,
             min: 50,
-            max: 2000,
+            max: 5000,
             range: true,
             slide: function(event, ui) {
                 for (var i = 0; i < ui.values.length; ++i) {
