@@ -1,6 +1,7 @@
 Immobilien.Startscreen = (function() {
 	var that = {},
     globalMap = null,
+    autocomplete  = null,
     geocoder = null,
     enteredValues = new Array(),
     ressources = new Array (),
@@ -127,17 +128,8 @@ Immobilien.Startscreen = (function() {
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
-            google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-
-            function onPlaceChanged() {
-                var place = autocomplete.getPlace();
-                if (place.geometry) {
-                    map.panTo(place.geometry.location);
-                    map.setZoom(13);
-                } else {
-                    $('wo-input').placeholder = 'Stadt eingeben';
-                }
-            }       
+            google.maps.event.addListener(autocomplete, 'place_changed', onAutocompletePlaceChanged);
+      
         }
 
         var input = document.getElementById('wo-input');
@@ -146,6 +138,19 @@ Immobilien.Startscreen = (function() {
             componentRestrictions: {country: 'de'}
         };      
 	},
+
+    onAutocompletePlaceChanged = function() {
+        var place = autocomplete.getPlace();
+        if (place.geometry) {
+            map.panTo(place.geometry.location);
+            map.setZoom(13);
+            console.log("place ", place.name);
+            getInputValues();
+            //$('wo-input').val(place.name);
+        } else {
+            $('wo-input').placeholder = 'Stadt eingeben';
+        }
+    } 
 
 	//Datepicker-Funktion
 	setupDatepicker = function () {
@@ -462,7 +467,10 @@ Immobilien.Startscreen = (function() {
         dateMin = null,
         dateMax = null;
 
-        city = $("#wo-input").val();
+        //city = $("#wo-input").val();
+        console.log(autocomplete);
+        city = autocomplete.getPlace().name;
+        console.log("Stadt: ", city);
         enteredValues["city"] = city;
 
         type = $("#was-input").val();
