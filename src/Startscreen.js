@@ -614,9 +614,28 @@ Immobilien.Startscreen = (function() {
     },
 
     reloadStartscreen = function () {
-        console.log("reloadStartscreen");
-        console.log(Immobilien.Results.getEnteredData());
+        startScreenTemplate = _.template($("#startscreen-tpl").html());
+        $("#content").html(startScreenTemplate);
+
+        emptyTemplate = _.template($("#empty-tpl").html());
+        $("#results").html(emptyTemplate);
+        
+        setupGoogleComponents();
+        createMietenKaufenButton();
+        setupDatepicker(); 
+        setupSliders(); 
+        setupAutocompleteWas(); 
+        setupTopButtons();
+        setupCheckbox();
+        setupInputListener();
+        setEnteredValues(); 
+    },
+
+    setEnteredValues = function () {
+        var values = Immobilien.Results.getEnteredData();
+        
     };
+
 
 	that.init = init;
     that.getEnteredData = getEnteredData;
