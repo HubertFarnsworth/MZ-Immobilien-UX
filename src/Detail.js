@@ -212,7 +212,7 @@ Immobilien.Detail = (function() {
         li.appendChild(document.createTextNode(content));
         ul.appendChild(li);
 
-    }
+    };
 
 	that.init = init;
 	that.startDetail = startDetail; 
