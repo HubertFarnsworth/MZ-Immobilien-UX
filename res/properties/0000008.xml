@@ -25,8 +25,8 @@
 	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from>01.09.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Eichenparkett; Fu&#223;bodenheizung; Einbauk&#252;che; Duschen bodengleich mit Echtglasabtrennung</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar>n</cellar> <!-- Keller y oder n -->
-	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+	<cellar>nicht vorhanden</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>vorhanden</built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email>johann@yahoo.com</email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone>0941/83450321</telephone> <!-- Kontak: Telefonnummer -->

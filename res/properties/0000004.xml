@@ -25,8 +25,8 @@
 	<type>Etagenwohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Einbauk&#252;che; Aufzug; Balkon; Parketboden; aktive Wohnrauml&#252;ftung; Videogegensprechanlage</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar>y</cellar> <!-- Keller y oder n -->
-	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+	<cellar>vorhanden</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>vorhanden</built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email>blumen.beate@web.de</email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone>0941/7086933</telephone> <!-- Kontak: Telefonnummer -->
