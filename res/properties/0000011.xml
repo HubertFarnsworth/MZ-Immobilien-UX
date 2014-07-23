@@ -25,8 +25,8 @@
 	<type>Haus</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from>01.07.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>S&#252;dterasse; G&#228;ste-WC</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar>n</cellar> <!-- Keller y oder n -->
-	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+	<cellar>nicht vorhanden</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>vorhanden</built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email>hansi@gmail.com</email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone>0941/84330</telephone> <!-- Kontak: Telefonnummer -->

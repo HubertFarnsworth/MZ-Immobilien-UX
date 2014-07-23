@@ -5,9 +5,6 @@ ToDo:
 - Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
 - Bugfix mehrmaliges Starten der Detail.js 
-- Autocomplete-Bug beheben
-- Autosuggest Reihenhaus
-- startscreen neu zeichnen, wenn auf zurück-button geclickt wird
 - Mieten, Kaufen umschalten => neue Suche
 - Detailansicht
 - Max-Wert der Slider setzen
@@ -28,3 +25,6 @@ Check:
 - start - Suche Button
 - XML-Files überarbeiten + Bilder suchen/speichern
 - Suche
+- Autocomplete-Bug beheben
+- Autosuggest Reihenhaus
+- startscreen neu zeichnen, wenn auf zurück-button geclickt wird

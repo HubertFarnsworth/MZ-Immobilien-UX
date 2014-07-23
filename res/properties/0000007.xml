@@ -25,8 +25,8 @@
 	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from>07.07.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Balkon; Whirlpool</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar>y</cellar> <!-- Keller y oder n -->
-	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+	<cellar>vorhanden</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>vorhanden</built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email>sonnenblume9@t-online.de</email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone>015122317970</telephone> <!-- Kontak: Telefonnummer -->

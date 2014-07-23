@@ -25,8 +25,8 @@
 	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
 	<vacant_from>15.09.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
 	<extra>Parkettboden; Einbauk&#252;che</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
-	<cellar>n</cellar> <!-- Keller y oder n -->
-	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+	<cellar>nicht vorhanden</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>vorhanden</built_in_kitchen> <!-- Einbauküche, y oder n -->
 
 	<email>wasser@gasse.de</email> <!-- Kontakt: E-Mail-Adresse -->
 	<telephone>0941/9328420</telephone> <!-- Kontakt: Telefonnummer -->
