@@ -118,7 +118,7 @@ Immobilien.Results = (function() {
     searchResults = new Array(); 
     numberOfResults = 0; 
     for (var i = 0 ; i < database.length; i++) {
-      if (filterCityName(i)&& filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i) && filterDate(i)){
+      if (filterCityName(i)&& filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i) && filterBuyRent(i) && filterDate(i)){
         searchResults[numberOfResults] = database[i];
         numberOfResults++;
       }
@@ -171,15 +171,77 @@ Immobilien.Results = (function() {
       return true;
     }
     return false;
-  };
+  },
+
+  filterBuyRent = function (index) {
+    if (enteredData.rent === false) {
+      if (database[index].buy_or_rent.equals("buy")) {
+        
+      }
+    } else {
+      console.log("notrent");
+    }
+    return true; 
+  },
 
   filterDate = function (index) {
     //console.log(someDate.valueOf());
     //console.log(someDate2.valueOf());
     //console.log(someDate.valueOf() < someDate2.valueOf());
+    if (database[index].vacant_from != "") { 
 
-    //var cleanVacantFrom = vacantFrom.split('.').join("");
+      var enteredMinDay = parseInt(enteredData.dateMin.substring(0, 2));
+      var enteredMinMonth = parseInt(enteredData.dateMin.substring(2, 4));
+      var enteredMinYear = parseInt(enteredData.dateMin.substring(4, 8));
 
+      var enteredMaxDay = parseInt(enteredData.dateMax.substring(0, 2));
+      var enteredMaxMonth = parseInt(enteredData.dateMax.substring(2, 4));
+      var enteredMaxYear = parseInt(enteredData.dateMax.substring(4, 8));
+
+      var cleanVacantFrom = database[index].vacant_from.split('.').join("");
+      var vacantFromDay = parseInt(cleanVacantFrom.toString().substring(0, 2));
+      var vacantFromMonth = parseInt(cleanVacantFrom.toString().substring(2, 4));
+      var vacantFromYear = parseInt(cleanVacantFrom.toString().substring(4, 8));
+
+      var enteredDateMin = new Date(enteredMinYear, enteredMinMonth-1 , enteredMinDay);
+      var enteredDateMax = new Date(enteredMaxYear, enteredMaxMonth-1 , enteredMaxDay);
+      var vacantFrom = new Date(vacantFromYear, vacantFromMonth-1 , vacantFromDay);
+
+      if ((enteredData.dateMin == "") && (enteredData.dateMax == "")) {
+        return true; 
+      }
+
+      if ((enteredData.dateMin == "") && (enteredData.dateMax != "")) {
+        if (enteredDateMax >= vacantFrom) {
+          return true; 
+        } else {
+          return false; 
+        }
+      }
+
+      if ((enteredData.dateMin != "") && (enteredData.dateMax == "")) {
+        /*if (enteredDateMin >= vacantFrom) {
+          return true; 
+        } else {
+          return false; 
+        }*/
+        return true; 
+      }
+
+      if ((enteredData.dateMin != "") && (enteredData.dateMax != "")) {
+        /*if ((enteredDateMin <= vacantFrom)&&(enteredDateMax >= vacantFrom)) {
+          return true; 
+        } else {
+          return false; 
+        }*/
+        if (enteredDateMax >= vacantFrom) {
+          return true;
+        } else {
+          return false; 
+        }
+      }
+    }
+    return true; 
     /*if (cleanVacantFrom != "") {
       if ((enteredData.dateMin == "") && (enteredData.dateMax == "")) {
         return true; 
@@ -205,7 +267,6 @@ Immobilien.Results = (function() {
       }
       return false; 
     }*/
-    return true; 
   };
 
 	that.init = init;
