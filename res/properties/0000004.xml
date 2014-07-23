@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000004</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93055</zipcode> <!-- PLZ -->
+	<streetname>Blumenstra&#223;e</streetname> <!-- Straße -->
+	<housenumber>1</housenumber> <!-- Hausnummer -->
+
+	<description>Mit dem Lift gelangen Sie bequem in das 2. OG, in welchem sich auch diese Wohnung befindet. Hier k&#246;nnen Sie sich auf ca. 74,41 qm frei entfalten. Die Wohnung betretend befinden Sie sich im Flur. Von hier aus erreichen Sie s&#228;mtliche R&#228;umlichkeiten: den gro&#223;z&#252;gigen offenen Wohn- Essbereich mit Zugang zum Balkon, das Schlafzimmer, das Kinderzimmer das Tageslichtbad mit Badewanne sowie das G&#228;ste - WC. Die Wohnung wird mit einer Einbauk&#252;che ausgestattet, welche bereits im Mietpreis inbegriffen ist. Ein Kellerabteil bietet zus&#228;tzliche Staufl&#228;che. Ihr Fahrrad k&#246;nnen Sie sicher in dem daf&#252;r vorgesehenen Fahrradraum abstellen. Es ist f&#252;r 50,00 EUR monatlich ein Tiefgaragenstelolplatz anzumieten.</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>3</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Erstbezug</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>75</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>75</living_space> <!-- Wohnfläche -->
+	<commission>1.125,00</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>765,00</price> <!-- Kaufpreis -->
+	<extra_cost>185,00</extra_cost> <!-- Nebenkosten -->
+	<bail>2.295,00</bail> <!-- Kaution -->
+	<floors>3</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2014</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Etagenwohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from></vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Einbauk&#252;che; Aufzug; Balkon; Parketboden; aktive Wohnrauml&#252;ftung; Videogegensprechanlage</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>y</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>blumen.beate@web.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/7086933</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Tiefgaragenstellplatz</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>1</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>rent</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>50,00</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

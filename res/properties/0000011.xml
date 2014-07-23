@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000011</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93051</zipcode> <!-- PLZ -->
+	<streetname>Bogenstra&#223;e</streetname> <!-- Straße -->
+	<housenumber>3</housenumber> <!-- Hausnummer -->
+
+	<description>Engergieeffzientes, sch&#246;nes und helles Reihenhaus mit gro&#223;z&#252;gig-offenem Wohn-/Essbereich Einzelgarage und Stellplatz, evtl. zus&#228;tzlich ein Carport anmietbar.</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>6</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Gepflegt</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>200</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>160</living_space> <!-- Wohnfläche -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>1.200,00</price> <!-- Kaufpreis -->
+	<extra_cost>150,00</extra_cost> <!-- Nebenkosten -->
+	<bail>3.500,00</bail> <!-- Kaution -->
+	<floors>3</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>1995</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Haus</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>01.07.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>S&#252;dterasse; G&#228;ste-WC</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>n</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>hansi@gmail.com</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/84330</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Garage</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>1</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>rent</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>75,00</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

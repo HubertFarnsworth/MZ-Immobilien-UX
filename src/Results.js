@@ -118,7 +118,7 @@ Immobilien.Results = (function() {
     searchResults = new Array(); 
     numberOfResults = 0; 
     for (var i = 0 ; i < database.length; i++) {
-      if (filterCityName(i) && filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i)){
+      if (filterCityName(i)&& filterType(i) && filterCosts(i) && filterRooms(i) && filterSpace(i) && filterCommission(i) && filterDate(i)){
         searchResults[numberOfResults] = database[i];
         numberOfResults++;
       }
@@ -141,10 +141,15 @@ Immobilien.Results = (function() {
   },
 
   filterCosts = function (index) {
-    if ((enteredData.moneyMin <= database[index].price)&&(enteredData.moneyMax >= database[index].price)){
+    console.log(enteredData.moneyMin );
+    console.log(database[index].price );
+    console.log(enteredData.moneyMin <= database[index].price);
+    //if ((enteredData.moneyMin <= database[index].price)&&(enteredData.moneyMax >= database[index].price)){
       return true; 
-    }
-    return false;
+    //}
+    //return false;
+
+
   },
 
   filterRooms = function (index) {
@@ -171,37 +176,40 @@ Immobilien.Results = (function() {
     return false;
   };
 
-  /*filterDate = function (index) {
-    var vacantFrom = database[index].vacant_from;
-    var cleanVacantFrom = vacantFrom.split('.').join("");
+  filterDate = function (index) {
+    //console.log(someDate.valueOf());
+    //console.log(someDate2.valueOf());
+    //console.log(someDate.valueOf() < someDate2.valueOf());
 
-    if (cleanVacantFrom != "") {
+    //var cleanVacantFrom = vacantFrom.split('.').join("");
+
+    /*if (cleanVacantFrom != "") {
       if ((enteredData.dateMin == "") && (enteredData.dateMax == "")) {
         return true; 
       }
 
       if ((enteredData.dateMin == "") && (enteredData.dateMax != "")) {
-        if (enteredData.dateMax <= database[index].vacant_from) {
+        console.log(enteredData.dateMax + "<= " + cleanVacantFrom);
+        if (enteredData.dateMax >= cleanVacantFrom) {
           return true; 
         }
       }
 
       if ((enteredData.dateMin != "") && (enteredData.dateMax == "")) {
-        if (enteredData.dateMin >= database[index].vacant_from) {
+        if (enteredData.dateMin <= cleanVacantFrom) {
           return true; 
         }
       }
 
       if ((enteredData.dateMin != "") && (enteredData.dateMax != "")) {
-        if ((enteredData.dateMin >= database[index].vacant_from)&&(enteredData.dateMax <= database[index].vacant_from)) {
+        if ((enteredData.dateMin >= cleanVacantFrom)&&(enteredData.dateMax <= cleanVacantFrom)) {
           return true; 
         }
       }
-
       return false; 
-    }
-     return false; 
-  };*/
+    }*/
+    return true; 
+  };
 
 	that.init = init;
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000012</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93059</zipcode> <!-- PLZ -->
+	<streetname>Wassergasse</streetname> <!-- Straße -->
+	<housenumber>3</housenumber> <!-- Hausnummer -->
+
+	<description>1 Zimmer-Appartement mit Single-Einbauk&#252;che und Duschbad </description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>1</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Modernisiert</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>25</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>25</living_space> <!-- Wohnfläche -->
+	<commission>625,00</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>275,00</price> <!-- Kaufpreis -->
+	<extra_cost>40,00</extra_cost> <!-- Nebenkosten -->
+	<bail>825,00</bail> <!-- Kaution -->
+	<floors>1</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2011</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>15.9.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Parkettboden; Einbauk&#252;che</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>n</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>wasser@gasse.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/9328420</telephone> <!-- Kontakt: Telefonnummer -->
+
+	<parking_space>Nicht vorhanden</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>0</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>Nicht vorhanden</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>0</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

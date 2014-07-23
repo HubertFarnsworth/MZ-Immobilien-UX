@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000010</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93055</zipcode> <!-- PLZ -->
+	<streetname>Straubinger Stra&#223;e</streetname> <!-- Straße -->
+	<housenumber>22</housenumber> <!-- Hausnummer -->
+
+	<description>Wir verwirklichen Ihren Traum vom eigenen Haus. Gro&#223;z&#252;giges, modernes und bezahlbares Eigenheim als Energieeffizienzhaus 70: Unsere H&#228;user bieten viel Platz f&#252;r Gro&#223; und Klein, junge Paare, Familien mit Kindern und eignen sich ebenfalls als Kapitalanlage. Unser Bauvorhaben im sch&#246;nen Regensburg umfasst insgesamt 29 Reihenh&#228;user mit je 114 m² und 136 m² Wohnfl&#228;che. Die H&#228;user werden schl&#252;sselfertig inkl. Grundst&#252;ck, Hausanschlusskosten, Architektenleistung, Statik, Baugenehmigung und Au&#223;enanlagen (z.B. Terrassen, Hauseingang) angeboten. Dank der Hochw&#228;rmed&#228;mmung und der massiven Bauweise zeichnen sich die Familienh&#228;user durch sehr niedrige, monatliche Nebenkosten aus. Gern begleiten wir Sie pers&#246;nlich und zuverl&#228;ssig auf Ihrem Weg in eine Zukunft im eigenen Werner Wohnbau Haus.</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>6</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Erstbezug</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>187</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>136</living_space> <!-- Wohnfläche -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>buy</buy_or_rent> <!-- buy oder rent --> 
+	<price>206.900,00</price> <!-- Kaufpreis -->
+	<extra_cost>0</extra_cost> <!-- Nebenkosten -->
+	<bail>0</bail> <!-- Kaution -->
+	<floors>3</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2014</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Fernw&#228;rme</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Haus</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>01.09.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Exklusives G&#228;ste WC; Gartenterasse; Wannenbad; Astra Satelliten TV-Anlage</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>y</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>n</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>jogi@nationalmannschaft.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/802346544</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Garage</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>1</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>buy</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>0</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

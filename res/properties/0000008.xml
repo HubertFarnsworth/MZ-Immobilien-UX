@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000008</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93053</zipcode> <!-- PLZ -->
+	<streetname>Rennerstra&#223;e</streetname> <!-- Straße -->
+	<housenumber>2</housenumber> <!-- Hausnummer -->
+
+	<description>Kleine feine, sehr hochwertig ausgestattete Wohnanlage in Holzst&#228;nderbauweise am Galgenberg mit gro&#223;er Gr&#252;nanlage. Hier wohnen viele Eigent&#252;mer selbst! Jede Wohnung mit Abstellkammer, sehr hell, Waschmaschinenanschluss und schnelles Glasfasernetz. Modernste Haustechnik, Tiefgarage und Aufzug.</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>2</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Erstbezug</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>53</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>53</living_space> <!-- Wohnfläche -->
+	<commission>0</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>buy</buy_or_rent> <!-- buy oder rent --> 
+	<price>221.300,00</price> <!-- Kaufpreis -->
+	<extra_cost>0</extra_cost> <!-- Nebenkosten -->
+	<bail>0</bail> <!-- Kaution -->
+	<floors>1</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>2014</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Holz-Pelletheizung</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>01.09.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Eichenparkett; Fu&#223;bodenheizung; Einbauk&#252;che; Duschen bodengleich mit Echtglasabtrennung</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>n</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>johann@yahoo.com</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/83450321</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Tiefgaragenstellplatz</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>1</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>buy</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>19.500,00</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>

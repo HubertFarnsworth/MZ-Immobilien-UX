@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<adcostruroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>0000002</id> <!-- id des Objekts -->
+
+	<city>Regensburg</city> <!-- Stadt -->
+	<zipcode>93047</zipcode> <!-- PLZ -->
+	<streetname>Bogenstra&#223;e</streetname> <!-- Straße -->
+	<housenumber>2</housenumber> <!-- Hausnummer -->
+
+	<description>Wer etwas Besonderes und Einzigartiges sucht ist hier genau richtig! Ger&#228;umige Zimmer, weite Flure und absolute Privatsph&#228;re zeichnen diese Rarit&#228;t in Regensburg aus. Im westlichen Teil des Penthouses finden Sie den Wohn-, Ess- und Kochbereich vor. Eine hochwertige Einbauk&#252;che mit gro&#223;er Kochinsel, sowie ein praktischer Aufbewahrungsraum direkt daneben stehen Ihnen hier zur Verf&#252;gung. Dinieren Sie an der langen Tafel vorm Kaminofen, der in beide Richtungen zu betrachten und bedienen ist. &#220;ber den Wohnbereich gelangen Sie in den Wintergarten und anschlie&#223;end auf die Dachterrasse mit West-Ausrichtung. Hier k&#246;nnen Sie die Freiheit absolut genie&#223;en und auch ein Spaziergang um das komplette Penthouse ist m&#246;glich. Auf dem Weg zum &#246;stlichen Bereich des Wohntraumes finden Sie noch ein G&#228;ste-WC und den Hauswirtschaftsraum vor. Es folgen nun zwei R&#228;ume, in dem perfekt der B&#252;robereich oder auch Kinderzimmer integriert werden k&#246;nnen. Ein eigenes Badezimmer mit Dusche ist vorhanden. Der gr&#246;&#223;ere Schlafraum besitzt zwei Ankleidezimmer und ist direkt mit dem gro&#223;en Bad verbunden. Eine gemauerte Dusche, Badewanne und eine Sauna geh&#246;ren hier zur Ausstattung. Im &#246;stlichsten Teil des Penthouses befindet sich ein weiterer gro&#223;er Raum, den Sie z.B. zu Ihrem Homeoffice, Heimkino oder Fitnessraum machen k&#246;nnen. Eine derartige M&#246;glichkeit des Wohnens finden Sie so schnell nie wieder!</description>  <!-- Fließtext vom Verkäufer -->
+	<number_of_rooms>5</number_of_rooms> <!-- Anzahl der Zimmer -->
+	<status>Neuwertig</status> <!-- Status der Immobilie (neuwertig, renoviert, renovierbedürftig, etc. -->
+	<size_of_property>467</size_of_property> <!-- Grundstücksfläche -->
+	<living_space>467</living_space> <!-- Wohnfläche -->
+	<commission>8.000,00</commission> <!-- Provisionspreis, 0 bis n -->
+	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
+	<price>4.000,00</price> <!-- Kaufpreis -->
+	<extra_cost>550,00</extra_cost> <!-- Nebenkosten -->
+	<bail>8.000,00</bail> <!-- Kaution -->
+	<floors>1</floors> <!-- Anzahl der Etagen -->
+	<year_of_construction>1999</year_of_construction> <!-- Jahr des Baus -->
+	<heatingtype>Gas</heatingtype> <!-- Öl, Zentralheizung, etc. -->
+	<rent>n</rent> <!--vermietet? y oder n -->
+	<type>Wohnung</type> <!-- Haus, Grundstück, Garage, Wohnung, etc. getrennt durch ; -->
+	<vacant_from>10.10.2014</vacant_from> <!-- Datum dd/mm/yyyy -->
+	<extra>Kamin; Klimaanlage</extra> <!-- Garten, Balkon, Terasse, etc. getrennt durch ; -->
+	<cellar>y</cellar> <!-- Keller y oder n -->
+	<built_in_kitchen>y</built_in_kitchen> <!-- Einbauküche, y oder n -->
+
+	<email>immobilien@regensburg.de</email> <!-- Kontakt: E-Mail-Adresse -->
+	<telephone>0941/28092101</telephone> <!-- Kontak: Telefonnummer -->
+
+	<parking_space>Garage</parking_space> <!-- Art des Stellplatzes -->
+	<parking_space_amount>2</parking_space_amount> <!-- Anzahl: 0 bis n -->
+	<parking_space_buy_or_rent>buy</parking_space_buy_or_rent> <!-- Wird Stellplatz verkauft oder vermietet? -->
+	<parking_space_price>0</parking_space_price> <!-- Preis des Stellplatzes (Miete oder Kauf) -->
+
+</adcostruroot>
