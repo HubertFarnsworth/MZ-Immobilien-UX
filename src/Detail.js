@@ -10,6 +10,7 @@ Immobilien.Detail = (function() {
     globalMap = null,
     latitude = null,
     longitude = null,
+    amountOfImages = 0,
 
 	init = function() {
 	   console.log("Detail.js aufgerufen");	
@@ -142,6 +143,18 @@ Immobilien.Detail = (function() {
     createHTMLTags = function () {
         //creates html-tags for the pictures
         //needed for the gallery
+        var id = informations.id;
+        var image_url;
+        var maxAmountOfImages = 10;
+        for (var i = 1; i <= 10; i++) {
+            //create up zo 10 image-tags for the gallery
+            image_url = "./res/image/" + id + "_" + i + ".jpg";
+            console.log(image_url);
+            var imgElement = document.createElement("img");
+            imgElement.setAttribute("id", "image" + i);
+            imgElement.setAttribute("src", image_url);
+        }
+        
     },
 
     setupMap = function () {
