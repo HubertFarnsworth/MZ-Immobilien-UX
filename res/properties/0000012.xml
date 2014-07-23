@@ -15,7 +15,7 @@
 	<living_space>25</living_space> <!-- Wohnfläche -->
 	<commission>625,00</commission> <!-- Provisionspreis, 0 bis n -->
 	<buy_or_rent>rent</buy_or_rent> <!-- buy oder rent --> 
-	<price>275,00</price> <!-- Kaufpreis -->
+	<price>275</price> <!-- Kaufpreis -->
 	<extra_cost>40,00</extra_cost> <!-- Nebenkosten -->
 	<bail>825,00</bail> <!-- Kaution -->
 	<floors>1</floors> <!-- Anzahl der Etagen -->

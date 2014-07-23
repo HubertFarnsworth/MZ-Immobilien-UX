@@ -141,13 +141,10 @@ Immobilien.Results = (function() {
   },
 
   filterCosts = function (index) {
-    console.log(enteredData.moneyMin );
-    console.log(database[index].price );
-    console.log(enteredData.moneyMin <= database[index].price);
-    //if ((enteredData.moneyMin <= database[index].price)&&(enteredData.moneyMax >= database[index].price)){
+    if ((enteredData.moneyMin <= database[index].price)&&(enteredData.moneyMax >= database[index].price)){
       return true; 
-    //}
-    //return false;
+    }
+    return false;
 
 
   },
