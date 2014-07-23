@@ -183,7 +183,12 @@ Immobilien.Detail = (function() {
         console.log(informations);
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
         document.getElementById("des-content-text").innerHTML = informations.description;
-        document.getElementById("data-content-text").innerHTML = informations.streetname + " " + informations.housenumber;
+        //document.getElementById("data-content-list").innerHTML = informations.streetname + " " + informations.housenumber;
+
+        var ul = document.getElementById("data-content-list");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode("Addresse: " + informations.streetname + " " + informations.housenumber));
+        ul.appendChild(li);
 	};
 
 	that.init = init;

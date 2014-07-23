@@ -12,6 +12,7 @@ ToDo:
 - Detailansicht
 - Max-Wert der Slider setzen
 - Punkte bei Preisangabe setzen
+- Marker in Suchergebnisse einfügen
 - wenn man in preiseingabe €-zeichen eingibt kommt ein fehler. 
 
 
