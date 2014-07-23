@@ -146,7 +146,6 @@ Immobilien.Startscreen = (function() {
             map.setZoom(13);
             console.log("place ", place.name);
             getInputValues();
-            //$('wo-input').val(place.name);
         } else {
             $('wo-input').placeholder = 'Stadt eingeben';
         }
