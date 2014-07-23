@@ -657,7 +657,7 @@ Immobilien.Startscreen = (function() {
         $("#size-lower-input").val(values.sizeMin);
 
         //Bug
-        $("#checkbox-commission").attr('checked',true);
+        //$("#checkbox-commission").attr('checked',true);
 
         if (values.dateMin != "") {
             $("#datepicker-min").val(values.dateMin.toString().substring(0,2) + "." + values.dateMin.toString().substring(2,4) + "." + values.dateMin.toString().substring(4,8));
@@ -666,9 +666,6 @@ Immobilien.Startscreen = (function() {
         if (values.dateMax != "") {
             $("#datepicker-max").val(values.dateMax.toString().substring(0,2) + "." + values.dateMax.toString().substring(2,4) + "." + values.dateMax.toString().substring(4,8));
         }
-
-
-
     };
 
 

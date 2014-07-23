@@ -218,11 +218,10 @@ Immobilien.Detail = (function() {
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
         document.getElementById("des-content-text").innerHTML = informations.description;
 
-        appendLi ("Objektnummer: " +  informations.id);
-        appendLi ("Kaltmiete: " +  informations.price);
-        appendLi ("Nebenkosten: " +  informations.extra_cost);
-        appendLi ("Gesamtmiete: " +  informations.bail);
-        appendLi ("Provision: " +  informations.commission);
+        appendLi ("Kaltmiete: " +  informations.price +" €");
+        appendLi ("Nebenkosten: " +  informations.extra_cost +" €");
+        appendLi ("Kaution: " +  informations.bail +" €");
+        appendLi ("Provision: " +  informations.commission +" €");
         appendLi ("Adresse: " + informations.streetname + " " + informations.housenumber + ", " + informations.plz + " " + informations.city);
         appendLi ("Anzahl der Zimmer: " +  informations.rooms);
         appendLi ("Wohnfläche: " +  informations.size + "qm");
@@ -230,14 +229,14 @@ Immobilien.Detail = (function() {
         appendLi ("Anzahl der Etagen: " +  informations.floors);
         appendLi ("Baujahr: " +  informations.year_of_construction);
         appendLi ("Befeuerung: " +  informations.heatingtype);
-        appendLi ("Verfügbar ab: " +  informations.vacant_from);
         appendLi ("Extras: " +  informations.extra);
         appendLi ("Keller: " +  informations.cellar);
         appendLi ("Küche: " +  informations.built_in_kitchen);
         appendLi ("Baujahr: " +  informations.year_of_construction);
         appendLi ("Stellplatz: " +  informations.parking_space);
         appendLi ("Verfügbare Stellplätze: " +  informations.parking_space_amount);
-        appendLi ("Kosten für Stellplatz: " +  informations.parking_space_price);
+        appendLi ("Kosten für Stellplatz: " +  informations.parking_space_price +" €");
+        appendLi ("Verfügbar ab: " +  informations.vacant_from);
 	},
 
     appendLi = function (content) {

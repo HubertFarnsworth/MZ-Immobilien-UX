@@ -11,7 +11,8 @@ ToDo:
 - Punkte bei Preisangabe setzen
 - Marker in Suchergebnisse einfügen
 - wenn man in preiseingabe €-zeichen eingibt kommt ein fehler. 
-- slider-bug bei zurück zu suche
+- slider-bug bei zurück zu suche / Autosuggest-Bug / Marker - Bug 
+
 
 
 
