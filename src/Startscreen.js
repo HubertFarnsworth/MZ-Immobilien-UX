@@ -611,12 +611,18 @@ Immobilien.Startscreen = (function() {
 
     getRessources = function() {
         return ressources; 
+    },
+
+    reloadStartscreen = function () {
+        console.log("reloadStartscreen");
+        console.log(Immobilien.Results.getEnteredData());
     };
 
 	that.init = init;
     that.getEnteredData = getEnteredData;
     that.getRessources = getRessources;
     that.setMarkersForResults = setMarkersForResults;
+    that.reloadStartscreen = reloadStartscreen; 
 
 	return that;
 }());

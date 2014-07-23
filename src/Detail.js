@@ -36,7 +36,7 @@ Immobilien.Detail = (function() {
 
 		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToSearch", function(event){
-      		Immobilien.MainController.init(); 
+      		Immobilien.MainController.reloadStartscreen(); 
     	});
 
 	    //Minimieren bzw. maximieren der Map-Ansicht

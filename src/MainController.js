@@ -24,17 +24,23 @@ Immobilien.MainController = (function() {
 	getEnteredData = function() {
 		var enteredData = Immobilien.Startscreen.getEnteredData(); 
 		return enteredData;
-	}
+	},
 
 	setMarkersForResults = function(results) {
 		Startscreen.setMarkersForResults(results);
-	}
+	},
+
+	reloadStartscreen = function () {
+		Startscreen.reloadStartscreen(); 
+	};
+
 
 	that.init = init;
 	that.startDetail = startDetail;
 	that.startResults = startResults; 
 	that.getEnteredData = getEnteredData;
 	that.setMarkersForResults = setMarkersForResults;
+	that.reloadStartscreen = reloadStartscreen; 
 
 	return that;
 }());

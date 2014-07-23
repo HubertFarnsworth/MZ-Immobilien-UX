@@ -194,7 +194,6 @@ Immobilien.Results = (function() {
     //console.log(someDate2.valueOf());
     //console.log(someDate.valueOf() < someDate2.valueOf());
     if (database[index].vacant_from != "") { 
-
       var enteredMinDay = parseInt(enteredData.dateMin.substring(0, 2));
       var enteredMinMonth = parseInt(enteredData.dateMin.substring(2, 4));
       var enteredMinYear = parseInt(enteredData.dateMin.substring(4, 8));
@@ -247,34 +246,14 @@ Immobilien.Results = (function() {
       }
     }
     return true; 
-    /*if (cleanVacantFrom != "") {
-      if ((enteredData.dateMin == "") && (enteredData.dateMax == "")) {
-        return true; 
-      }
+  },
 
-      if ((enteredData.dateMin == "") && (enteredData.dateMax != "")) {
-        console.log(enteredData.dateMax + "<= " + cleanVacantFrom);
-        if (enteredData.dateMax >= cleanVacantFrom) {
-          return true; 
-        }
-      }
-
-      if ((enteredData.dateMin != "") && (enteredData.dateMax == "")) {
-        if (enteredData.dateMin <= cleanVacantFrom) {
-          return true; 
-        }
-      }
-
-      if ((enteredData.dateMin != "") && (enteredData.dateMax != "")) {
-        if ((enteredData.dateMin >= cleanVacantFrom)&&(enteredData.dateMax <= cleanVacantFrom)) {
-          return true; 
-        }
-      }
-      return false; 
-    }*/
+  getEnteredData = function () {
+    return enteredData; 
   };
 
 	that.init = init;
+  that.getEnteredData = getEnteredData;  
 
 	return that;
 
