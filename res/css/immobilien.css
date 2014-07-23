@@ -242,6 +242,12 @@
 	height: 400px; 
 }
 
+#galleria {
+	padding: 1%;
+	height: 350px;
+	margin-right: 5%;
+}
+
 #data-size, #map-size, #images-size, #des-size, #contact-size {
 	overflow: hidden;
 }
