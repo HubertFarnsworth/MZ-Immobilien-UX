@@ -10,7 +10,7 @@ Immobilien.Detail = (function() {
     globalMap = null,
     latitude = null,
     longitude = null,
-    amountOfImages = 0,
+    amountOfImages = 4,
 
 	init = function() {
 	   console.log("Detail.js aufgerufen");	
@@ -156,9 +156,8 @@ Immobilien.Detail = (function() {
         //needed for the gallery
         var id = informations.id;
         var imageUrl;
-        var maxAmountOfImages = 10;
 
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 1; i <= amountOfImages; i++) {
             //create up zo 4 image-tags for the gallery
             imageUrl = "./res/image/" + id + "_" + i + ".jpg";
             console.log(imageUrl);
