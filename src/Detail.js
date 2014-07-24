@@ -38,7 +38,9 @@ Immobilien.Detail = (function() {
 
 		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToSearch", function(event){
-            $('.galleria').data('galleria').destroy();
+            if ($('.galleria').data('galleria') != null) {
+                $('.galleria').data('galleria').destroy();
+            }
       		Immobilien.MainController.reloadStartscreen(); 
     	});
 
