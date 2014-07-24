@@ -23,6 +23,7 @@ Immobilien.Startscreen = (function() {
         setupTopButtons();
         setupCheckbox();
         setupInputListener();
+
         if(resLoaded === false) {
             loadRessources(); 
             resLoaded = true; 
@@ -118,7 +119,11 @@ Immobilien.Startscreen = (function() {
 
 	//Google-Autocomplete für Wo-Input 
 	setupGoogleComponents = function () {
-		google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addDomListener(window, 'load', initializeGoogleComponents);
+            
+	},
+
+    initializeGoogleComponents = function() {
 
         var mapOptions = {
                 center: new google.maps.LatLng(49.0167, 11.0833),
@@ -126,26 +131,29 @@ Immobilien.Startscreen = (function() {
             };
 
         map = new google.maps.Map(document.getElementById("map-canvas"),
-                mapOptions);   
+                mapOptions); 
 
-        function initialize() {
-            //hier war mapOptions und new map-aufruf
-            console.log(map);
+        //hier war mapOptions und new map-aufruf
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", map);
 
-            globalMap = map;
-
-            autocomplete = new google.maps.places.Autocomplete(input, options);
-
-            google.maps.event.addListener(autocomplete, 'place_changed', onAutocompletePlaceChanged);
-      
-        }
+        globalMap = map;
 
         var input = document.getElementById('wo-input');
+
         var options = {
             types: ['(cities)'],
             componentRestrictions: {country: 'de'}
-        };      
-	},
+        };  
+
+        autocomplete = new google.maps.places.Autocomplete(input, options);
+
+        google.maps.event.addListener(autocomplete, 'place_changed', onAutocompletePlaceChanged);
+  
+    },
+
+    loadGoogleComponents = function() {
+        initialize();
+    },
 
     onAutocompletePlaceChanged = function() {
         var place = autocomplete.getPlace();
@@ -475,13 +483,18 @@ Immobilien.Startscreen = (function() {
         dateMin = null,
         dateMax = null;
 
-        //city = $("#wo-input").val();
         console.log(autocomplete);
-        if (enteredPlace) {
-            city = autocomplete.getPlace().name;
+        if (autocomplete.getPlace() === undefined) {
+            city = $("#wo-input").val();
         }
+
         else {
-            city = "";
+            if (enteredPlace) {
+                city = autocomplete.getPlace().name;
+            }
+            else {
+                city = "";
+            }
         }
         
         console.log("Stadt: ", city);
@@ -627,7 +640,7 @@ Immobilien.Startscreen = (function() {
         emptyTemplate = _.template($("#empty-tpl").html());
         $("#results").html(emptyTemplate);
         
-        setupGoogleComponents();
+        initializeGoogleComponents();
         createMietenKaufenButton();
         setupDatepicker(); 
         setupSliders(); 
