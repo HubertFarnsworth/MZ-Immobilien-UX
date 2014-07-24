@@ -158,7 +158,7 @@ Immobilien.Detail = (function() {
         var imageUrl;
         var maxAmountOfImages = 10;
 
-        for (var i = 1; i <= parseInt(amountOfImages); i++) {
+        for (var i = 1; i <= 4; i++) {
             //create up zo 4 image-tags for the gallery
             imageUrl = "./res/image/" + id + "_" + i + ".jpg";
             console.log(imageUrl);
