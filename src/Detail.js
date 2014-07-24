@@ -33,7 +33,7 @@ Immobilien.Detail = (function() {
 		informations = data; 
 		setText();
         setupMap();
-        
+        createHTMLTags(),
         setupGalleria();
 
 		//Zurück zum Hauptmenü
@@ -63,18 +63,28 @@ Immobilien.Detail = (function() {
         //Minimieren bzw. maximieren der Bildergalerie
         $(document).on("click", "#images-size-button", function(event){
             if (images === true) {
+                console.log("einklappen");
                 $("#images-content").height(0);
                 $('.galleria').data('galleria').destroy();
-                var img = document.getElementById("image1");
-                img.style.visibility = "hidden";
-                var img = document.getElementById("image2");
-                img.style.visibility = "hidden";
+                for (var i = 1; i <= parseInt(amountOfImages); i++) {
+                    var img = document.getElementById("image" + i);
+                    console.log("image" + i);
+                    img.style.visibility = "hidden";
+                }
                 $("#images-size-button").removeClass("glyphicon-minus");
                 $("#images-size-button").addClass("glyphicon-plus");
                 images = false; 
             } else {
+                console.log("ausklappen");
                 $("#images-content").height(400);
                 setupGalleria();
+                /*
+                for (var i = 1; i <= parseInt(amountOfImages); i++) {
+                    var img = document.getElementById("image" + i);
+                    console.log("image" + i);
+                    img.style.visibility = "visible";
+                }
+                */
                 $("#images-size-button").removeClass("glyphicon-plus");
                 $("#images-size-button").addClass("glyphicon-minus");
                 images = true;
@@ -143,8 +153,7 @@ Immobilien.Detail = (function() {
 	},
 
     setupGalleria = function () {
-
-        createHTMLTags(),
+        //start the gallery
 
         Galleria.loadTheme('./libs/galleria/themes/classic/galleria.classic.min.js');
         Galleria.run('.galleria');
@@ -160,14 +169,11 @@ Immobilien.Detail = (function() {
         for (var i = 1; i <= amountOfImages; i++) {
             //create up zo 4 image-tags for the gallery
             imageUrl = "./res/image/" + id + "_" + i + ".jpg";
-            console.log(imageUrl);
             var imgElement = document.createElement("img");
             imgElement.setAttribute("id", "image" + i);
             imgElement.setAttribute("src", imageUrl);
             document.getElementById("galleria").appendChild(imgElement);
         }
-        
-        
     },
 
     setupMap = function () {
