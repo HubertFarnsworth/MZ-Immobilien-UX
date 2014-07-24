@@ -8,6 +8,7 @@ Immobilien.Startscreen = (function() {
     enteredValues = new Array(),
     ressources = new Array (),
     markersArray = new Array(),
+    markersGeodataArray = new Array(),
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -427,6 +428,10 @@ Immobilien.Startscreen = (function() {
             if (status == google.maps.GeocoderStatus.OK) {
                 latitude = results[0].geometry.location.lat();
                 longitude = results[0].geometry.location.lng();
+                
+                var markerGeodata = new google.maps.LatLng(latitude, longitude);
+
+                console.log(markerGeodata);
 
                 //path for numbered icons
                 var iconPath = "res/markers/marker" + parseInt(id + 1) + ".png";
@@ -438,6 +443,7 @@ Immobilien.Startscreen = (function() {
                     icon: iconPath
                 });
 
+                markersGeodataArray.push(markerGeodata);
                 markersArray.push(marker);
                 //google.maps.event.addListener(marker,"click",function(){});
             }
@@ -620,6 +626,28 @@ Immobilien.Startscreen = (function() {
             placeMarkerOnMap(address, i);
             console.log(address);
         }
+
+        //is called while for loop is still running
+        fitMapToMarkers();
+    },
+
+    fitMapToMarkers = function() {
+        // map: an instance of GMap3
+        // latlng: an array of instances of GLatLng
+        var latlngbounds = new google.maps.LatLngBounds();
+        /*
+        markersGeodataArray.each(function(n){
+           latlngbounds.extend(n);
+        });
+        */
+        for (var i = 0; i < markersGeodataArray.length; i++) {
+            //  And increase the bounds to take this point
+            latlngbounds.extend(markersGeodataArray[i]);
+        }
+
+        globalMap.setCenter(latlngbounds.getCenter());
+        console.log(latlngbounds.getCenter());
+        globalMap.fitBounds(latlngbounds); 
     },
 
     clearOverlays = function () {
@@ -627,6 +655,7 @@ Immobilien.Startscreen = (function() {
             markersArray[i].setMap(null);
         }
         markersArray.length = 0;
+        markersGeodataArray.length = 0;
     },
 
     getRessources = function() {
