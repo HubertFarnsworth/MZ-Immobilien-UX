@@ -155,16 +155,19 @@ Immobilien.Detail = (function() {
         //creates html-tags for the pictures
         //needed for the gallery
         var id = informations.id;
-        var image_url;
+        var imageUrl;
         var maxAmountOfImages = 10;
-        for (var i = 1; i <= 10; i++) {
-            //create up zo 10 image-tags for the gallery
-            image_url = "./res/image/" + id + "_" + i + ".jpg";
-            console.log(image_url);
+
+        for (var i = 1; i <= parseInt(amountOfImages); i++) {
+            //create up zo 4 image-tags for the gallery
+            imageUrl = "./res/image/" + id + "_" + i + ".jpg";
+            console.log(imageUrl);
             var imgElement = document.createElement("img");
             imgElement.setAttribute("id", "image" + i);
-            imgElement.setAttribute("src", image_url);
+            imgElement.setAttribute("src", imageUrl);
+            document.getElementById("galleria").appendChild(imgElement);
         }
+        
         
     },
 
