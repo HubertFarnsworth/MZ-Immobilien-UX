@@ -36,6 +36,10 @@ Immobilien.MainController = (function() {
 
 	loadMerkliste = function() {
 		Immobilien.Merkliste.init(); 
+	},
+
+	addToMerkliste = function (informations) {
+		Immobilien.Merkliste.addToMerkliste(informations); 
 	};
 
 
@@ -46,6 +50,7 @@ Immobilien.MainController = (function() {
 	that.setMarkersForResults = setMarkersForResults;
 	that.reloadStartscreen = reloadStartscreen; 
 	that.loadMerkliste = loadMerkliste; 
+	that.addToMerkliste = addToMerkliste; 
 
 	return that;
 }());

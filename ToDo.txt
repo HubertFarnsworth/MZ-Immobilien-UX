@@ -4,19 +4,24 @@ ToDo:
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
 - Merkliste und Merken-Button einfügen
 - Platzhalterseite für "Biete"
-- Bugfix mehrmaliges Starten der Detail.js 
 - Mieten, Kaufen umschalten => neue Suche
 - Detailansicht
-- Max-Wert der Slider setzen
-- Punkte bei Preisangabe setzen
 - Marker in Suchergebnisse einfügen
 - wenn man in preiseingabe €-zeichen eingibt kommt ein fehler. 
-- slider-bug bei zurück zu suche / Autosuggest-Bug / Marker - Bug  / Suche muss nochmal starten
+- slider-bug bei zurück zu suche / Autosuggest-Bug / Marker - Bug  / Suche muss nochmal starten / Marker setzen 
+- Umgebungsinformationen !!!!!
+- Provisions-Checkbox
 
 
-
-
-??? Pfeil bei Suchergebnissen
+Nice to have:
+- Pfeil bei Suchergebnissen
+- Max-Wert der Slider setzen
+- Bugfix mehrmaliges Starten der Detail.js 
+- Punkte bei Preisangabe setzen
+- Detail.js => ganz normaler Marker statt mit nr 1
+- Felder in Detail.js verkleinern
+- Leerzeile in Objektdetails
+- Marker in Auflistung der Immobilie
 
 
 
@@ -29,3 +34,4 @@ Check:
 - Autocomplete-Bug beheben
 - Autosuggest Reihenhaus
 - startscreen neu zeichnen, wenn auf zurück-button geclickt wird
+- Gallerie 

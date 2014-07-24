@@ -4,7 +4,7 @@ Immobilien.Detail = (function() {
 	map = false,
     firstload = true,
     images = true, 
-    data = false, 
+    dataVisible = false, 
     des = false,
     contact = false,
     globalMap = null,
@@ -93,18 +93,18 @@ Immobilien.Detail = (function() {
 
         //Minimieren bzw. maximieren der Objektdaten
         $(document).on("click", "#data-size-button", function(event){
-            if (data === true) {
+            if (dataVisible === true) {
                 $("#data-content").height(0);
                 $("#data-size-button").removeClass("glyphicon-minus");
                 $("#data-size-button").addClass("glyphicon-plus");
                 $("#data-content-list").css({"visibility":"hidden"});
-                data = false; 
+                dataVisible = false; 
             } else {
                 $("#data-content").height(400);
                 $("#data-size-button").removeClass("glyphicon-plus");
                 $("#data-size-button").addClass("glyphicon-minus");
                 $("#data-content-list").css({"visibility":"visible"});
-                data = true;
+                dataVisible = true;
             }
         });
 
@@ -150,6 +150,16 @@ Immobilien.Detail = (function() {
              + "&body=" + escape("Hallo, ich interessiere mich fuer Ihr Objekt in der " + informations.streetname + " " + informations.housenumber + ", " + informations.plz + " " + informations.city +". Bitte senden Sie mir einen Besichtigungsterm zu.");
             window.location.href = link;
         }); 
+
+        $(document).on("click", "#merkliste-button", function(event){
+            Immobilien.MainController.loadMerkliste(); 
+        });
+
+        $(document).on("click", "#add-merkliste", function(event){
+            Immobilien.MainController.addToMerkliste(informations); 
+        });
+
+
 	},
 
     setupGalleria = function () {
@@ -237,8 +247,9 @@ Immobilien.Detail = (function() {
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
         document.getElementById("des-content-text").innerHTML = informations.description;
 
-        appendLi ("Kaltmiete: " +  informations.price +" €");
+        appendLi ("Kaltmiete: " +  informations.price +",00 €");
         appendLi ("Nebenkosten: " +  informations.extra_cost +" €");
+        appendLi ("Gesamtkosten: " +  (parseInt(informations.extra_cost) + parseInt(informations.price))  +",00 €");
         appendLi ("Kaution: " +  informations.bail +" €");
         appendLi ("Provision: " +  informations.commission +" €");
         appendLi ("Adresse: " + informations.streetname + " " + informations.housenumber + ", " + informations.plz + " " + informations.city);
@@ -246,7 +257,6 @@ Immobilien.Detail = (function() {
         appendLi ("Wohnfläche: " +  informations.size + "qm");
         appendLi ("Objektzustand: " +  informations.status);
         appendLi ("Anzahl der Etagen: " +  informations.floors);
-        appendLi ("Baujahr: " +  informations.year_of_construction);
         appendLi ("Befeuerung: " +  informations.heatingtype);
         appendLi ("Extras: " +  informations.extra);
         appendLi ("Keller: " +  informations.cellar);
@@ -261,8 +271,8 @@ Immobilien.Detail = (function() {
            appendLi ("Verfügbar ab: sofort"); 
         }
 
-        document.getElementById("telephone").innerHTML = informations.telephone;
-        document.getElementById("e-mail").innerHTML = informations.email;
+        document.getElementById("telephone").innerHTML = ("Telefon: ") + informations.telephone;
+        document.getElementById("e-mail").innerHTML = ("E-Mail: ") + informations.email;
 
 
         

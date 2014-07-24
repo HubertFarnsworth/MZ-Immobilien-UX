@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -194,6 +194,20 @@
                 <button type="button" class="btn btn-default" id="merkliste-button"><span class="glyphicon glyphicon-star"></span> Meine Merkliste
                 </button>
             </div>
+            <% _.each (Properties, function(Property) { %>
+                <div class="Property" id="<%= Property.id %>">
+                    <div class="Startimage" id="<%= Property.id %>">
+                        <img id="<%= Property.id %>" src="res/image/<%= Property.id%>_1.jpg" height="100%" width="100%"></img>
+                    </div>
+                    <div class="description" id="<%= Property.id %>">
+                        <p class="immo-headline" id="<%= Property.id %>"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
+                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
+                        <p class="immo-size" id="<%= Property.id %>"> Wohnfläche: <%=Property.size%>qm </p>
+                        <p class="immo-rooms" id="<%= Property.id %>"> Zimmeranzahl: <%= Property.rooms %> </p>
+                        <p class="immo-plz" id="<%= Property.id %>"> <%= Property.plz %> <%= Property.city %> </p>
+                    </div>
+                </div>
+            <% }); %>
         </script>
         <script type="text/template" id="empty-tpl">
         </script>

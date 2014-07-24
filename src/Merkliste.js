@@ -1,30 +1,51 @@
 Immobilien.Merkliste = (function() {
 	var that = {},
+        list = new Array, 
 
 	init = function() {
-		console.log("init von Merkliste aufgerufen");
-		merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
-        $("#content").html(merklisteHeadTemplate);
+        	console.log("init von Merkliste aufgerufen");
 
-        merklisteBotTemplate = _.template($("#empty-tpl").html());
-        $("#results").html(merklisteBotTemplate);
+                var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
+                var resultingHtml = merklisteHeadTemplate({Properties : list});
 
-        $("#gesuche-button").attr('class', 'btn btn-default');
-        $("#anbieten-button").attr('class', 'btn btn-default');
-        $("#merkliste-button").attr('class', 'btn btn-primary');
+                $("#content").html(resultingHtml);
+
+                merklisteBotTemplate = _.template($("#empty-tpl").html());
+                $("#results").html(merklisteBotTemplate);
+
+                $("#gesuche-button").attr('class', 'btn btn-default');
+                $("#anbieten-button").attr('class', 'btn btn-default');
+                $("#merkliste-button").attr('class', 'btn btn-primary');
 
 
-        $("#gesuche-button").click(function() {
-        	if (Immobilien.Results.getFirstSearch() === false) {
-        		Immobilien.Startscreen.init();
-        	} else {
-        		Immobilien.Startscreen.reloadStartscreen(); 
-        	}
-        });
-	};
+                $("#gesuche-button").click(function() {
+                	if (Immobilien.Results.getFirstSearch() === false) {
+                		Immobilien.Startscreen.init();
+                	} else {
+                		Immobilien.Startscreen.reloadStartscreen(); 
+                	}
+                });
+
+                $( ".Property" ).mouseenter(function() {
+                        $(this).addClass("hover");
+                        $(this).css("cursor", "pointer");
+                });
+
+                $( ".Property" ).mouseleave(function() {
+                        $(this).removeClass("hover");
+                });
+	},
+
+
+        addToMerkliste = function (informations) {
+                list[list.length] = informations; 
+                console.log(list);
+
+        };
 
 
 	that.init = init;
+        that.addToMerkliste = addToMerkliste; 
 
 	return that;
 }());
