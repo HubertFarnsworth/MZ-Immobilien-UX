@@ -634,12 +634,15 @@ Immobilien.Startscreen = (function() {
         setupAutocompleteWas(); 
         setupTopButtons();
         setupCheckbox();
-        setupInputListener();
         setEnteredValues(); 
+        setupInputListener();
+        
     },
 
     setEnteredValues = function () {
         var values = Immobilien.Results.getEnteredData();
+
+        console.log(values);
 
         //Bug
         $("#wo-input").val(values.city);
@@ -654,17 +657,22 @@ Immobilien.Startscreen = (function() {
         }
 
         //Slider-Bug
-        $("#money-lower-input").val(values.moneyMin);
-        $("#money-upper-input").val(values.moneyMax);
+        $("#money-lower-input").val(values.moneyMin + "€");
+        $("#money-upper-input").val(values.moneyMax + "€");
+        $("#moneyslider").slider("values", [values.moneyMin, values.moneyMax]);
 
         $("#rooms-upper-input").val(values.roomsMax);
         $("#rooms-lower-input").val(values.roomsMin);
+        $("#roomsslider").slider("values", [values.roomsMin, values.roomsMax]);
 
-        $("#size-upper-input").val(values.sizeMax);
-        $("#size-lower-input").val(values.sizeMin);
+        $("#size-upper-input").val(values.sizeMax + "m²");
+        $("#size-lower-input").val(values.sizeMin + "m²");
+        $("#sizeslider").slider("values", [values.sizeMin, values.sizeMax]);
 
-        //Bug
-        //$("#checkbox-commission").attr('checked',true);
+
+        if (values.commission) {
+            $("#checkbox-commission").prettyCheckable("check");
+        }
 
         if (values.dateMin != "") {
             $("#datepicker-min").val(values.dateMin.toString().substring(0,2) + "." + values.dateMin.toString().substring(2,4) + "." + values.dateMin.toString().substring(4,8));
@@ -673,6 +681,9 @@ Immobilien.Startscreen = (function() {
         if (values.dateMax != "") {
             $("#datepicker-max").val(values.dateMax.toString().substring(0,2) + "." + values.dateMax.toString().substring(2,4) + "." + values.dateMax.toString().substring(4,8));
         }
+
+        //show found results
+        getInputValues();
     };
 
 
