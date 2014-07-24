@@ -38,6 +38,7 @@ Immobilien.Detail = (function() {
 
 		//Zurück zum Hauptmenü
 	    $(document).on("click", "#backToSearch", function(event){
+            $('.galleria').data('galleria').destroy();
       		Immobilien.MainController.reloadStartscreen(); 
     	});
 
@@ -78,13 +79,6 @@ Immobilien.Detail = (function() {
                 console.log("ausklappen");
                 $("#images-content").height(400);
                 setupGalleria();
-                /*
-                for (var i = 1; i <= parseInt(amountOfImages); i++) {
-                    var img = document.getElementById("image" + i);
-                    console.log("image" + i);
-                    img.style.visibility = "visible";
-                }
-                */
                 $("#images-size-button").removeClass("glyphicon-plus");
                 $("#images-size-button").addClass("glyphicon-minus");
                 images = true;
@@ -166,8 +160,11 @@ Immobilien.Detail = (function() {
         //start the gallery
 
         Galleria.loadTheme('./libs/galleria/themes/classic/galleria.classic.min.js');
-        Galleria.run('.galleria');
-
+        //Galleria.run('.galleria');
+        Galleria.run('#galleria', {
+            height: parseInt($('#galleria').css('height')),
+            wait: true
+        });
     },
 
     createHTMLTags = function () {
