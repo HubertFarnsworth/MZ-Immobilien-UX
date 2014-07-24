@@ -28,6 +28,10 @@ Immobilien.Merkliste = (function() {
                 	}
                 });
 
+                $("#anbieten-button").click(function() {
+                    Immobilien.MainController.startBiete(); 
+                });
+
                 $( ".Property" ).mouseenter(function() {
                         $(this).addClass("hover");
                         $(this).css("cursor", "pointer");

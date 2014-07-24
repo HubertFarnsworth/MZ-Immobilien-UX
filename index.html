@@ -232,6 +232,22 @@
                 </div>
             <% }); %>
         </script>
+
+        <script type="text/template" id="biete-tpl">
+            <div id="headline">
+                <h1 id="logo">
+                    Mittelbayerische Immobilien
+                </h1>
+            </div>    
+            <div id="navigation-buttons">
+                <button type="button" class="btn btn-default" id="gesuche-button">          Suche
+                </button>
+                <button type="button" class="btn btn-primary" id="anbieten-button">         Biete
+                </button>
+                <button type="button" class="btn btn-default" id="merkliste-button"><span class="glyphicon glyphicon-star"></span> Meine Merkliste
+                </button>
+            </div>
+        </script>
         <script type="text/template" id="empty-tpl">
         </script>
 
@@ -251,6 +267,7 @@
         <script src="src/Results.js"></script>
         <script src="src/Detail.js"></script>
         <script src="src/Merkliste.js"></script>
+        <script src="src/Biete.js"></script>
 
         <script>
                 Immobilien.init();
