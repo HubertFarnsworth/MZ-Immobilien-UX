@@ -150,10 +150,12 @@ Immobilien.Detail = (function() {
         });
 
         $(document).on("click", "#add-merkliste", function(event){
-            Immobilien.MainController.addToMerkliste(informations); 
+            if ($("#add-merkliste").text() == "Zur Merkliste hinzufügen") {
+                $("#add-merkliste").text("Zur Merkliste hinzugefügt");
+                $("#add-merkliste").attr("disabled", true);
+                Immobilien.MainController.addToMerkliste(informations);
+            }
         });
-
-
 	},
 
     setupGalleria = function () {

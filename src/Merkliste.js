@@ -1,7 +1,8 @@
 Immobilien.Merkliste = (function() {
 	var that = {},
         list = new Array, 
-        sortArray = new Array, 
+        sortArray = new Array,
+        contains = 0,  
 
 	init = function() {
         	console.log("init von Merkliste aufgerufen");
@@ -74,9 +75,10 @@ Immobilien.Merkliste = (function() {
                 console.log("Preis aufsteigend");
                 var priceList = new Array(); 
                 for (var i = 0; i < list.length; i++) {
-                        list[i].price = priceList[i];
+                        priceList[i] = list[i].price;
                 }
                 console.log(priceList);
+
         },
 
         sortPreisAbsteigend = function () {
@@ -100,8 +102,9 @@ Immobilien.Merkliste = (function() {
         },
 
         addToMerkliste = function (informations) {
-                list[list.length] = informations; 
-                console.log(list);
+                list[contains] = informations; 
+                console.log(list.length);
+                contains++;
         };
 
 
