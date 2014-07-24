@@ -1,6 +1,7 @@
 Immobilien.Merkliste = (function() {
 	var that = {},
         list = new Array, 
+        sortArray = new Array, 
 
 	init = function() {
         	console.log("init von Merkliste aufgerufen");
@@ -29,22 +30,70 @@ Immobilien.Merkliste = (function() {
                 $( ".Property" ).mouseenter(function() {
                         $(this).addClass("hover");
                         $(this).css("cursor", "pointer");
+
                 });
 
                 $( ".Property" ).mouseleave(function() {
                         $(this).removeClass("hover");
                 });
 
-                $('.dropdown').change(function() {
-                        console.log($('#dropdownMenu').text(this.val()));
+                sortImmo ($("#select-immo-sort").val());
+
+                $('#select-immo-sort').change(function() {
+                        sortImmo ($(this).val());
                 });
 	},
 
+        sortImmo = function (sortType) {
+                switch(sortType) {
+                        case "Preis aufsteigend":
+                                sortPreisAufsteigend(); 
+                                break;
+                        case "Preis absteigend":
+                                sortPreisAbsteigend(); 
+                                break;
+                        case "Fläche aufsteigend":
+                                sortFlächeAufsteigend();
+                                break;
+                        case "Fläche absteigend":
+                                sortFlächeAbsteigend();
+                                break;
+                        case "Zimmeranzahl aufsteigend":
+                                sortZimmerAufsteigend();
+                                break;
+                        case "Zimmeranzahl absteigend":
+                                sortZimmerAbsteigend(); 
+                                break;
+                }
+        },
+
+        sortPreisAufsteigend = function () {
+                console.log("Preis aufsteigend");
+        },
+
+        sortPreisAbsteigend = function () {
+                console.log("Preis absteigend");
+        },
+
+        sortFlächeAufsteigend = function () {
+                console.log("Fläche aufsteigend");
+        },
+
+        sortFlächeAbsteigend = function () {
+                console.log("Fläche absteigend");
+        },
+
+        sortZimmerAufsteigend = function () {
+                console.log("Zimmeranzahl aufsteigend");
+        },
+
+        sortZimmerAbsteigend = function () {
+                console.log("Zimmeranzahl absteigend");
+        },
 
         addToMerkliste = function (informations) {
                 list[list.length] = informations; 
                 console.log(list);
-
         };
 
 
