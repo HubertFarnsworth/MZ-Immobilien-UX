@@ -44,8 +44,10 @@ Immobilien.Results = (function() {
     $(".scrollToResults").css({"visibility":"visible"});
     if (numberOfResults === 0) {
       $(".scrollToResults").text(numberOfResults + " Treffer gefunden");
+      $("#select-immo-sort-results").css({"visibility":"hidden"});
     } else {
       $(".scrollToResults").text(numberOfResults + " Treffer anzeigen");
+      $("#select-immo-sort-results").css({"visibility":"visible"});
     }
 
     if (numberOfResults !== 0) {
