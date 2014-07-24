@@ -242,6 +242,8 @@
 	height: 400px; 
 }
 
+.galleria-container{ background:#175573; }
+
 #galleria {
 	padding: 1%;
 	height: 350px;
