@@ -87,10 +87,10 @@
                     </div>
                     <div class="description" id="<%= Property.id %>">
                         <p class="immo-headline" id="<%= Property.id %>"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
-                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
                         <p class="immo-size" id="<%= Property.id %>"> Wohnfläche: <%=Property.size%>qm </p>
                         <p class="immo-rooms" id="<%= Property.id %>"> Zimmeranzahl: <%= Property.rooms %> </p>
                         <p class="immo-plz" id="<%= Property.id %>"> <%= Property.plz %> <%= Property.city %> </p>
+                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
                     </div>
                 </div>
             <% }); %>
@@ -223,10 +223,11 @@
                     </div>
                     <div class="description" id="<%= Property.id %>">
                         <p class="immo-headline" id="<%= Property.id %>"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
-                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
+                        <button class ="delete-immo btn btn-default" id="<%= Property.id %>" > X </button>
                         <p class="immo-size" id="<%= Property.id %>"> Wohnfläche: <%=Property.size%>qm </p>
                         <p class="immo-rooms" id="<%= Property.id %>"> Zimmeranzahl: <%= Property.rooms %> </p>
                         <p class="immo-plz" id="<%= Property.id %>"> <%= Property.plz %> <%= Property.city %> </p>
+                        <p class="immo-price" id="<%= Property.id %>"> Preis: <%= Property.price %>€ </p>
                     </div>
                 </div>
             <% }); %>

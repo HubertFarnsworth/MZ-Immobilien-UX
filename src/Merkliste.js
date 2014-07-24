@@ -1,7 +1,7 @@
 Immobilien.Merkliste = (function() {
 	var that = {},
         list = new Array, 
-        sortArray = new Array,
+        sortArray,
         contains = 0,  
 
 	init = function() {
@@ -11,7 +11,7 @@ Immobilien.Merkliste = (function() {
 
                 var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
                 $("#content").html(merklisteHeadTemplate);
-
+                sortImmo($("#select-immo-sort").val());
                 drawList(); 
 
 
@@ -44,15 +44,32 @@ Immobilien.Merkliste = (function() {
                         sortImmo ($(this).val());
                         drawList();
                 });
+
+                $(".delete-immo").on("click", function(e){
+                        //console.log(event.target.id);
+                        deleteOneElement(event.target.id);
+                        sortImmo($("#select-immo-sort").val());
+                        drawList(); 
+                        e.stopImmediatePropagation();
+                });
 	},
 
         drawList = function() {
                 var merklisteBotTemplate = _.template($("#merkliste-result-tpl").html());
                 var resultingHtml = merklisteBotTemplate({Properties : sortArray});
                 $("#results").html(resultingHtml);
+
+                $(".delete-immo").on("click", function(e){
+                        //console.log(event.target.id);
+                        deleteOneElement(event.target.id);
+                        sortImmo($("#select-immo-sort").val());
+                        drawList(); 
+                        e.stopImmediatePropagation();
+                });
         },
 
         sortImmo = function (sortType) {
+                sortArray = new Array(); 
                 switch(sortType) {
                         case "Preis aufsteigend":
                                 sortPreisAufsteigend(); 
@@ -169,7 +186,6 @@ Immobilien.Merkliste = (function() {
                         roomList[i] = list[i].rooms;
                 }
                 roomList.sort(function(a, b){return b-a});
-                console.log(roomList);
 
                 for (var i = 0; i < list.length; i++) {
                         for (var j = 0; j < list.length; j++) {
@@ -178,6 +194,18 @@ Immobilien.Merkliste = (function() {
                                 }
                         }
                 }
+        },
+
+        deleteOneElement = function (id) {
+                console.log(id);
+                for (var i = 0; i < list.length; i++) {
+                        if (list[i].id === id) {
+                                list.splice(i,1);
+                        }
+                }
+                console.log(list);
+                
+
         },
 
         addToMerkliste = function (informations) {

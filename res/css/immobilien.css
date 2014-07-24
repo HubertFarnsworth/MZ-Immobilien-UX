@@ -133,6 +133,8 @@
 
 .description {
 	float: left; 
+	width: 78%; 
+	overflow: hidden;
 }
 
 .immo-headline, .immo-price {
@@ -144,12 +146,6 @@
 .immo-headline{
 	width: 100%; 
 	float: left;
-}
-
-.immo-price {
-	position: absolute;
-    right: 16%;
-    float: left;
 }
 
 .immo-size {
@@ -281,6 +277,26 @@
 	margin-left: 70%; 
 	width: 15%; 
 	margin-top: 1%;  
+}
+
+.immo-plz{
+	float: left; 
+	width: 30%; 
+}
+
+.immo-price {
+	margin-left: 40%;
+	margin-right: 0;
+	width: 20%; 
+	float: left;
+
+}
+
+.delete-immo{
+	background-color: transparent;
+	color: white;
+	position: absolute; 
+	right: 16%;
 }
 
 
