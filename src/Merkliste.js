@@ -34,6 +34,10 @@ Immobilien.Merkliste = (function() {
                 $( ".Property" ).mouseleave(function() {
                         $(this).removeClass("hover");
                 });
+
+                $('.dropdown').change(function() {
+                        console.log($('#dropdownMenu').text(this.val()));
+                });
 	},
 
 

@@ -271,4 +271,10 @@
 	margin-top: 2%; 
 }
 
+#select-immo-sort {
+	position: absolute;
+	right: 15.2%;
+	width: 15%;  
+}
+
 

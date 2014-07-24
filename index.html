@@ -194,6 +194,17 @@
                 <button type="button" class="btn btn-default" id="merkliste-button"><span class="glyphicon glyphicon-star"></span> Meine Merkliste
                 </button>
             </div>
+            <div id="detail-head">
+                <p id="immo-headline"> </p>
+                <select class="form-control" id="select-immo-sort">
+                    <option>Preis aufsteigend</option>
+                    <option>Preis absteigend</option>
+                    <option>Fläche aufteigend</option>
+                    <option>Fläche absteigend</option>
+                    <option>Zimmeranzahl aufsteigend</option>
+                    <option>Zimmeranzahl absteigend</option>
+                </select>
+            </div>
             <% _.each (Properties, function(Property) { %>
                 <div class="Property" id="<%= Property.id %>">
                     <div class="Startimage" id="<%= Property.id %>">
