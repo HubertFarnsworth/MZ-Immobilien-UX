@@ -69,9 +69,7 @@
                 <div id="map-canvas"></div>
                 <button class="scrollToResults btn btn-default">6 Treffer gefunden
                 </button>
-            </div>        
-        </script>
-        <script type="text/template" id="results-tpl">
+            </div>
             <select class="form-control" id="select-immo-sort-results">
                     <option>Preis aufsteigend</option>
                     <option>Preis absteigend</option>
@@ -79,7 +77,9 @@
                     <option>Fläche absteigend</option>
                     <option>Zimmeranzahl aufsteigend</option>
                     <option>Zimmeranzahl absteigend</option>
-            </select>
+            </select>        
+        </script>
+        <script type="text/template" id="results-tpl">
             <% _.each (Properties, function(Property) { %>
                 <div class="Property" id="<%= Property.id %>">
                     <div class="Startimage" id="<%= Property.id %>">

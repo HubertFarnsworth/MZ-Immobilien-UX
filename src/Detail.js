@@ -31,9 +31,11 @@ Immobilien.Detail = (function() {
 
 		//Sets the Text 
 		informations = data; 
-        if($("#immo-headline").text == "") {
+        console.log($("#immo-headline").text());
+        //if($("#immo-headline").text() == "") {
+            //console.log("setText called");
             setText();
-        } 
+        //} 
 		
         setupMap();
         createHTMLTags(),
