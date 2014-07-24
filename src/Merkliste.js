@@ -5,14 +5,7 @@ Immobilien.Merkliste = (function() {
 
 	init = function() {
         	console.log("init von Merkliste aufgerufen");
-
-                var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
-                var resultingHtml = merklisteHeadTemplate({Properties : list});
-
-                $("#content").html(resultingHtml);
-
-                merklisteBotTemplate = _.template($("#empty-tpl").html());
-                $("#results").html(merklisteBotTemplate);
+                drawPage(); 
 
                 $("#gesuche-button").attr('class', 'btn btn-default');
                 $("#anbieten-button").attr('class', 'btn btn-default');
@@ -44,6 +37,16 @@ Immobilien.Merkliste = (function() {
                 });
 	},
 
+        drawPage = function() {
+                var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
+                var resultingHtml = merklisteHeadTemplate({Properties : list});
+
+                $("#content").html(resultingHtml);
+
+                merklisteBotTemplate = _.template($("#empty-tpl").html());
+                $("#results").html(merklisteBotTemplate);
+        },
+
         sortImmo = function (sortType) {
                 switch(sortType) {
                         case "Preis aufsteigend":
@@ -69,6 +72,11 @@ Immobilien.Merkliste = (function() {
 
         sortPreisAufsteigend = function () {
                 console.log("Preis aufsteigend");
+                var priceList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        list[i].price = priceList[i];
+                }
+                console.log(priceList);
         },
 
         sortPreisAbsteigend = function () {

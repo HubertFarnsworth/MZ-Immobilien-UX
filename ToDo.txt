@@ -11,6 +11,7 @@ ToDo:
 - slider-bug bei zurück zu suche / Autosuggest-Bug / Marker - Bug  / Suche muss nochmal starten / Marker setzen 
 - Umgebungsinformationen !!!!!
 - Provisions-Checkbox
+-Uncaught Error: Fatal error: Could not extract a stage height from the CSS. Traced height: 0px. 
 
 
 Nice to have:

@@ -72,6 +72,14 @@
             </div>        
         </script>
         <script type="text/template" id="results-tpl">
+            <select class="form-control" id="select-immo-sort-results">
+                    <option>Preis aufsteigend</option>
+                    <option>Preis absteigend</option>
+                    <option>Fläche aufsteigend</option>
+                    <option>Fläche absteigend</option>
+                    <option>Zimmeranzahl aufsteigend</option>
+                    <option>Zimmeranzahl absteigend</option>
+            </select>
             <% _.each (Properties, function(Property) { %>
                 <div class="Property" id="<%= Property.id %>">
                     <div class="Startimage" id="<%= Property.id %>">
