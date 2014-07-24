@@ -6,7 +6,14 @@ Immobilien.Merkliste = (function() {
 
 	init = function() {
         	console.log("init von Merkliste aufgerufen");
-                drawPage(); 
+                sortImmo ($("#select-immo-sort").val());
+                
+
+                var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
+                $("#content").html(merklisteHeadTemplate);
+
+                drawList(); 
+
 
                 $("#gesuche-button").attr('class', 'btn btn-default');
                 $("#anbieten-button").attr('class', 'btn btn-default');
@@ -31,21 +38,18 @@ Immobilien.Merkliste = (function() {
                         $(this).removeClass("hover");
                 });
 
-                sortImmo ($("#select-immo-sort").val());
+                
 
                 $('#select-immo-sort').change(function() {
                         sortImmo ($(this).val());
+                        drawList();
                 });
 	},
 
-        drawPage = function() {
-                var merklisteHeadTemplate = _.template($("#merkliste-head-tpl").html());
-                var resultingHtml = merklisteHeadTemplate({Properties : list});
-
-                $("#content").html(resultingHtml);
-
-                merklisteBotTemplate = _.template($("#empty-tpl").html());
-                $("#results").html(merklisteBotTemplate);
+        drawList = function() {
+                var merklisteBotTemplate = _.template($("#merkliste-result-tpl").html());
+                var resultingHtml = merklisteBotTemplate({Properties : sortArray});
+                $("#results").html(resultingHtml);
         },
 
         sortImmo = function (sortType) {
@@ -72,33 +76,108 @@ Immobilien.Merkliste = (function() {
         },
 
         sortPreisAufsteigend = function () {
-                console.log("Preis aufsteigend");
                 var priceList = new Array(); 
                 for (var i = 0; i < list.length; i++) {
                         priceList[i] = list[i].price;
                 }
-                console.log(priceList);
+                priceList.sort(function(a, b){return a-b});
 
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (priceList[i] == list[j].price) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                }
         },
 
         sortPreisAbsteigend = function () {
                 console.log("Preis absteigend");
+                var priceList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        priceList[i] = list[i].price;
+                }
+                priceList.sort(function(a, b){return b-a});
+
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (priceList[i] == list[j].price) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                } 
         },
 
         sortFlächeAufsteigend = function () {
                 console.log("Fläche aufsteigend");
+                var sizeList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        sizeList[i] = list[i].size;
+                }
+                sizeList.sort(function(a, b){return a-b});
+                console.log(sizeList);
+
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (sizeList[i] == list[j].size) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                }
         },
 
         sortFlächeAbsteigend = function () {
                 console.log("Fläche absteigend");
+                var sizeList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        sizeList[i] = list[i].size;
+                }
+                sizeList.sort(function(a, b){return b-a});
+                console.log(sizeList);
+
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (sizeList[i] == list[j].size) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                }
         },
 
         sortZimmerAufsteigend = function () {
                 console.log("Zimmeranzahl aufsteigend");
+                var roomList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        roomList[i] = list[i].rooms;
+                }
+                roomList.sort(function(a, b){return a-b});
+                console.log(roomList);
+
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (roomList[i] == list[j].rooms) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                }
         },
 
         sortZimmerAbsteigend = function () {
                 console.log("Zimmeranzahl absteigend");
+                var roomList = new Array(); 
+                for (var i = 0; i < list.length; i++) {
+                        roomList[i] = list[i].rooms;
+                }
+                roomList.sort(function(a, b){return b-a});
+                console.log(roomList);
+
+                for (var i = 0; i < list.length; i++) {
+                        for (var j = 0; j < list.length; j++) {
+                                if (roomList[i] == list[j].rooms) {
+                                        sortArray[i] = list[j];
+                                }
+                        }
+                }
         },
 
         addToMerkliste = function (informations) {
