@@ -24,6 +24,7 @@ Immobilien.Results = (function() {
       for (var i = 0; i < database.length; i++) {
         if (database[i].id === PropertyID) {
           Immobilien.MainController.startDetail(database[i]);
+          event.stopImmediatePropagation();
         }
       }
     });
