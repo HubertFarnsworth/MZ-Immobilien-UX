@@ -4,9 +4,9 @@
 	<id>0000004</id> <!-- id des Objekts -->
 
 	<city>Regensburg</city> <!-- Stadt -->
-	<zipcode>93055</zipcode> <!-- PLZ -->
-	<streetname>Blumenstra&#223;e</streetname> <!-- Straße -->
-	<housenumber>1</housenumber> <!-- Hausnummer -->
+	<zipcode>93049</zipcode> <!-- PLZ -->
+	<streetname>Taxisstra&#223;e</streetname> <!-- Straße -->
+	<housenumber>2</housenumber> <!-- Hausnummer -->
 
 	<description>Mit dem Lift gelangen Sie bequem in das 2. OG, in welchem sich auch diese Wohnung befindet. Hier k&#246;nnen Sie sich auf ca. 74,41 qm frei entfalten. Die Wohnung betretend befinden Sie sich im Flur. Von hier aus erreichen Sie s&#228;mtliche R&#228;umlichkeiten: den gro&#223;z&#252;gigen offenen Wohn- Essbereich mit Zugang zum Balkon, das Schlafzimmer, das Kinderzimmer das Tageslichtbad mit Badewanne sowie das G&#228;ste - WC. Die Wohnung wird mit einer Einbauk&#252;che ausgestattet, welche bereits im Mietpreis inbegriffen ist. Ein Kellerabteil bietet zus&#228;tzliche Staufl&#228;che. Ihr Fahrrad k&#246;nnen Sie sicher in dem daf&#252;r vorgesehenen Fahrradraum abstellen. Es ist f&#252;r 50,00 EUR monatlich ein Tiefgaragenstelolplatz anzumieten.</description>  <!-- Fließtext vom Verkäufer -->
 	<number_of_rooms>3</number_of_rooms> <!-- Anzahl der Zimmer -->
