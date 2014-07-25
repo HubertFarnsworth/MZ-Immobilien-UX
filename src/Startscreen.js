@@ -454,7 +454,7 @@ Immobilien.Startscreen = (function() {
                     var markerID = markersArray.indexOf(marker) + 1;
                     var element = document.getElementById(propertyID);
                     alignWithTop = true;
-                    element.scrollIntoView(alignWithTop);
+                    element.scrollIntoView(false);
                     //window.scroll(0,findPos(document.getElementById(propertyID)));
                     //$("Property." + markerID).scrollTo(200, 0);
                     //$('html, body').animate({scrollTop : document.getElementById(propertyID).offset().top},100)
