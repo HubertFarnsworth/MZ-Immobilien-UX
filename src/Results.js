@@ -16,16 +16,11 @@ Immobilien.Results = (function() {
 
     sortImmo ($("#select-immo-sort-results").val());
     drawResults(); 
-    setMarker();
 
     $("#select-immo-sort-results").change(function() {
       sortImmo ($(this).val());
-      drawResults(); 
-    });
-
-
-
-       
+      drawResults();  
+    }); 
 	},
 
   drawResults = function () {
@@ -54,7 +49,7 @@ Immobilien.Results = (function() {
     });
 
     
-
+    setMarker();
     setupScrollButtons();  
   },
 
@@ -66,7 +61,6 @@ Immobilien.Results = (function() {
     for (var i = 0; i < ids.length;i++) {
       var id = "marker "+ ids[i];
       var src = "res/markers/marker"+(i+1)+".png";
-      console.log(document.getElementById(id));
       document.getElementById(id).src = src;    
     }
   },
