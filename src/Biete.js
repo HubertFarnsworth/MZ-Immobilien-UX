@@ -14,7 +14,8 @@ Immobilien.Biete = (function() {
 
         $("#gesuche-button").click(function() {
 
-        	Immobilien.MainController.init(); 
+        	//Immobilien.MainController.init();
+            Immobilien.MainController.reloadStartscreen();
 
         });
 

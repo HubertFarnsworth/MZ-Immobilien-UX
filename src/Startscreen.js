@@ -107,6 +107,7 @@ Immobilien.Startscreen = (function() {
             //$("#anbieten-button").attr('class', 'btn btn-primary');
             //$("#merkliste-button").attr('class', 'btn btn-default');
 
+
             Immobilien.MainController.startBiete(); 
         });
 
@@ -643,27 +644,7 @@ Immobilien.Startscreen = (function() {
             placeMarkerOnMap(address, i, results[i].id);
             console.log(address);
         }
-
-        //is called while for loop is still running
-        //fitMapToMarkers();
     },
-
-    /*
-    fitMapToMarkers = function() {
-        // map: an instance of GMap3
-        // latlng: an array of instances of GLatLng
-        var latlngbounds = new google.maps.LatLngBounds();
-        
-        for (var i = 0; i < markersGeodataArray.length; i++) {
-            //  And increase the bounds to take this point
-            latlngbounds.extend(markersGeodataArray[i]);
-        }
-
-        globalMap.setCenter(latlngbounds.getCenter());
-        console.log(latlngbounds.getCenter());
-        globalMap.fitBounds(latlngbounds); 
-    },
-    */
 
     clearOverlays = function () {
         for (var i = 0; i < markersArray.length; i++ ) {
@@ -701,7 +682,6 @@ Immobilien.Startscreen = (function() {
 
         console.log(values);
 
-        //Bug
         $("#wo-input").val(values.city);
         $("#was-input").val(values.type);
 
@@ -713,30 +693,47 @@ Immobilien.Startscreen = (function() {
             $("#Kaufen-Button").attr('class', 'btn btn-primary');
         }
 
-        //Slider-Bug
-        $("#money-lower-input").val(values.moneyMin + "€");
-        $("#money-upper-input").val(values.moneyMax + "€");
-        $("#moneyslider").slider("values", [values.moneyMin, values.moneyMax]);
+        if (isNaN(values.moneyMin)) {
+            //enter standard-values
+            $("#money-lower-input").val("50€");
+            $("#money-upper-input").val("400€");
+            $("#moneyslider").slider("values", [50, 400]);
 
-        $("#rooms-upper-input").val(values.roomsMax);
-        $("#rooms-lower-input").val(values.roomsMin);
-        $("#roomsslider").slider("values", [values.roomsMin, values.roomsMax]);
+            $("#rooms-upper-input").val(1);
+            $("#rooms-lower-input").val(4);
+            $("#roomsslider").slider("values", [1, 4]);
 
-        $("#size-upper-input").val(values.sizeMax + "m²");
-        $("#size-lower-input").val(values.sizeMin + "m²");
-        $("#sizeslider").slider("values", [values.sizeMin, values.sizeMax]);
+            $("#size-upper-input").val("10m²");
+            $("#size-lower-input").val("100m²");
+            $("#sizeslider").slider("values", [10, 100]);
 
-
-        if (values.commission) {
-            $("#checkbox-commission").prettyCheckable("check");
         }
 
-        if (values.dateMin != "") {
-            $("#datepicker-min").val(values.dateMin.toString().substring(0,2) + "." + values.dateMin.toString().substring(2,4) + "." + values.dateMin.toString().substring(4,8));
-        }
-        
-        if (values.dateMax != "") {
-            $("#datepicker-max").val(values.dateMax.toString().substring(0,2) + "." + values.dateMax.toString().substring(2,4) + "." + values.dateMax.toString().substring(4,8));
+        else {
+            $("#money-lower-input").val(values.moneyMin + "€");
+            $("#money-upper-input").val(values.moneyMax + "€");
+            $("#moneyslider").slider("values", [values.moneyMin, values.moneyMax]);
+
+            $("#rooms-upper-input").val(values.roomsMax);
+            $("#rooms-lower-input").val(values.roomsMin);
+            $("#roomsslider").slider("values", [values.roomsMin, values.roomsMax]);
+
+            $("#size-upper-input").val(values.sizeMax + "m²");
+            $("#size-lower-input").val(values.sizeMin + "m²");
+            $("#sizeslider").slider("values", [values.sizeMin, values.sizeMax]);
+
+
+            if (values.commission) {
+                $("#checkbox-commission").prettyCheckable("check");
+            }
+
+            if (values.dateMin != "" && values.dateMin != null) {
+                $("#datepicker-min").val(values.dateMin.toString().substring(0,2) + "." + values.dateMin.toString().substring(2,4) + "." + values.dateMin.toString().substring(4,8));
+            }
+            
+            if (values.dateMax != "" && values.dateMin != null) {
+                $("#datepicker-max").val(values.dateMax.toString().substring(0,2) + "." + values.dateMax.toString().substring(2,4) + "." + values.dateMax.toString().substring(4,8));
+            }
         }
 
         //show found results
