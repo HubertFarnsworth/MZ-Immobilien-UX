@@ -133,7 +133,7 @@
 
 .description {
 	float: left; 
-	width: 78%; 
+	width: 76%; 
 	overflow: hidden;
 }
 
@@ -300,9 +300,8 @@
 	right: 16%;
 }
 
-.immo-marker{
-	position: absolute; 
-	right: 25%;
+#marker-div {
+	float: left
 }
 
 
