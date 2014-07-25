@@ -5,7 +5,6 @@ Immobilien.Results = (function() {
   searchResults, 
   numberOfResults,
   firstSearch = false,
-  sortArray,
 
 	init = function() {
     firstSearch = true; 
@@ -364,10 +363,7 @@ Immobilien.Results = (function() {
     for (var i = 0; i < searchResults.length; i++) {
       for (var j = 0; j < searchResults.length; j++) {
         if (roomList[i] == searchResults[j].rooms) {
-          if (checkIfIdTaken(searchResults[j].id, takenID) === false) {
             sortArray[i] = searchResults[j];
-            takenID[takenID.length] = searchResults[j].id;
-          }  
         }
       }
     }
@@ -386,18 +382,8 @@ Immobilien.Results = (function() {
         }
       }
     }
-  },
+  };
 
-  checkIfIdTaken = function (id, array) {
-
-    for (var i = 0; i < array.length; i++) {
-      if (array[i] == id) {
-        return true;
-      } 
-    }
-    return false; 
-
-  }
 
 	that.init = init;
   that.getEnteredData = getEnteredData;  
