@@ -13,13 +13,10 @@ Immobilien.Detail = (function() {
     amountOfImages = 4,
 
 	init = function() {
-	   console.log("Detail.js aufgerufen");	
 	},
 
 	startDetail = function (data) {
-        console.log("detail started");
 
-        //setupMap();
 		//Scolls to 0,0
 		window.scrollTo(0, 0);
 
@@ -30,12 +27,8 @@ Immobilien.Detail = (function() {
 		$("#results").html(detailTemplateBot);
 
 		//Sets the Text 
-		informations = data; 
-        console.log($("#immo-headline").text());
-        //if($("#immo-headline").text() == "") {
-            //console.log("setText called");
-            setText();
-        //} 
+		informations = data;
+        setText();
 		
         setupMap();
         createHTMLTags(),
@@ -71,19 +64,16 @@ Immobilien.Detail = (function() {
         //Minimieren bzw. maximieren der Bildergalerie
         $(document).on("click", "#images-size-button", function(event){
             if (images === true) {
-                console.log("einklappen");
                 $("#images-content").height(0);
                 $('.galleria').data('galleria').destroy();
                 for (var i = 1; i <= parseInt(amountOfImages); i++) {
                     var img = document.getElementById("image" + i);
-                    console.log("image" + i);
                     img.style.visibility = "hidden";
                 }
                 $("#images-size-button").removeClass("glyphicon-minus");
                 $("#images-size-button").addClass("glyphicon-plus");
                 images = false; 
             } else {
-                console.log("ausklappen");
                 $("#images-content").height(400);
                 setupGalleria();
                 $("#images-size-button").removeClass("glyphicon-plus");
@@ -144,7 +134,6 @@ Immobilien.Detail = (function() {
         });
 
         $(document).on("click", "#write-email", function(event){
-            console.log("write email");
             var link = "mailto:domi.bauer@arcor.de"
              + "?cc="
              + "&subject=" + escape("MZ-Immobilien: Interesse an Objekt #" + informations.id)
@@ -193,11 +182,9 @@ Immobilien.Detail = (function() {
     },
 
     setupMap = function () {
-        console.log("map called");
         google.maps.event.addDomListener(window, 'load');
 
         var address = informations.city + ", " + informations.streetname + " " + informations.housenumber;
-        console.log(address);
 
         placeMarkersOnMap(address);
 
@@ -236,8 +223,6 @@ Immobilien.Detail = (function() {
                 latitude = results[0].geometry.location.lat();
                 longitude = results[0].geometry.location.lng();
 
-                console.log(latitude, longitude);
-
                 var marker = new google.maps.Marker({
                     map: globalMap,
                     position: results[0].geometry.location,
@@ -249,7 +234,6 @@ Immobilien.Detail = (function() {
     },
 
 	setText = function () {
-        console.log(informations);
 		document.getElementById("immo-headline").innerHTML = informations.rooms + " Zimmer "+ informations.type;
         document.getElementById("des-content-text").innerHTML = informations.description;
 

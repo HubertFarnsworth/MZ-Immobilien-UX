@@ -12,7 +12,6 @@ Immobilien.Startscreen = (function() {
     markersIDs = new Array(),
 
 	init = function() {
-		console.log("StartScreenView.js aufgerufen");
 
         startScreenTemplate = _.template($("#startscreen-tpl").html());
         $("#content").html(startScreenTemplate);
@@ -164,7 +163,6 @@ Immobilien.Startscreen = (function() {
         if (place.geometry) {
             map.panTo(place.geometry.location);
             map.setZoom(13);
-            console.log("place ", place.name);
             enteredPlace = true;
             getInputValues();
         } else {
@@ -346,9 +344,7 @@ Immobilien.Startscreen = (function() {
                 if (parseInt(id) % 2 != 0) {
                     //input of this field should be lower than opposite input value
                     if (value.indexOf("€") > -1) {
-                        console.log("€ true ", value);
                         value = value.substring(0, value.length - 1);
-                        console.log(value);
                     }
 
                     if (parseInt(value) >=  parseInt($(oppositeInputID).val())) {
@@ -430,8 +426,6 @@ Immobilien.Startscreen = (function() {
 
         var latitude, longitude;
 
-        console.log(propertyID);
-
         geocoder.geocode( { 'address': address}, function(results, status) {
 
             if (status == google.maps.GeocoderStatus.OK) {
@@ -439,8 +433,6 @@ Immobilien.Startscreen = (function() {
                 longitude = results[0].geometry.location.lng();
                 
                 var markerGeodata = new google.maps.LatLng(latitude, longitude);
-
-                console.log(markerGeodata);
 
                 //path for numbered icons
                 var iconPath = "res/markers/marker" + parseInt(id + 1) + ".png";
@@ -455,7 +447,6 @@ Immobilien.Startscreen = (function() {
                 google.maps.event.addListener(marker, 'click', function() {
                     //user clicks on marker
                     //scroll to result
-                    console.log("marker clicked", document.getElementById(propertyID));
                     var markerID = markersArray.indexOf(marker) + 1;
                     var element = document.getElementById(propertyID);
                     alignWithTop = true;
@@ -476,12 +467,10 @@ Immobilien.Startscreen = (function() {
         //sets up listeners for all input-fields
 
         $(".userInput").change( function() {
-            console.log("input element changed");
             getInputValues();
         });
 
         $(".userInputButton").click( function() {
-            console.log("rent/buy clicked");
             getInputValues();
         });
 
@@ -511,7 +500,6 @@ Immobilien.Startscreen = (function() {
         dateMin = null,
         dateMax = null;
 
-        console.log(autocomplete);
         if (autocomplete.getPlace() === undefined) {
             city = $("#wo-input").val();
         }
@@ -525,7 +513,6 @@ Immobilien.Startscreen = (function() {
             }
         }
         
-        console.log("Stadt: ", city);
         enteredValues["city"] = city;
 
         type = $("#was-input").val();
@@ -552,9 +539,6 @@ Immobilien.Startscreen = (function() {
         enteredValues["dateMax"] = dateMax.split('.').join("");
 
         Immobilien.MainController.startResults();
-
-        //console.log(city, type, rent, moneyMin, moneyMax, roomsMin, roomsMax, sizeMin, sizeMax, commission, dateMin, dateMax);
-        console.log(enteredValues);
     },
 
     getEnteredData = function () {
@@ -646,7 +630,6 @@ Immobilien.Startscreen = (function() {
         for (var i = 0; i < results.length; i++) {
             var address = results[i].city + ", " + results[i].streetname + " " + results[i].housenumber;
             placeMarkerOnMap(address, i, results[i].id);
-            console.log(address);
         }
     },
 
@@ -684,7 +667,6 @@ Immobilien.Startscreen = (function() {
     setEnteredValues = function () {
         var values = Immobilien.Results.getEnteredData();
 
-        console.log(values);
 
         $("#wo-input").val(values.city);
         $("#was-input").val(values.type);

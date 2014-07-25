@@ -2,7 +2,6 @@ Immobilien.Biete = (function() {
 	var that = {},
 
 	init = function() {
-		console.log("Biete init");
 
 		bieteTemplate = _.template($("#biete-tpl").html());
         $("#content").html(bieteTemplate);
@@ -10,13 +9,8 @@ Immobilien.Biete = (function() {
         bieteTemplate2 = _.template($("#empty-tpl").html());
         $("#results").html(bieteTemplate2);
 
-
-
         $("#gesuche-button").click(function() {
-
-        	//Immobilien.MainController.init();
             Immobilien.MainController.reloadStartscreen();
-
         });
 
         $("#merkliste-button").click(function() {
@@ -24,8 +18,6 @@ Immobilien.Biete = (function() {
         });
 
 	};
-
-
 
 	that.init = init;
 

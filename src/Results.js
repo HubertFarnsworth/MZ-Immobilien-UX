@@ -8,11 +8,9 @@ Immobilien.Results = (function() {
   sortArray,
 
 	init = function() {
-		console.log("Results.js aufgerufen");
     firstSearch = true; 
     database = Immobilien.Startscreen.getRessources();
-    filterDataBase(); 
-    console.log(database); 
+    filterDataBase();
 
     sortImmo ($("#select-immo-sort-results").val());
     drawResults(); 
@@ -293,8 +291,6 @@ Immobilien.Results = (function() {
                                 sortZimmerAbsteigend(); 
                                 break;
                 }
-      console.log(sortArray);
-      console.log(searchResults);
   },
 
   sortPreisAufsteigend = function () {
@@ -302,8 +298,6 @@ Immobilien.Results = (function() {
     for (var i = 0; i < searchResults.length; i++) {
         priceList[i] = searchResults[i].price;
     }
-    console.log(searchResults);
-    console.log("pricelist " + priceList);
     priceList.sort(function(a, b){return a-b});
     for (var i = 0; i < searchResults.length; i++) {
         for (var j = 0; j < searchResults.length; j++) {
@@ -315,7 +309,6 @@ Immobilien.Results = (function() {
   },
 
   sortPreisAbsteigend = function () {
-    console.log("Preis absteigend");
     var priceList = new Array(); 
     for (var i = 0; i < searchResults.length; i++) {
       priceList[i] = searchResults[i].price;
@@ -331,13 +324,11 @@ Immobilien.Results = (function() {
   };
 
   sortFlächeAufsteigend = function () {
-    console.log("Fläche aufsteigend");
     var sizeList = new Array(); 
     for (var i = 0; i < searchResults.length; i++) {
       sizeList[i] = searchResults[i].size;
     }
     sizeList.sort(function(a, b){return a-b});
-    console.log(sizeList);
     for (var i = 0; i < searchResults.length; i++) {
       for (var j = 0; j < searchResults.length; j++) {
         if (sizeList[i] == searchResults[j].size) {
@@ -348,13 +339,11 @@ Immobilien.Results = (function() {
   },
 
   sortFlächeAbsteigend = function () {
-    console.log("Fläche absteigend");
     var sizeList = new Array(); 
     for (var i = 0; i < searchResults.length; i++) {
       sizeList[i] = searchResults[i].size;
     }
     sizeList.sort(function(a, b){return b-a});
-    console.log(sizeList);
     for (var i = 0; i < searchResults.length; i++) {
       for (var j = 0; j < searchResults.length; j++) {
         if (sizeList[i] == searchResults[j].size) {
@@ -365,7 +354,6 @@ Immobilien.Results = (function() {
   },
 
   sortZimmerAufsteigend = function () {
-    console.log("Zimmeranzahl aufsteigend");
     var roomList = new Array(); 
     var takenID = new Array();
 
@@ -373,13 +361,10 @@ Immobilien.Results = (function() {
       roomList[i] = searchResults[i].rooms;
     }
     roomList.sort(function(a, b){return a-b});
-    console.log(roomList);
     for (var i = 0; i < searchResults.length; i++) {
       for (var j = 0; j < searchResults.length; j++) {
         if (roomList[i] == searchResults[j].rooms) {
-          //console.log(checkIfIdTaken(searchResults[j].id, takenID));
           if (checkIfIdTaken(searchResults[j].id, takenID) === false) {
-            console.log("check ist true");
             sortArray[i] = searchResults[j];
             takenID[takenID.length] = searchResults[j].id;
           }  
@@ -389,7 +374,6 @@ Immobilien.Results = (function() {
   },
 
   sortZimmerAbsteigend = function () {
-    console.log("Zimmeranzahl absteigend");
     var roomList = new Array(); 
     for (var i = 0; i < searchResults.length; i++) {
         roomList[i] = searchResults[i].rooms;                  
@@ -408,15 +392,11 @@ Immobilien.Results = (function() {
 
     for (var i = 0; i < array.length; i++) {
       if (array[i] == id) {
-        console.log("taken");
         return true;
       } 
     }
-    console.log("not taken");
     return false; 
 
-    console.log(array);
-    console.log(array.length);
   }
 
 	that.init = init;
