@@ -331,8 +331,6 @@ Immobilien.Startscreen = (function() {
             var value = $(this).val();
             var current = $(this);
 
-
-
             //check if entered value is below or above the value of the oppsite input
             //if so, user gets notification that this is not allowed
 
@@ -347,7 +345,13 @@ Immobilien.Startscreen = (function() {
             else {
                 if (parseInt(id) % 2 != 0) {
                     //input of this field should be lower than opposite input value
-                    if (value >=  parseInt($(oppositeInputID).val())) {
+                    if (value.indexOf("€") > -1) {
+                        console.log("€ true ", value);
+                        value = value.substring(0, value.length - 1);
+                        console.log(value);
+                    }
+
+                    if (parseInt(value) >=  parseInt($(oppositeInputID).val())) {
                         //is allowed
                         refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                     }
@@ -362,7 +366,7 @@ Immobilien.Startscreen = (function() {
 
                 else {
                     //input of this field should be lower than opposite input value
-                    if (value <=  parseInt($(oppositeInputID).val())) {
+                    if (parseInt(value) <=  parseInt($(oppositeInputID).val())) {
                         //is allowed
                         refreshSliderFillInput(value, specialSign, signLength, inputID, slider, current);
                     }
