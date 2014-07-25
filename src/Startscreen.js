@@ -9,6 +9,7 @@ Immobilien.Startscreen = (function() {
     ressources = new Array (),
     markersArray = new Array(),
     markersGeodataArray = new Array(),
+    markersIDs = new Array(),
 
 	init = function() {
 		console.log("StartScreenView.js aufgerufen");
@@ -136,9 +137,6 @@ Immobilien.Startscreen = (function() {
         map = new google.maps.Map(document.getElementById("map-canvas"),
                 mapOptions); 
 
-        //hier war mapOptions und new map-aufruf
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", map);
-
         globalMap = map;
 
         var input = document.getElementById('wo-input');
@@ -151,6 +149,8 @@ Immobilien.Startscreen = (function() {
         autocomplete = new google.maps.places.Autocomplete(input, options);
 
         google.maps.event.addListener(autocomplete, 'place_changed', onAutocompletePlaceChanged);
+
+
   
     },
 
@@ -419,11 +419,13 @@ Immobilien.Startscreen = (function() {
         $("#checkbox-commission").prettyCheckable();
     },
 
-    placeMarkerOnMap = function(address, id) {
+    placeMarkerOnMap = function(address, id, propertyID) {
 
         geocoder = new google.maps.Geocoder();
 
         var latitude, longitude;
+
+        console.log(propertyID);
 
         geocoder.geocode( { 'address': address}, function(results, status) {
 
@@ -445,8 +447,21 @@ Immobilien.Startscreen = (function() {
                     icon: iconPath
                 });
 
-                markersGeodataArray.push(markerGeodata);
+                google.maps.event.addListener(marker, 'click', function() {
+                    //user clicks on marker
+                    //scroll to result
+                    console.log("marker clicked", document.getElementById(propertyID));
+                    var markerID = markersArray.indexOf(marker) + 1;
+                    var element = document.getElementById(propertyID);
+                    alignWithTop = true;
+                    element.scrollIntoView(alignWithTop);
+                    //window.scroll(0,findPos(document.getElementById(propertyID)));
+                    //$("Property." + markerID).scrollTo(200, 0);
+                    //$('html, body').animate({scrollTop : document.getElementById(propertyID).offset().top},100)
+                });
+
                 markersArray.push(marker);
+                markersIDs.push(propertyID);
                 //google.maps.event.addListener(marker,"click",function(){});
             }
         });
@@ -625,23 +640,20 @@ Immobilien.Startscreen = (function() {
 
         for (var i = 0; i < results.length; i++) {
             var address = results[i].city + ", " + results[i].streetname + " " + results[i].housenumber;
-            placeMarkerOnMap(address, i);
+            placeMarkerOnMap(address, i, results[i].id);
             console.log(address);
         }
 
         //is called while for loop is still running
-        fitMapToMarkers();
+        //fitMapToMarkers();
     },
 
+    /*
     fitMapToMarkers = function() {
         // map: an instance of GMap3
         // latlng: an array of instances of GLatLng
         var latlngbounds = new google.maps.LatLngBounds();
-        /*
-        markersGeodataArray.each(function(n){
-           latlngbounds.extend(n);
-        });
-        */
+        
         for (var i = 0; i < markersGeodataArray.length; i++) {
             //  And increase the bounds to take this point
             latlngbounds.extend(markersGeodataArray[i]);
@@ -651,6 +663,7 @@ Immobilien.Startscreen = (function() {
         console.log(latlngbounds.getCenter());
         globalMap.fitBounds(latlngbounds); 
     },
+    */
 
     clearOverlays = function () {
         for (var i = 0; i < markersArray.length; i++ ) {
