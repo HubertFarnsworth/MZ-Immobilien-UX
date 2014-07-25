@@ -277,6 +277,7 @@
 	margin-left: 70%; 
 	width: 15%; 
 	margin-top: 1%;  
+	visibility: hidden;
 }
 
 .immo-plz{
@@ -297,6 +298,11 @@
 	color: white;
 	position: absolute; 
 	right: 16%;
+}
+
+.immo-marker{
+	position: absolute; 
+	right: 25%;
 }
 
 

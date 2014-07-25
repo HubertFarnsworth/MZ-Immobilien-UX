@@ -40,6 +40,10 @@ Immobilien.MainController = (function() {
 
 	addToMerkliste = function (informations) {
 		Immobilien.Merkliste.addToMerkliste(informations); 
+	},
+
+	startBiete = function () {
+		Immobilien.Biete.init(); 
 	};
 
 
@@ -51,6 +55,7 @@ Immobilien.MainController = (function() {
 	that.reloadStartscreen = reloadStartscreen; 
 	that.loadMerkliste = loadMerkliste; 
 	that.addToMerkliste = addToMerkliste; 
+	that.startBiete = startBiete;
 
 	return that;
 }());

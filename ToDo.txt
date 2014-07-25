@@ -3,7 +3,6 @@ ToDo:
 
 - Objekte in Startscreen-Karte und Objekt in Detailansicht-Karte einzeichnen
 - Merkliste und Merken-Button einfügen
-- Platzhalterseite für "Biete"
 - Mieten, Kaufen umschalten => neue Suche
 - Detailansicht
 - Marker in Suchergebnisse einfügen
@@ -36,3 +35,4 @@ Check:
 - Autosuggest Reihenhaus
 - startscreen neu zeichnen, wenn auf zurück-button geclickt wird
 - Gallerie 
+- Platzhalterseite für "Biete"

@@ -28,6 +28,10 @@ Immobilien.Merkliste = (function() {
                 	}
                 });
 
+                $("#anbieten-button").click(function() {
+                    Immobilien.MainController.startBiete(); 
+                });
+
                 $( ".Property" ).mouseenter(function() {
                         $(this).addClass("hover");
                         $(this).css("cursor", "pointer");
@@ -94,13 +98,13 @@ Immobilien.Merkliste = (function() {
 
         sortPreisAufsteigend = function () {
                 var priceList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
+                for (var i = 0; i < contains; i++) {
                         priceList[i] = list[i].price;
                 }
                 priceList.sort(function(a, b){return a-b});
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (priceList[i] == list[j].price) {
                                         sortArray[i] = list[j];
                                 }
@@ -111,13 +115,13 @@ Immobilien.Merkliste = (function() {
         sortPreisAbsteigend = function () {
                 console.log("Preis absteigend");
                 var priceList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
+                for (var i = 0; i < contains; i++) {
                         priceList[i] = list[i].price;
                 }
                 priceList.sort(function(a, b){return b-a});
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (priceList[i] == list[j].price) {
                                         sortArray[i] = list[j];
                                 }
@@ -128,14 +132,14 @@ Immobilien.Merkliste = (function() {
         sortFlächeAufsteigend = function () {
                 console.log("Fläche aufsteigend");
                 var sizeList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
+                for (var i = 0; i < contains; i++) {
                         sizeList[i] = list[i].size;
                 }
                 sizeList.sort(function(a, b){return a-b});
                 console.log(sizeList);
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (sizeList[i] == list[j].size) {
                                         sortArray[i] = list[j];
                                 }
@@ -146,14 +150,14 @@ Immobilien.Merkliste = (function() {
         sortFlächeAbsteigend = function () {
                 console.log("Fläche absteigend");
                 var sizeList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
+                for (var i = 0; i < contains; i++) {
                         sizeList[i] = list[i].size;
                 }
                 sizeList.sort(function(a, b){return b-a});
                 console.log(sizeList);
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (sizeList[i] == list[j].size) {
                                         sortArray[i] = list[j];
                                 }
@@ -164,14 +168,14 @@ Immobilien.Merkliste = (function() {
         sortZimmerAufsteigend = function () {
                 console.log("Zimmeranzahl aufsteigend");
                 var roomList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
+                for (var i = 0; i < contains; i++) {
                         roomList[i] = list[i].rooms;
                 }
                 roomList.sort(function(a, b){return a-b});
                 console.log(roomList);
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (roomList[i] == list[j].rooms) {
                                         sortArray[i] = list[j];
                                 }
@@ -182,13 +186,16 @@ Immobilien.Merkliste = (function() {
         sortZimmerAbsteigend = function () {
                 console.log("Zimmeranzahl absteigend");
                 var roomList = new Array(); 
-                for (var i = 0; i < list.length; i++) {
-                        roomList[i] = list[i].rooms;
+                for (var i = 0; i < contains; i++) {
+                        if (list[i].rooms != null){
+                          roomList[i] = list[i].rooms;      
+                        }
+                        
                 }
                 roomList.sort(function(a, b){return b-a});
 
-                for (var i = 0; i < list.length; i++) {
-                        for (var j = 0; j < list.length; j++) {
+                for (var i = 0; i < contains; i++) {
+                        for (var j = 0; j < contains; j++) {
                                 if (roomList[i] == list[j].rooms) {
                                         sortArray[i] = list[j];
                                 }
@@ -198,14 +205,16 @@ Immobilien.Merkliste = (function() {
 
         deleteOneElement = function (id) {
                 console.log(id);
-                for (var i = 0; i < list.length; i++) {
+                console.log(list);
+                console.log(contains);
+                contains--;
+                for (var i = 0; i < contains; i++) {
                         if (list[i].id === id) {
                                 list.splice(i,1);
                         }
                 }
-                console.log(list);
                 
-
+                //contains--;
         },
 
         addToMerkliste = function (informations) {

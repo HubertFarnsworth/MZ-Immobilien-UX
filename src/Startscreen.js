@@ -102,17 +102,19 @@ Immobilien.Startscreen = (function() {
         $("#anbieten-button").click(function() {
             //user clicks on anbieten-button
             //give user feedback (change button states)
-            $("#gesuche-button").attr('class', 'btn btn-default');
-            $("#anbieten-button").attr('class', 'btn btn-primary');
-            $("#merkliste-button").attr('class', 'btn btn-default');
+            //$("#gesuche-button").attr('class', 'btn btn-default');
+            //$("#anbieten-button").attr('class', 'btn btn-primary');
+            //$("#merkliste-button").attr('class', 'btn btn-default');
+
+            Immobilien.MainController.startBiete(); 
         });
 
         $("#merkliste-button").click(function() {
             //user clicks on merkliste-button
             //give user feedback (change button states)
-            $("#gesuche-button").attr('class', 'btn btn-default');
-            $("#anbieten-button").attr('class', 'btn btn-default');
-            $("#merkliste-button").attr('class', 'btn btn-primary');
+            //$("#gesuche-button").attr('class', 'btn btn-default');
+            //$("#anbieten-button").attr('class', 'btn btn-default');
+            //$("#merkliste-button").attr('class', 'btn btn-primary');
 
             Immobilien.MainController.loadMerkliste(); 
         });

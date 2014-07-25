@@ -69,9 +69,7 @@
                 <div id="map-canvas"></div>
                 <button class="scrollToResults btn btn-default">6 Treffer gefunden
                 </button>
-            </div>        
-        </script>
-        <script type="text/template" id="results-tpl">
+            </div>
             <select class="form-control" id="select-immo-sort-results">
                     <option>Preis aufsteigend</option>
                     <option>Preis absteigend</option>
@@ -79,7 +77,9 @@
                     <option>Fläche absteigend</option>
                     <option>Zimmeranzahl aufsteigend</option>
                     <option>Zimmeranzahl absteigend</option>
-            </select>
+            </select>        
+        </script>
+        <script type="text/template" id="results-tpl">
             <% _.each (Properties, function(Property) { %>
                 <div class="Property" id="<%= Property.id %>">
                     <div class="Startimage" id="<%= Property.id %>">
@@ -87,6 +87,7 @@
                     </div>
                     <div class="description" id="<%= Property.id %>">
                         <p class="immo-headline" id="<%= Property.id %>"> <%= Property.rooms %> Zimmer <%= Property.type %> </p>
+                        <img class="immo-marker" id="marker <%= Property.id %>" src="res/markers/marker1.png" height= "50px" width="30px"></img>
                         <p class="immo-size" id="<%= Property.id %>"> Wohnfläche: <%=Property.size%>qm </p>
                         <p class="immo-rooms" id="<%= Property.id %>"> Zimmeranzahl: <%= Property.rooms %> </p>
                         <p class="immo-plz" id="<%= Property.id %>"> <%= Property.plz %> <%= Property.city %> </p>
@@ -232,6 +233,22 @@
                 </div>
             <% }); %>
         </script>
+
+        <script type="text/template" id="biete-tpl">
+            <div id="headline">
+                <h1 id="logo">
+                    Mittelbayerische Immobilien
+                </h1>
+            </div>    
+            <div id="navigation-buttons">
+                <button type="button" class="btn btn-default" id="gesuche-button">          Suche
+                </button>
+                <button type="button" class="btn btn-primary" id="anbieten-button">         Biete
+                </button>
+                <button type="button" class="btn btn-default" id="merkliste-button"><span class="glyphicon glyphicon-star"></span> Meine Merkliste
+                </button>
+            </div>
+        </script>
         <script type="text/template" id="empty-tpl">
         </script>
 
@@ -251,6 +268,7 @@
         <script src="src/Results.js"></script>
         <script src="src/Detail.js"></script>
         <script src="src/Merkliste.js"></script>
+        <script src="src/Biete.js"></script>
 
         <script>
                 Immobilien.init();
