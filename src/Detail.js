@@ -205,7 +205,7 @@ Immobilien.Detail = (function() {
 
         var mapOptions = {
             center: new google.maps.LatLng(latitude, longitude),
-            zoom: 15,
+            zoom: 17,
         };
 
         globalMap = new google.maps.Map(document.getElementById("map-content"),
